@@ -29,3 +29,7 @@ results/resynth_run.log
 results/run_*.log
 results/raw/_discarded*
 models/
+video/frames/
+video/audio/
+video/_check_*.png
+video/*.wav
