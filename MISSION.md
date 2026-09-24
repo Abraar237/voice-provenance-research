@@ -1,133 +1,114 @@
-# MISSION: The Agent Heard Fifty
-## Silent entity corruption in voice-agent tool calls, and what read-back confirmation recovers
+# MISSION: The Synthetic-Voice Penalty
+## Do audio-LLM voice agents treat a cloned voice differently from the same person's real voice?
 
-You are a Claude Code agent starting a complete research project in this folder. Your user is
+You are a Claude Code agent running a complete research project in this folder. Your user is
 Mohammed Abraar (author name on the paper; email abraar@vizz.vizuara.ai). This file is your
 complete brief. Read it fully before doing anything.
 
-SAFETY FRAMING (binding): every "tool" is a local mock; no real payment, calendar, or account
-system is touched. Every spoken request is synthetic (TTS from templated text with synthetic
-names and numbers). The contribution is a measurement of where voice agents fail silently and
-what a cheap confirmation policy recovers. Publish enough to reproduce the measurement.
+HISTORY: the project began 2026-09-24 as a silent-wrong tool-call study (see
+`lit_review/candidate_toolcall/`); CP1 found it half pre-empted by τ-Elicitation (2609.13602)
+and BFCL Audio (ICML 2026). The user chose to switch to a unique problem; the second
+candidate (spoken self-repairs) was also crowded (Full-Duplex-Bench-v3). This brief is the
+third and final problem. Pre-registrations below were recorded before any data.
+
+SAFETY FRAMING (binding): no real person is cloned without consent beyond what the dataset
+licence permits (LibriSpeech, CC BY 4.0, public-domain audiobook readers); clones are used
+only as matched stimuli for measuring model behaviour and are never published as voices.
+Every model is queried through its public API or an open-weight checkpoint on our own GPU.
 
 ---
 
-## 0. THE CHECKPOINT PROTOCOL (this governs everything)
+## 0. THE CHECKPOINT PROTOCOL
 
-Work phase by phase. **At the end of every phase, STOP and report to the user.** Do not start
-the next phase until the user says continue.
+The user has authorised running CP2 through CP6 WITHOUT stopping (2026-09-24): "stop only
+after the website, paper and all the code are ready with the video on the website, then give
+me the score". Record each CP in `MILESTONES.md` as it completes; report once at the end.
+Stop early only for a hard blocker (key exhausted, budget cap, a pre-emption discovered).
 
-1. **CP1 · Lit review + pre-emption check** -> report, wait
-2. **CP2 · Experiment plan frozen (with budget)** -> report, wait
-3. **CP3 · Experiments complete, analysis done** -> report headline numbers, wait
-4. **CP4 · Paper written (PDF, figures, 30+ verified citations)** -> deliver, wait
-5. **CP5 · Published: repo + Pages site + film + GIFs** -> deliver links, wait
-6. **CP6 · Self-review: a-star-reviewer scores + fix list**
-
-Track progress in `MILESTONES.md`; log every API call's cost (§5).
+1. CP1 · Lit review + pre-emption (done for this candidate; extend to 30+ refs during CP3)
+2. CP2 · Experiment plan frozen (with budget)
+3. CP3 · Experiments complete, analysis done
+4. CP4 · Paper written (PDF, figures, 30+ verified citations)
+5. CP5 · Published: public repo + Pages site + film + GIFs
+6. CP6 · Self-review: a-star-reviewer scores + fix list -> REPORT TO USER
 
 ---
 
 ## 1. THE PROBLEM (what we are testing)
 
-Voice agents take a spoken request and execute a tool call: "send fifty dollars to Priya",
-"book the room for the fourteenth at two", "my account number is four one five, nine nine
-two, zero one seven". The parameters of the call are spoken entities: amounts, digit strings,
-dates and times, quantities, names and spelled emails. Between the speaker and the tool sits
-either an ASR stage feeding a text LLM (the cascade) or an audio-native LLM. When the entity is
-mis-heard ("fifteen" as "fifty", a swapped digit, "Priya" as "Brea"), the resulting call is
-usually **schema-valid**: the amount is a number, the phone number has ten digits, the date
-parses. Nothing errors. The call executes with the wrong semantics. **The vulnerability is
-not that ASR makes errors (known); it is that entity errors become confidently executed tool
-calls, that no validator can catch them, and that the only defence, asking the user to
-confirm, is deployed by taste rather than by measurement.** That ledger, and the recovery
-number for confirmation, is the contribution.
-
-The three predecessor papers (in `reference/`) share one shape: a staged pipeline, a cell of
-failures that surface no error (OCR: unfiltered payloads; schema drift: accepted-wrong
-calls), and a cheap lever measured for recovery and cost. This project is the voice instance
-of that shape.
+Audio LLMs increasingly hear synthetic voices: accessibility users who speak through TTS,
+agent-to-agent voice calls, voice-preservation users, and robocalls (>=27% of honeypot
+robocalls are synthetic, 2609.11137). Two assumptions go untested at once. Deployed voice
+agents are assumed to treat a voice the same regardless of provenance. And nearly every
+recent audio-bias benchmark generates its stimuli WITH TTS (FairDialogue, BiasInEar, our own
+voice-judge paper), silently assuming synthetic-ness itself is inert. **Nobody has measured
+whether an audio LLM behaves differently toward a cloned voice than toward the same
+speaker's real recording of the same words.** The side-results that exist disagree in sign:
+Gemini scores synthetic subsets HIGHER (MedMosaic 2605.00969, Audio MultiChallenge
+2512.14865), open-weight models score them >12 points LOWER (MedMosaic). That contradiction,
+and the matched design that resolves it, is the contribution.
 
 **Core questions:**
-1. What fraction of spoken-entity tool calls execute with wrong semantics while surfacing
-   no error and asking no question (the SILENT-WRONG cell), by entity type × pipeline
-   (P1 local Whisper ASR -> text LLM; P2 audio LLM as transcriber -> text LLM; P3 audio-native
-   LLM calling tools directly)?
-2. How does the silent-wrong rate vary by acoustic condition: voice (multiple TTS voices per
-   accent: US, UK, Indian, Australian; two TTS families), speaking rate, background noise at
-   fixed SNR, 8 kHz mu-law telephone band? Does entity error decouple from WER (WER a poor
-   predictor of silent-wrong, as CER was for RAG utility and OCR WER was for injection)?
-3. Which recovery lever works and what does it cost: (a) none; (b) READ-BACK CONFIRMATION
-   (agent must restate every entity before calling; a scripted user oracle answers yes/no
-   from ground truth and corrects once); (c) ASR-confidence / n-best-disagreement gating that
-   forces a clarification question; (d) an "ask when unsure" instruction alone. Recovery
-   fraction of the silent-wrong cell, extra turns, tokens, latency.
-4. Does the model ask when it should? Calibration of clarification requests against actual
-   entity errors (asked-and-wrong, asked-and-right, silent-and-wrong, silent-and-right).
+1. Holding speaker and words fixed, does provenance (real recording vs zero-shot clone)
+   change what the model does: what it transcribes (WER), how it grades the speaker, whether
+   it understands the content, and how it responds as an assistant?
+2. Is the delta provenance or artifacts? A neural-codec RESYNTHESIS of the real audio (same
+   waveform through an encode-decode) separates "synthetic provenance" from "codec-like
+   artifacts"; a STOCK-VOICE TTS arm (same words, a different synthetic identity) separates
+   "cloned identity" from "synthetic in general".
+3. Does the model KNOW? An explicit probe ("real human or AI-generated?") gives detection
+   accuracy on the same pairs; the comparison of implicit behavioural delta against explicit
+   detection tells whether models discriminate by provenance without being able to report it.
+4. Does the sign differ by model family, reconciling the published contradiction?
 
-**Pre-registered directions (record in MILESTONES.md before ANY data collection):**
-- D1: Digit strings (phone/account numbers) and amounts carry the highest silent-wrong
-  rates; dates/times the lowest (they are normalised and cross-checked against calendars).
-- D2: The audio-native pipeline (P3) surfaces FEWER errors and asks FEWER questions than
-  the cascade but has a HIGHER silent-wrong rate: it hears a plausible value where the
-  cascade's ASR produces a visible mess that triggers a clarification.
-- D3: Read-back confirmation with a truthful oracle recovers >80% of silent-wrong calls at
-  one extra turn; confidence gating recovers under half; the instruction alone recovers
-  little.
-- D4: Telephone band and noise raise WER and silent-wrong together, but silent-wrong rises
-  faster than WER because errors concentrate on entities; WER is a poor predictor of
-  silent-wrong across conditions.
-- D5: Non-US voices raise silent-wrong, but the per-voice spread within an accent is as
-  large as the between-accent gap (the voice-judge lesson: never one voice per cell).
+**Pre-registered directions (recorded in MILESTONES.md 2026-09-24, before any data):**
+- D1: At least one model family shows a behavioural provenance delta (grading or
+  comprehension) between real and cloned same-speaker same-content audio that is larger,
+  in standardised units, than its explicit detection accuracy above chance on the same pairs.
+- D2: The resynthesis control accounts for less than half of the real-vs-clone delta: the
+  effect tracks provenance, not re-encoding.
+- D3: Sign differs by family: Gemini grades clones at or above real speech; the open-weight
+  models grade them below (the MedMosaic direction).
+- D4: Explicit detection is near chance (<60%) for every family, so any behavioural delta is
+  implicit sensitivity without awareness.
+- D5: Transcription WER does not differ between real and clone beyond the noise floor, so
+  grading deltas are not mediated by intelligibility.
 
-**Design sketch (CP2 refines; all local + API, no GPU training):**
-- **Task bank:** ~20 mock tools (payments, calendar, contacts, orders, travel, support), ~120
-  spoken tasks, each with one or two entity slots drawn from 6 entity types (amount, digit
-  string, date, time, quantity, name/spelled-email), ground-truth call frozen with the task.
-  Spoken text is written the way people say it ("four one five, five five five, zero one
-  nine eight"; "the fourteenth at two thirty"). Freeze with a hash before any audio.
-- **Audio rendering:** TTS family A = macOS `say` (free; en_US, en_GB, en_IN, en_AU voices,
-  3 voices per accent, rate 160/220 wpm); TTS family B = ElevenLabs (several library
-  voices; the key is TTS-scoped and works for text-to-speech) for a second family. Conditions via ffmpeg: clean, babble noise at 10 dB
-  SNR, 8 kHz mu-law telephone, both. Loudness-normalised. Frozen corpus with hashes.
-- **Pipelines:** P1 faster-whisper (local, CPU, small/medium) -> `google/gemini-3.6-flash`
-  with tools; P2 Gemini audio transcribe -> same text LLM; P3 Gemini audio-native with
-  tools. ALL MODEL CALLS GO THROUGH OPENROUTER (binding, user instruction 2026-09-24): use
-  the OpenAI-compatible chat endpoint with `input_audio` parts and `tools`; never call the
-  Gemini API directly for experiments. Second family in the text role from OpenRouter's
-  catalogue (an OpenAI or open-weight model); an open-weight audio model from OpenRouter if
-  one is listed with audio input, else Modal.
-- **Executor and ledger:** local mock executor validates each call against the schema
-  (schema-valid or error) and compares executed args to ground truth: CORRECT /
-  SILENT-WRONG / ERROR-SURFACED / ASKED (clarification requested). Canonicalised entity
-  matching (numeric, ISO dates, digit strings, fuzzy names with a fixed threshold).
-- **Levers:** none / read-back confirmation with oracle / confidence gating (Whisper
-  avg-logprob or n-best disagreement -> forced clarification) / ask-when-unsure instruction.
-- **Metrics:** silent-wrong rate per (entity type × condition × voice × pipeline × lever),
-  WER as covariate, recovery fraction with bootstrap CIs, extra turns and tokens per lever,
-  clarification calibration. Paired within-task stats, noise floor (30 cells × 5 calls),
-  interactions tested directly, BH over the full family, n>=24 hand-audited silent-wrong
-  transcripts shipped.
+**Design (frozen at CP2):**
+- **Speakers and items:** LibriSpeech test-clean (CC BY 4.0, 347 MB), 40 speakers (20 F /
+  20 M). Per speaker: one reference clip (5-10 s) for cloning and 5 target utterances
+  (4-12 s) with gold transcripts. 200 base items.
+- **Provenance arms (4 x 200 = 800 clips):** REAL (original recording); CLONE
+  (ResembleAI Chatterbox zero-shot from the speaker's reference, same words); RESYNTH (real
+  audio through EnCodec 24 kHz encode-decode); STOCK (Chatterbox default voice, same words,
+  a different synthetic identity). All clips loudness-normalised (ffmpeg loudnorm, -23 LUFS),
+  16 kHz mono wav, frozen with SHA-256 hashes before any model call.
+- **Models:** `google/gemini-3.6-flash` (full grid) and `google/gemini-3.1-pro-preview`
+  (subset) via OpenRouter; open-weight Qwen2-Audio-7B-Instruct and Voxtral-Mini-3B on
+  Modal (vLLM, A10G/L4). Temperature 0, one clip per call, randomised order, resume-safe.
+  ALL closed-model calls go through OpenRouter (user instruction). Other OpenRouter audio
+  families are blocked by a workspace guardrail as of 2026-09-24; add them if it is lifted.
+- **Outcomes per clip:** O1 TRANSCRIBE (WER vs gold); O2 GRADE (1-10 clarity and fluency of
+  the reading, judge role); O3 COMPREHEND (4-option content question generated once per
+  utterance from the gold transcript by a text model, answered from audio; accuracy);
+  O4 PROBE ("real human recording or AI-generated speech? REAL/SYNTHETIC"); O5 ASSIST
+  (reply as a voice assistant; measure reply length, refusal/deflection, and whether the
+  reply remarks on the voice), scored by regex plus a text judge blind to provenance.
+- **Batteries:** noise floor 30 clips x 5 repeats (O2, O4) on Flash; a second reference clip
+  per speaker for 10 speakers (clone-of-clone stability); WER per arm as covariate.
+- **Statistics:** paired within-utterance deltas (clone-real, resynth-real, stock-real),
+  sign-flip permutation clustered by speaker (20k), speaker-cluster bootstrap CIs (10k),
+  paired d_z; provenance x family interaction by label permutation; D1 test compares
+  standardised implicit delta with explicit detection accuracy per family; BH over the full
+  family from day one; n>=24 hand-audited O5 replies shipped.
 
-**Pre-emption frontier (verify FULL-TEXT at CP1 — decides go/no-go):**
-- Known and MUST be delineated: ASR robustness of spoken language understanding and
-  spoken task-oriented dialogue (slot error rates under ASR noise); numeric/entity
-  transcription errors in ASR (contextual biasing, ITN); voice-agent benchmarks
-  (VoiceBench, AudioBench, spoken tau-bench variants, full-duplex agent evals); LLM
-  clarification-question and confirmation studies in text agents; confidence estimation
-  for ASR. Our unclaimed core, if it holds: **the silent-wrong ledger for spoken-entity
-  tool calls across cascade vs audio-native pipelines, crossed with acoustic conditions,
-  with read-back confirmation measured as a recovery lever against confidence gating.**
-- Search: "spoken tool calling", "voice agent function calling ASR error", "speech
-  task-oriented dialogue slot error LLM", "audio LLM function calling benchmark",
-  "confirmation dialogue voice assistant numbers", "ASR numeric entity error",
-  "clarification questions speech agents", "telephone voice agent evaluation".
-- If a paper already measures silent wrong-semantics tool calls from spoken entities across
-  cascade vs audio-native pipelines with a confirmation-recovery comparison, STOP AT CP1 and
-  report; the user decides.
-- The voice-judge project's scouting notes are in `reference/VOICE_PROBLEM_STATEMENTS.md`;
-  its "crowded areas to avoid" list still applies (refusal/jailbreak by accent, decision bias
-  by paralinguistics, ASR accent bias per se).
+**Pre-emption frontier (checked 2026-09-24, `lit_review/candidate_provenance_preemption.md`):**
+Audio MultiChallenge 2512.14865 (stock TTS re-render, accuracy only, +7.5% text-output /
+-2.5% audio-output); Counterfactual Audits 2608.06718 (rank-order stability of judge
+profiles, no per-item delta); MedMosaic 2605.00969 (unmatched real vs ElevenLabs subsets,
+signs differ by family); BiasInEar 2602.01030 (clones only as a validity check);
+ALLM4ADD 2505.11079 and AudioTrust 2505.16211 (explicit detection near chance / refused).
+None holds speaker AND content fixed with a resynthesis control and behavioural outcomes.
 
 ---
 
@@ -157,7 +138,7 @@ ocr-injection, schema-drift.
    families, repeat-call noise floors (~30 cells x 5 calls) from day one.
 4. **Test interactions directly**; a difference in significance is not a significant difference.
 5. **BH correction over the full test family from day one; bold only survivors.**
-6. **Hand-verify a sample of silent-wrong calls** (n>=24) and ship the audited sample.
+6. **Hand-verify a sample of O5 assistant replies and O2 grades** (n>=24) and ship the audited sample.
    Never claim an unperformed audit.
 7. **Verify every citation via export.arxiv.org** (or Semantic Scholar batch when arXiv 429s).
 8. **Cost tracker with hard stop** (copy from the schema-drift repo). Gemini thinking tokens
@@ -168,10 +149,10 @@ ocr-injection, schema-drift.
     (slate #155e8c, hot #b3006b, shelf #c0641a, good #1c7a55), finding annotated on the figure.
 11. **OpenRouter key is $5-capped and has $0.18 left**; ask the user before relying on it.
 12. **Pre-empt the reviewer in v1:** noise floors, interactions, per-family tables, BH,
-    verbatim prompts in appendix, honest Limitations. Voice-specific: report WER per voice
-    and condition so intelligibility is a measured covariate, not a hidden mediator; the
-    "by construction" cells (a schema-valid wrong number cannot error) must be labelled as
-    such in the abstract (the schema-drift review flagged exactly this).
+    verbatim prompts in appendix, honest Limitations. Voice-specific: report WER per arm so
+    intelligibility is a measured covariate, not a hidden mediator; report clone quality
+    (speaker-similarity and naturalness proxies) so "the clones were bad" is answered in
+    the paper, not in the rebuttal.
 13. **Reviewer lessons from the two newest reviews:** explain the headline mechanism, do not
     just observe it (run the ablation that tells capability from prompt artefact); do not
     let a comparison be confounded by information content; give the lever's false-positive
@@ -182,11 +163,10 @@ ocr-injection, schema-drift.
 ## 4. BUDGET (hard rules)
 
 - **Total cap: $30.** Hard-stop in the cost tracker at $25. Report spend at every checkpoint.
-- Expected (all via OpenRouter, which returns exact cost per call in `usage.cost`; log
-  that number, not an estimate): Gemini audio calls (P2 transcribe + P3 native, ~3,000
-  clips x ~300 tokens in) ~$3-5; text-LLM calls for P1/P2 and lever turns ~$3-5; second
-  family ~$3; ElevenLabs TTS for family B within the existing plan; macOS `say`, ffmpeg,
-  faster-whisper all local at $0; Modal optional ~$3.
+- Expected: Gemini Flash 800 clips x 5 outcomes ~$1.5; Gemini Pro subset ~$1.5; text
+  judge and MCQ generation ~$0.5; Modal: Chatterbox cloning ~0.5 GPU-h, Qwen2-Audio and
+  Voxtral inference ~2 GPU-h on A10G/L4 (~$3-5); EnCodec and loudnorm local at $0.
+  OpenRouter returns exact cost per call in `usage.cost`; log that, not an estimate.
 
 ## 5. KEYS AND ACCOUNTS (`.env` in this folder — NEVER commit, never print values)
 
@@ -203,21 +183,19 @@ ocr-injection, schema-drift.
 ## 6. FOLDER LAYOUT
 
 ```
-voice toolcall research/
+voice provenance research/
   MISSION.md          <- this file
   MILESTONES.md       <- checkpoint tracker
   .env                <- keys (never commit)
   Agent Skills/       <- all 4 skill bundles
   reference/          <- four predecessor papers + voice scouting notes; read first
   lit_review/  experiments/  corpus/  results/  paper/  figures/  site/  video/
+  lit_review/candidate_toolcall/  <- archived CP1 of the first (pre-empted) candidate
 ```
 
 ## 7. FIRST ACTIONS WHEN YOU (the new session) START
 
 1. Read this file fully, then the PDFs in `reference/`.
 2. Install writing skills: `cp -R "Agent Skills/3-research-paper-writing/skills/"* ~/.claude/skills/`
-3. Sanity-check: tiny Gemini call (watch prepaid-429), `say -v '?' | grep en_`, `ffmpeg
-   -version`, `pip install faster-whisper` and a one-clip transcription, `modal profile current`.
-4. Begin Phase 1: lit review seeded from §1's pre-emption frontier — the silent-wrong ledger
-   and the confirmation-recovery comparison are the FIRST delineation questions. Then
-   **CHECKPOINT CP1: stop and report.**
+3. Sanity-check: one OpenRouter audio call, `ffmpeg -version`, `modal profile current`.
+4. Continue from the first unchecked item in MILESTONES.md.

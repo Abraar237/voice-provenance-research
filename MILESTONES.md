@@ -1,52 +1,46 @@
-# Voice Tool-Call Silent-Error Audit · Milestones & Checkpoints
+# Synthetic-Voice Penalty · Milestones & Checkpoints
 
 Project brief: MISSION.md. Budget cap: **$30 total** (hard stop $25). Update this file at
-every checkpoint. RULE: at each CP, STOP and report to the user; wait for approval.
+every checkpoint. The user authorised CP2-CP6 without stopping (2026-09-24); report at the end.
 
-## Pre-registered directions (recorded BEFORE any task-bank generation or data collection)
-- [x] D1: Digit strings and amounts carry the highest silent-wrong rates; dates/times the
-      lowest.  Recorded: 2026-09-24
-- [x] D2: Audio-native pipeline (P3) surfaces fewer errors and asks fewer questions than the
-      cascade but has a HIGHER silent-wrong rate.  Recorded: 2026-09-24
-- [x] D3: Read-back confirmation with a truthful oracle recovers >80% of silent-wrong at one
-      extra turn; confidence gating recovers under half; instruction alone recovers little.
+## Problem-statement history
+- 2026-09-24 07:20 Candidate 1 (silent-wrong tool calls from spoken entities): CP1 done,
+  verdict GO-WITH-REFRAME, half pre-empted by τ-Elicitation 2609.13602 and BFCL Audio
+  (ICML 2026). User chose to switch. Archived in lit_review/candidate_toolcall/.
+- 2026-09-24 08:40 Candidate 2 (spoken self-repairs executed as retracted values):
+  pre-emption sweep ALIVE-BUT-CROWDED (Full-Duplex-Bench-v3 2604.04847, Audio2Tool
+  2604.22821, Audio MultiChallenge 2512.14865). Not chosen.
+- 2026-09-24 08:40 Candidate 3 (provenance bias, matched real-vs-clone): ALIVE, no paper
+  holds speaker and content fixed with a resynthesis control and behavioural outcomes.
+  CHOSEN. Repo renamed voice-provenance-research.
+
+## Pre-registered directions (recorded BEFORE any clip was cloned or any model call made)
+- [x] D1: At least one family's behavioural provenance delta (grading or comprehension,
+      standardised) exceeds its explicit detection accuracy above chance.  Recorded: 2026-09-24
+- [x] D2: The resynthesis control accounts for under half of the real-vs-clone delta.
       Recorded: 2026-09-24
-- [x] D4: Telephone band and noise raise silent-wrong faster than WER; WER is a poor
-      predictor of silent-wrong across conditions.  Recorded: 2026-09-24
-- [x] D5: Non-US voices raise silent-wrong, but within-accent per-voice spread is as large as
-      the between-accent gap.  Recorded: 2026-09-24
-- Note at registration: D2 may reverse if the audio-native model is simply a better
-  listener than small local Whisper; if so we report that as a reversal and add the
-  Whisper model size as a factor.
+- [x] D3: Sign differs by family: Gemini grades clones at or above real; open-weight models
+      grade them below.  Recorded: 2026-09-24
+- [x] D4: Explicit detection is near chance (<60%) for every family.  Recorded: 2026-09-24
+- [x] D5: Transcription WER does not differ between real and clone beyond the noise floor.
+      Recorded: 2026-09-24
+- Note at registration: if clone quality is poor (high WER on CLONE), D5 fails for a
+  mechanical reason and D1-D3 must be read conditional on intelligibility; we report that.
 
-## CP1 · Lit review + pre-emption — DONE 2026-09-24, awaiting approval
-- [x] Angle agents (A spoken tool calling, B ASR entity errors, C confirmation levers,
-      D cascade vs native, E recency) -> lit_review/lit_review.csv (121 unique verified ids)
-- [x] Full-text pre-emption reads on 7 nearest neighbours -> lit_review/preemption_fulltext.md
-      (τ-Elicitation 2609.13602 [posted 2026-09-11], BFCL Audio ICML 2026, From Text to
-      Voice 2605.15104, SpeechGym 2608.26432, VoiceCodeBench 2608.28916, MTVA-Bench
-      2609.20152, Proactive for Uncertainty 2605.25404)
-- [x] LIT_REVIEW.md with novelty-delineation table + significance statement
-- [x] Verdict: **GO-WITH-REFRAME** — τ-Elicitation owns the read-back recovery headline
-      (audio-native only); BFCL Audio owns cascade-vs-native under noise (failure shares
-      only). Ours: executed silent-wrong RATE by entity type on identical clips across
-      three pipelines incl. transcriber arm, telephone band + babble, WER per cell,
-      gating vs read-back with the false-positive bill. Proposed reframe + D1/D3
-      amendments in LIT_REVIEW.md (need approval before recording)
-- [ ] **REPORTED TO USER, APPROVAL RECEIVED: ____**
+## CP1 · Lit review + pre-emption — DONE 2026-09-24 (for candidate 3)
+- [x] Pre-emption sweep -> lit_review/candidate_provenance_preemption.md (verified
+      abstracts, full-text reads of 2512.14865, 2608.06718, 2602.01030)
+- [x] Verdict: ALIVE
+- [ ] Extend to 30+ verified refs (angles: deepfake detection with ALLMs; TTS-stimulus
+      bias audits; clone quality / human perception; accessibility and robocall stakes)
+      -> lit_review/lit_review.csv + LIT_REVIEW.md, during CP3
 
 ### Environment sanity (2026-09-24)
-- Gemini key OK; models live: gemini-3.6-flash, gemini-3.8-flash, gemini-3.1-pro-preview,
-  gemini-3.8-flash-tts
-- OpenRouter: new key (2026-09-24), $50 limit; ALL model calls incl. Gemini go through it
-  (user instruction); verified audio + tool call via OpenRouter, $0.00035, cost returned per call
-- Modal profile thesreedath OK
-- macOS `say`: 186 voices incl. en_US/en_GB/en_IN/en_AU; ffmpeg present; faster-whisper 1.2.1
-  installed (small/int8 on CPU: 2.2 s per clip)
-- End-to-end smoke test 2026-09-24: say -> 16 kHz wav -> (a) Whisper transcript, (b) Gemini
-  3.6 Flash audio-native with a send_payment tool declaration; both correct on clean US voice
-  and on 8 kHz mu-law telephone band; ~290 tokens in per 8 s clip. Repeated through
-  OpenRouter (google/gemini-3.6-flash, input_audio + tools): identical correct call
+- OpenRouter: new key, $50 limit. google/gemini-3.6-flash and gemini-3.1-pro-preview accept
+  audio input and return usage.cost. gpt-audio-mini, voxtral, qwen-omni are blocked by a
+  workspace GUARDRAIL (not credit); user can lift at openrouter.ai/workspaces/default/guardrails
+- Modal profile thesreedath OK; ffmpeg present; faster-whisper 1.2.1 installed (not needed now)
+- GEMINI_API_KEY: not to be used for experiments (user instruction)
 
 ## CP2 · Experiment plan frozen — PENDING
 ## CP3 · Experiments + analysis — PENDING
@@ -57,4 +51,4 @@ every checkpoint. RULE: at each CP, STOP and report to the user; wait for approv
 ## Spend log
 | Date | Item | Amount | Running total |
 |---|---|---|---|
-| 2026-09-24 | 2 direct Gemini smoke calls (before the OpenRouter rule) + 1 OpenRouter smoke call | <$0.01 | $0.01 |
+| 2026-09-24 | Smoke and probe calls for candidates 1-2 (direct Gemini x2, OpenRouter x11) | $0.01 | $0.01 |
