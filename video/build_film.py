@@ -155,7 +155,7 @@ def s2(d, t):  # the assumption
     g3 = seg(t, at("p2", "Nobody had"), at("p2", "Nobody had") + 0.8)
     if g3 > 0:
         d.text((W // 2, 820), "nobody had held the speaker and the words fixed", font=f_body, fill=mix(BG, INK, g3), anchor="mm")
-        underline(d, 540, 1380, 852, seg(t, at("p2", "held the"), at("p2", "held the") + 0.7))
+        underline(d, 540, 1380, 852, seg(t, at("p2", "held fixed"), at("p2", "held fixed") + 0.7))
 
 
 def s3(d, t):  # the design
