@@ -110,6 +110,8 @@ def grade_bars(d, t, rows, y0=330, t_anchor=None, note=None, note_t=None, note_c
     for i, (lab, val, col, ta) in enumerate(rows):
         y = y0 + i * 150
         g = seg(t, ta, ta + 1.1)
+        if g <= 0:
+            continue
         d.text((160, y), lab, font=f_lab, fill=mix(BG, INK, min(1, g * 3)), anchor="lm")
         hbar(d, 160, y + 30, 1100, 56, (val / 10.0) * g, col)
         if g > 0.99:
@@ -159,10 +161,10 @@ def s2(d, t):  # the assumption
 def s3(d, t):  # the design
     d.text((W // 2, 170), "Same speaker, same words, four versions", font=f_h2, fill=INK, anchor="mm")
     g0 = seg(t, cue_start("p3"), cue_start("p3") + 0.8)
-    d.rounded_rectangle([140, 380, 520, 620], radius=18, outline=mix(BG, INK2, g0), width=4)
-    d.text((330, 450), "one LibriSpeech reader", font=f_lab, fill=mix(BG, INK, g0), anchor="mm")
-    d.text((330, 510), "40 readers", font=f_num, fill=mix(BG, SLATE, g0), anchor="mm")
-    d.text((330, 565), "200 real utterances", font=f_num, fill=mix(BG, SLATE, g0), anchor="mm")
+    d.rounded_rectangle([100, 380, 600, 620], radius=18, outline=mix(BG, INK2, g0), width=4)
+    d.text((350, 450), "one LibriSpeech reader", font=f_lab, fill=mix(BG, INK, g0), anchor="mm")
+    d.text((350, 510), "40 readers", font=f_num, fill=mix(BG, SLATE, g0), anchor="mm")
+    d.text((350, 565), "200 real utterances", font=f_num, fill=mix(BG, SLATE, g0), anchor="mm")
     arms = [("REAL", "the original recording", SLATE, at("p3", "Two hundred")),
             ("CLONE", "zero-shot clone of the same reader", HOT, at("p3", "A zero-shot")),
             ("RESYNTH", "real audio through a 6 kbps codec", SHELF, at("p3", "The real recording")),
@@ -172,7 +174,7 @@ def s3(d, t):  # the design
         if g <= 0:
             continue
         y = 300 + i * 150
-        d.line([(520, 500), (700, y + 50)], fill=mix(BG, RULE, g), width=4)
+        d.line([(600, 500), (700, y + 50)], fill=mix(BG, RULE, g), width=4)
         d.rounded_rectangle([700, y, 1500, y + 110], radius=16, outline=mix(BG, col, g), width=4, fill=mix(BG, col, 0.06 * g))
         d.text((740, y + 35), name, font=f_num, fill=mix(BG, col, g), anchor="lm")
         d.text((740, y + 80), sub, font=f_note, fill=mix(BG, INK2, g), anchor="lm")
@@ -246,6 +248,8 @@ def s7(d, t):  # result 3: probe
     for i, (lab, val, ta) in enumerate(rows):
         y = 330 + i * 150
         g = seg(t, ta, ta + 1.1)
+        if g <= 0:
+            continue
         d.text((160, y), lab, font=f_lab, fill=mix(BG, INK, min(1, g * 3)), anchor="lm")
         hbar(d, 160, y + 30, 1100, 56, val * g, HOT)
         if g > 0.99:
@@ -268,6 +272,8 @@ def s8(d, t):  # no hidden sensitivity
     for i, (lab, val, col, ta) in enumerate(rows):
         y = 360 + i * 160
         g = seg(t, ta, ta + 1.0)
+        if g <= 0:
+            continue
         d.text((160, y), lab, font=f_lab, fill=mix(BG, INK, min(1, g * 3)), anchor="lm")
         hbar(d, 160, y + 30, 1100, 56, ((val - 0.5) / 0.1) * g, col)
         if g > 0.99:

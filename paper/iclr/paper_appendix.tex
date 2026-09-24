@@ -36,17 +36,19 @@ Flash & grade & $+.005$ [$-.155$, $+.161$] & $\mathbf{-.312}$ [$-.460$, $-.162$]
 \midrule
 Pro & grade & $+.345$ [$-.897$, $+1.458$] & $+.121$ [$-.776$, $+1.033$] & $+.328$ [$-.474$, $+1.155$] & $+.224$ [$-1.000$, $+1.446$] \\
  & share SYNTHETIC & $+.056$ [$-.050$, $+.179$] & $+.049$ [$-.065$, $+.179$] & $+.054$ [$-.073$, $+.189$] & $.000$ [$-.071$, $+.077$] \\
-% @@VOXAPPTABLE@@
+\midrule
+Voxtral & grade & $-.175$ [$-.400$, $+.050$] & --- & --- & --- \\
+ & share SYNTHETIC & $.000$ [$.000$, $.000$] & --- & --- & --- \\
 \bottomrule
 \end{tabular}
-\caption{Paired within-item differences with 95\% speaker-bootstrap intervals. Bold: survives Benjamini-Hochberg at $q \le 0.05$ over all 45 tests. Flash $n = 200$ pairs (195 to 200 depending on parse), Pro $n = 60$.}
+\caption{Paired within-item differences with 95\% speaker-bootstrap intervals. Bold: survives Benjamini-Hochberg at $q \le 0.05$ over all 49 tests. Flash $n = 200$ pairs (195 to 200 depending on parse), Pro $n = 60$, Voxtral $n = 40$.}
 \label{tab:deltas}
 \end{table}
 
 \section{Statistical test family}
 \label{app:tests}
 
-All 45 sign-flip tests enter one Benjamini-Hochberg family. Two survive at $q \le 0.05$: Flash grade RESYNTH$-$REAL ($p = 3.5\times10^{-4}$, $q = 0.008$) and Flash grade CLONE$-$RESYNTH ($p = 4.5\times10^{-4}$, $q = 0.008$). The next smallest are Flash share-SYNTHETIC RESYNTH$-$REAL ($p = 0.0085$) and CLONE$-$REAL ($p = 0.015$), which do not survive. The family-by-provenance interaction (difference of CLONE$-$REAL grade deltas, Pro minus Flash) is $+0.39$ [$-0.89$, $+1.47$], $p = 0.56$, $n = 57$ shared items. The permutation floor is $p = 5\times10^{-5}$.
+All 49 sign-flip tests enter one Benjamini-Hochberg family. Two survive at $q \le 0.05$: Flash grade RESYNTH$-$REAL ($p = 3.5\times10^{-4}$, $q = 0.008$) and Flash grade CLONE$-$RESYNTH ($p = 4.5\times10^{-4}$, $q = 0.008$). The next smallest are Flash share-SYNTHETIC RESYNTH$-$REAL ($p = 0.0085$) and CLONE$-$REAL ($p = 0.015$), which do not survive. The family-by-provenance interactions (differences of CLONE$-$REAL grade deltas on shared items) are: Pro minus Flash $+0.39$ [$-0.89$, $+1.47$], $p = 0.56$, $n = 57$; Flash minus Voxtral $+0.18$, $p = 0.45$, $n = 39$; Pro minus Voxtral $+0.65$, $p = 0.44$, $n = 20$. The permutation floor is $p = 5\times10^{-5}$.
 
 \section{Batteries}
 \label{app:batteries}
@@ -65,4 +67,4 @@ All 45 sign-flip tests enter one Benjamini-Hochberg family. Two survive at $q \l
 \section{Cost and compute}
 \label{app:cost}
 
-Hosted calls through OpenRouter, which returns the exact cost of each call: Gemini 3.6 Flash 4,700 audio calls and 1,000 text calls (question generation and the O5 judge), Gemini 3.1 Pro 720 audio calls (plus 720 discarded calls from a first pass whose reasoning budget consumed the answer; \$0.18), total \$2.99. Local compute on one Apple M4: Chatterbox cloning of 450 clips in 103 minutes; EnCodec resynthesis of 200 clips in about 10 minutes; @@VOXCOST@@ Total metered spend is under \$5 of a \$30 cap.
+Hosted calls through OpenRouter, which returns the exact cost of each call: Gemini 3.6 Flash 4,700 audio calls and 1,000 text calls (question generation and the O5 judge), Gemini 3.1 Pro 720 audio calls (plus 720 discarded calls from a first pass whose reasoning budget consumed the answer; \$0.18), total \$2.99. Local compute on one Apple M4: Chatterbox cloning of 450 clips in 103 minutes; EnCodec resynthesis of 200 clips in about 10 minutes; Voxtral-Mini-3B inference of 159 calls in about 2.9 hours on CPU (bfloat16). Total metered spend is under \$5 of a \$30 cap.

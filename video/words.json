@@ -2155,9 +2155,352 @@
    ]
   },
   {
+   "id": "p9",
+   "text": "One more model. Voxtral, an open-weight audio model, on forty paired items. It grades the clone a sixth of a point lower than the real recording. The interval includes zero. And when asked, it calls every single clip real, the mirror image of Gemini. The sign pattern we pre-registered, Gemini at or above, open-weight below, is there in the point estimates, and not established by the tests.",
+   "start": 176.53795800000003,
+   "dur": 26.842271,
+   "words": [
+    {
+     "w": "One",
+     "s": 0.0,
+     "e": 0.186
+    },
+    {
+     "w": "more",
+     "s": 0.221,
+     "e": 0.395
+    },
+    {
+     "w": "model.",
+     "s": 0.441,
+     "e": 0.94
+    },
+    {
+     "w": "Voxtral,",
+     "s": 1.265,
+     "e": 2.043
+    },
+    {
+     "w": "an",
+     "s": 2.113,
+     "e": 2.252
+    },
+    {
+     "w": "open-weight",
+     "s": 2.334,
+     "e": 2.856
+    },
+    {
+     "w": "audio",
+     "s": 2.902,
+     "e": 3.193
+    },
+    {
+     "w": "model,",
+     "s": 3.251,
+     "e": 3.738
+    },
+    {
+     "w": "on",
+     "s": 3.913,
+     "e": 4.075
+    },
+    {
+     "w": "forty",
+     "s": 4.156,
+     "e": 4.435
+    },
+    {
+     "w": "paired",
+     "s": 4.505,
+     "e": 4.76
+    },
+    {
+     "w": "items.",
+     "s": 4.818,
+     "e": 5.375
+    },
+    {
+     "w": "It",
+     "s": 5.817,
+     "e": 5.956
+    },
+    {
+     "w": "grades",
+     "s": 6.002,
+     "e": 6.339
+    },
+    {
+     "w": "the",
+     "s": 6.397,
+     "e": 6.467
+    },
+    {
+     "w": "clone",
+     "s": 6.513,
+     "e": 6.908
+    },
+    {
+     "w": "a",
+     "s": 6.966,
+     "e": 7.012
+    },
+    {
+     "w": "sixth",
+     "s": 7.129,
+     "e": 7.442
+    },
+    {
+     "w": "of",
+     "s": 7.488,
+     "e": 7.546
+    },
+    {
+     "w": "a",
+     "s": 7.593,
+     "e": 7.628
+    },
+    {
+     "w": "point",
+     "s": 7.686,
+     "e": 7.918
+    },
+    {
+     "w": "lower",
+     "s": 7.976,
+     "e": 8.255
+    },
+    {
+     "w": "than",
+     "s": 8.324,
+     "e": 8.452
+    },
+    {
+     "w": "the",
+     "s": 8.475,
+     "e": 8.545
+    },
+    {
+     "w": "real",
+     "s": 8.603,
+     "e": 8.777
+    },
+    {
+     "w": "recording.",
+     "s": 8.847,
+     "e": 9.532
+    },
+    {
+     "w": "The",
+     "s": 9.973,
+     "e": 10.089
+    },
+    {
+     "w": "interval",
+     "s": 10.147,
+     "e": 10.542
+    },
+    {
+     "w": "includes",
+     "s": 10.623,
+     "e": 11.041
+    },
+    {
+     "w": "zero.",
+     "s": 11.076,
+     "e": 11.622
+    },
+    {
+     "w": "And",
+     "s": 12.225,
+     "e": 12.365
+    },
+    {
+     "w": "when",
+     "s": 12.411,
+     "e": 12.55
+    },
+    {
+     "w": "asked,",
+     "s": 12.608,
+     "e": 13.038
+    },
+    {
+     "w": "it",
+     "s": 13.154,
+     "e": 13.282
+    },
+    {
+     "w": "calls",
+     "s": 13.328,
+     "e": 13.595
+    },
+    {
+     "w": "every",
+     "s": 13.677,
+     "e": 13.967
+    },
+    {
+     "w": "single",
+     "s": 14.025,
+     "e": 14.303
+    },
+    {
+     "w": "clip",
+     "s": 14.338,
+     "e": 14.594
+    },
+    {
+     "w": "real,",
+     "s": 14.721,
+     "e": 15.232
+    },
+    {
+     "w": "the",
+     "s": 15.673,
+     "e": 15.778
+    },
+    {
+     "w": "mirror",
+     "s": 15.836,
+     "e": 16.138
+    },
+    {
+     "w": "image",
+     "s": 16.207,
+     "e": 16.532
+    },
+    {
+     "w": "of",
+     "s": 16.579,
+     "e": 16.683
+    },
+    {
+     "w": "Gemini.",
+     "s": 16.741,
+     "e": 17.403
+    },
+    {
+     "w": "The",
+     "s": 17.786,
+     "e": 17.902
+    },
+    {
+     "w": "sign",
+     "s": 17.972,
+     "e": 18.228
+    },
+    {
+     "w": "pattern",
+     "s": 18.286,
+     "e": 18.611
+    },
+    {
+     "w": "we",
+     "s": 18.645,
+     "e": 18.727
+    },
+    {
+     "w": "pre-registered,",
+     "s": 18.796,
+     "e": 19.702
+    },
+    {
+     "w": "Gemini",
+     "s": 19.876,
+     "e": 20.341
+    },
+    {
+     "w": "at",
+     "s": 20.457,
+     "e": 20.712
+    },
+    {
+     "w": "or",
+     "s": 20.782,
+     "e": 20.944
+    },
+    {
+     "w": "above,",
+     "s": 20.991,
+     "e": 21.502
+    },
+    {
+     "w": "open-weight",
+     "s": 21.827,
+     "e": 22.337
+    },
+    {
+     "w": "below,",
+     "s": 22.372,
+     "e": 22.953
+    },
+    {
+     "w": "is",
+     "s": 23.162,
+     "e": 23.324
+    },
+    {
+     "w": "there",
+     "s": 23.382,
+     "e": 23.591
+    },
+    {
+     "w": "in",
+     "s": 23.638,
+     "e": 23.707
+    },
+    {
+     "w": "the",
+     "s": 23.754,
+     "e": 23.824
+    },
+    {
+     "w": "point",
+     "s": 23.87,
+     "e": 24.102
+    },
+    {
+     "w": "estimates,",
+     "s": 24.16,
+     "e": 24.81
+    },
+    {
+     "w": "and",
+     "s": 25.054,
+     "e": 25.205
+    },
+    {
+     "w": "not",
+     "s": 25.263,
+     "e": 25.449
+    },
+    {
+     "w": "established",
+     "s": 25.519,
+     "e": 26.087
+    },
+    {
+     "w": "by",
+     "s": 26.134,
+     "e": 26.238
+    },
+    {
+     "w": "the",
+     "s": 26.285,
+     "e": 26.355
+    },
+    {
+     "w": "tests.",
+     "s": 26.389,
+     "e": 26.842
+    }
+   ]
+  },
+  {
    "id": "p10",
    "text": "So, three things. For audit designers: synthetic stimuli are validated for these models, to about a sixth of a grade point, with one new rule. Equalise compression across arms, because the model grades the codec. For deployers: a clone of a person is treated as that person. And do not let the model's own opinion about who is real gate a decision. It calls most real people synthetic.",
-   "start": 176.53795800000003,
+   "start": 204.28022900000002,
    "dur": 25.216875,
    "words": [
     {
@@ -2505,7 +2848,7 @@
   {
    "id": "p11",
    "text": "Same speaker, same words. The clone is invisible. The codec is not.",
-   "start": 202.65483300000002,
+   "start": 230.397104,
    "dur": 4.597563,
    "words": [
     {
@@ -2571,5 +2914,5 @@
    ]
   }
  ],
- "total": 211.25239600000003
+ "total": 238.99466700000002
 }

@@ -1,6 +1,6 @@
 {
  "generated": "analyze.py",
- "n_records": 4820,
+ "n_records": 4979,
  "models": {
   "google/gemini-3.1-pro-preview": {
    "n_items": 60,
@@ -1023,17 +1023,132 @@
      11.146224492731307
     ]
    }
+  },
+  "mistralai/Voxtral-Mini-3B-2507": {
+   "n_items": 40,
+   "arms": {
+    "real": {
+     "grade": {
+      "mean": 8.475,
+      "n": 40,
+      "ci": [
+       8.325,
+       8.625
+      ]
+     },
+     "says_synthetic": {
+      "mean": 0.0,
+      "n": 40,
+      "ci": [
+       0.0,
+       0.0
+      ]
+     }
+    },
+    "clone": {
+     "grade": {
+      "mean": 8.3,
+      "n": 40,
+      "ci": [
+       8.125,
+       8.475
+      ]
+     },
+     "says_synthetic": {
+      "mean": 0.0,
+      "n": 39,
+      "ci": [
+       0.0,
+       0.0
+      ]
+     }
+    }
+   },
+   "contrasts": {
+    "grade:clone-real": {
+     "mean": -0.175,
+     "ci": [
+      -0.4,
+      0.05
+     ],
+     "p": 0.18885,
+     "dz": -0.24576051368862242,
+     "n_pairs": 40,
+     "auc_a_over_b": 0.425
+    },
+    "says_synthetic:clone-real": {
+     "mean": 0.0,
+     "ci": [
+      0.0,
+      0.0
+     ],
+     "p": 1.0,
+     "dz": NaN,
+     "n_pairs": 39,
+     "auc_a_over_b": 0.5
+    }
+   },
+   "probe": {
+    "real": {
+     "share_synthetic": 0.0,
+     "n": 40
+    },
+    "clone": {
+     "share_synthetic": 0.0,
+     "n": 39
+    },
+    "balanced_acc_real_vs_clone": 0.5,
+    "explicit_auc_real_vs_clone": 0.5,
+    "acc_real_clone": {
+     "mean": 0.5063291139240507,
+     "ci": [
+      0.5,
+      0.5194805194805194
+     ]
+    }
+   },
+   "d1": {
+    "grade": {
+     "implicit_auc": 0.575,
+     "implicit_auc_dirfree": 0.575,
+     "explicit_auc": 0.5,
+     "implicit_minus_explicit": 0.07499999999999996,
+     "ci": [
+      0.0,
+      0.17500000000000004
+     ],
+     "n": 40
+    }
+   }
   }
  },
  "d3_pairs": {
   "google/gemini-3.1-pro-preview vs google/gemini-3.6-flash": {
    "diff_of_deltas": 0.38596491228070173,
    "ci": [
-    -0.8909090909090909,
-    1.4668421052631553
+    -0.8727272727272727,
+    1.4827586206896552
    ],
-   "p": 0.56245,
+   "p": 0.5621,
    "n": 57
+  },
+  "google/gemini-3.1-pro-preview vs mistralai/Voxtral-Mini-3B-2507": {
+   "diff_of_deltas": 0.65,
+   "ci": [
+    -0.95,
+    2.3
+   ],
+   "p": 0.43455,
+   "n": 20
+  },
+  "google/gemini-3.6-flash vs mistralai/Voxtral-Mini-3B-2507": {
+   "diff_of_deltas": 0.1794871794871795,
+   "ci": [
+    -0.20512820512820512,
+    0.5897435897435898
+   ],
+   "p": 0.4485,
+   "n": 39
   }
  },
  "noise_floor": {
@@ -1148,7 +1263,7 @@
   },
   "google/gemini-3.6-flash:grade:resynth-real": {
    "p": 0.0002,
-   "q_bh": 0.009000000000000001,
+   "q_bh": 0.0098,
    "bh_survives_05": true
   },
   "google/gemini-3.6-flash:grade:stock-real": {
@@ -1158,7 +1273,7 @@
   },
   "google/gemini-3.6-flash:grade:clone-resynth": {
    "p": 0.0005,
-   "q_bh": 0.01125,
+   "q_bh": 0.01225,
    "bh_survives_05": true
   },
   "google/gemini-3.6-flash:mcq_correct:clone-real": {
@@ -1183,17 +1298,17 @@
   },
   "google/gemini-3.6-flash:says_synthetic:clone-real": {
    "p": 0.01775,
-   "q_bh": 0.1996875,
+   "q_bh": 0.21743749999999998,
    "bh_survives_05": false
   },
   "google/gemini-3.6-flash:says_synthetic:resynth-real": {
    "p": 0.00745,
-   "q_bh": 0.11175,
+   "q_bh": 0.12168333333333332,
    "bh_survives_05": false
   },
   "google/gemini-3.6-flash:says_synthetic:stock-real": {
    "p": 0.03695,
-   "q_bh": 0.33255,
+   "q_bh": 0.36211,
    "bh_survives_05": false
   },
   "google/gemini-3.6-flash:says_synthetic:clone-resynth": {
@@ -1281,14 +1396,34 @@
    "q_bh": 1.0,
    "bh_survives_05": false
   },
+  "mistralai/Voxtral-Mini-3B-2507:grade:clone-real": {
+   "p": 0.18885,
+   "q_bh": 1.0,
+   "bh_survives_05": false
+  },
+  "mistralai/Voxtral-Mini-3B-2507:says_synthetic:clone-real": {
+   "p": 1.0,
+   "q_bh": 1.0,
+   "bh_survives_05": false
+  },
   "d3:google/gemini-3.1-pro-preview|google/gemini-3.6-flash": {
-   "p": 0.56245,
+   "p": 0.5621,
+   "q_bh": 1.0,
+   "bh_survives_05": false
+  },
+  "d3:google/gemini-3.1-pro-preview|mistralai/Voxtral-Mini-3B-2507": {
+   "p": 0.43455,
+   "q_bh": 1.0,
+   "bh_survives_05": false
+  },
+  "d3:google/gemini-3.6-flash|mistralai/Voxtral-Mini-3B-2507": {
+   "p": 0.4485,
    "q_bh": 1.0,
    "bh_survives_05": false
   }
  },
  "bh": {
-  "n_tests": 45,
+  "n_tests": 49,
   "n_survive": 2
  },
  "spend": {
