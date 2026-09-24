@@ -19,13 +19,20 @@ every checkpoint. RULE: at each CP, STOP and report to the user; wait for approv
   listener than small local Whisper; if so we report that as a reversal and add the
   Whisper model size as a factor.
 
-## CP1 · Lit review + pre-emption — IN PROGRESS 2026-09-24
-- [ ] Angle agents (A spoken tool calling / voice-agent benchmarks, B ASR entity errors and
-      SLU slot robustness, C confirmation / clarification / confidence gating, D audio-native
-      vs cascade, E recency sweep 2026) -> lit_review/lit_review.csv (verified ids)
-- [ ] Full-text pre-emption reads on the nearest neighbours -> lit_review/preemption_fulltext.md
-- [ ] LIT_REVIEW.md with novelty-delineation table + significance statement
-- [ ] Verdict
+## CP1 · Lit review + pre-emption — DONE 2026-09-24, awaiting approval
+- [x] Angle agents (A spoken tool calling, B ASR entity errors, C confirmation levers,
+      D cascade vs native, E recency) -> lit_review/lit_review.csv (121 unique verified ids)
+- [x] Full-text pre-emption reads on 7 nearest neighbours -> lit_review/preemption_fulltext.md
+      (τ-Elicitation 2609.13602 [posted 2026-09-11], BFCL Audio ICML 2026, From Text to
+      Voice 2605.15104, SpeechGym 2608.26432, VoiceCodeBench 2608.28916, MTVA-Bench
+      2609.20152, Proactive for Uncertainty 2605.25404)
+- [x] LIT_REVIEW.md with novelty-delineation table + significance statement
+- [x] Verdict: **GO-WITH-REFRAME** — τ-Elicitation owns the read-back recovery headline
+      (audio-native only); BFCL Audio owns cascade-vs-native under noise (failure shares
+      only). Ours: executed silent-wrong RATE by entity type on identical clips across
+      three pipelines incl. transcriber arm, telephone band + babble, WER per cell,
+      gating vs read-back with the false-positive bill. Proposed reframe + D1/D3
+      amendments in LIT_REVIEW.md (need approval before recording)
 - [ ] **REPORTED TO USER, APPROVAL RECEIVED: ____**
 
 ### Environment sanity (2026-09-24)
