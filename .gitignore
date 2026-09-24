@@ -1,0 +1,18 @@
+.env
+.DS_Store
+__pycache__/
+*.pyc
+.pytest_cache/
+node_modules/
+*.aux
+*.bbl
+*.blg
+*.out
+*.log
+*.synctex.gz
+Agent Skills/
+reference/
+corpus/audio/
+video/renders/
+video/frames/
+video/*.mp4
