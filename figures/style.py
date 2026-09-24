@@ -31,7 +31,7 @@ def apply():
 
 def eyebrow(ax, text, y=1.06):
     ax.text(0, y, text.upper(), transform=ax.transAxes, fontsize=9,
-            color=MUTED, ha="left", va="bottom", letterspacing=None,
+            color=MUTED, ha="left", va="bottom",
             fontfamily="serif").set_stretch("semi-expanded")
 
 def clean(ax):

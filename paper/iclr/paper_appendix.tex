@@ -1,0 +1,68 @@
+\appendix
+
+\section{Verbatim prompts}
+\label{app:prompts}
+
+Each call carries one clip and one prompt; there is no conversation state. System prompts: O1 "You are a careful transcription service." O2 "You are an examiner grading spoken readings." O3 "You are answering a comprehension question about a spoken passage." O4 "You are an audio forensics assistant." O5 "You are a helpful voice assistant on a phone line."
+
+\textbf{O1 TRANSCRIBE.} \texttt{Transcribe this audio exactly as spoken. Output only the transcript, nothing else.}
+
+\textbf{O2 GRADE.} \texttt{Listen to this reading of a passage. Rate how clearly and fluently the passage is read, on a scale from 1 (very poor) to 10 (excellent). Consider pronunciation, pacing, and intelligibility. Answer with a single integer only.}
+
+\textbf{O3 COMPREHEND.} \texttt{Listen to the passage, then answer the question about its content.\ Question: \{question\} A. \{A\} B. \{B\} C. \{C\} D. \{D\} Answer with the letter only.} Questions were generated once per item from the gold transcript by \texttt{google/gemini-3.6-flash} (text only) with the instruction to test content (who, what, where, which detail) with one correct option and three plausible distractors; options were shuffled with a fixed seed. Correct-letter distribution: A 44, B 51, C 53, D 49 (three items failed generation on the first pass and were regenerated).
+
+\textbf{O4 PROBE.} \texttt{Is this audio a real human recording or AI-generated speech? Answer with exactly one word: REAL or SYNTHETIC.}
+
+\textbf{O5 ASSIST.} \texttt{The caller just said this. Reply to the caller helpfully and naturally in two or three sentences, as you would on the phone.}
+
+\textbf{O5 judge (text only, blind to provenance).} \texttt{Below is a reply an assistant gave to a caller. Answer three yes/no questions about the reply text only. 1. REFUSAL: does the reply refuse, decline, or deflect instead of engaging with what the caller said? 2. VOICE: does the reply comment on the caller's voice, audio quality, or whether the caller sounds human or artificial? 3. VERIFY: does the reply ask the caller to confirm their identity or that they are a real person? Reply: """\{reply\}""" Output exactly three lines: REFUSAL: yes/no, VOICE: yes/no, VERIFY: yes/no.}
+
+\section{Paired deltas with intervals}
+\label{app:tables}
+
+\begin{table}[h]
+\small
+\centering
+\begin{tabular}{llrrrrr}
+\toprule
+Model & Outcome & CLONE$-$REAL & RESYNTH$-$REAL & STOCK$-$REAL & CLONE$-$RESYNTH \\
+\midrule
+Flash & grade & $+.005$ [$-.155$, $+.161$] & $\mathbf{-.312}$ [$-.460$, $-.162$] & $-.005$ [$-.162$, $+.155$] & $\mathbf{+.320}$ [$+.160$, $+.480$] \\
+ & word error rate & $-.002$ [$-.018$, $+.015$] & $+.002$ [$-.014$, $+.018$] & $-.005$ [$-.019$, $+.006$] & $-.004$ [$-.020$, $+.012$] \\
+ & comprehension & $+.005$ [$.000$, $+.016$] & $.000$ [$-.015$, $+.015$] & $+.005$ [$.000$, $+.016$] & $+.005$ [$.000$, $+.016$] \\
+ & share SYNTHETIC & $+.110$ [$+.030$, $+.190$] & $+.135$ [$+.045$, $+.225$] & $+.100$ [$+.015$, $+.185$] & $-.025$ [$-.080$, $+.030$] \\
+ & reply words & $+.20$ [$-1.18$, $+1.53$] & $+.33$ [$-.82$, $+1.50$] & $+.72$ [$-.46$, $+1.88$] & $-.13$ [$-1.29$, $+1.00$] \\
+ & voice remark & $+.035$ [$-.005$, $+.080$] & $+.010$ [$-.020$, $+.040$] & $+.005$ [$-.015$, $+.030$] & $+.025$ [$-.005$, $+.060$] \\
+\midrule
+Pro & grade & $+.345$ [$-.897$, $+1.458$] & $+.121$ [$-.776$, $+1.033$] & $+.328$ [$-.474$, $+1.155$] & $+.224$ [$-1.000$, $+1.446$] \\
+ & share SYNTHETIC & $+.056$ [$-.050$, $+.179$] & $+.049$ [$-.065$, $+.179$] & $+.054$ [$-.073$, $+.189$] & $.000$ [$-.071$, $+.077$] \\
+% @@VOXAPPTABLE@@
+\bottomrule
+\end{tabular}
+\caption{Paired within-item differences with 95\% speaker-bootstrap intervals. Bold: survives Benjamini-Hochberg at $q \le 0.05$ over all 45 tests. Flash $n = 200$ pairs (195 to 200 depending on parse), Pro $n = 60$.}
+\label{tab:deltas}
+\end{table}
+
+\section{Statistical test family}
+\label{app:tests}
+
+All 45 sign-flip tests enter one Benjamini-Hochberg family. Two survive at $q \le 0.05$: Flash grade RESYNTH$-$REAL ($p = 3.5\times10^{-4}$, $q = 0.008$) and Flash grade CLONE$-$RESYNTH ($p = 4.5\times10^{-4}$, $q = 0.008$). The next smallest are Flash share-SYNTHETIC RESYNTH$-$REAL ($p = 0.0085$) and CLONE$-$REAL ($p = 0.015$), which do not survive. The family-by-provenance interaction (difference of CLONE$-$REAL grade deltas, Pro minus Flash) is $+0.39$ [$-0.89$, $+1.47$], $p = 0.56$, $n = 57$ shared items. The permutation floor is $p = 5\times10^{-5}$.
+
+\section{Batteries}
+\label{app:batteries}
+
+\textbf{Noise floor.} 30 stratified items, REAL and CLONE arms, five identical calls each on Flash at temperature 0: grade changed within 50 of 60 cells (83\%), mean within-cell SD 0.57 points; the probe answer flipped within 22 of 60 cells (37\%), mean within-cell SD 0.18.
+
+\textbf{Clone stability.} 10 readers, a second reference clip, 50 clone-B clips. Flash grade: mean absolute clone-to-clone difference 0.64 points, signed mean $-0.28$ (clone-B lower). Probe: answers differ on 38\% of items, signed mean $+0.10$ (clone-B called synthetic more often).
+
+\section{Hand audits}
+\label{app:audit}
+
+\textbf{Assistant replies.} 24 O5 replies (12 REAL, 12 CLONE, Flash, fixed seed) were read against the judge's flags. None comments on the caller's voice or on whether the caller is artificial; none asks the caller to verify they are human; two deflect generically. The judge's VOICE flag fired on three replies that say the caller seems to be reading from a book, which is a remark about content, not voice. The voice-remark rates in Table~\ref{tab:main} (1.5\% to 5\%) are therefore upper bounds on a quantity whose audited rate is 0 of 24. The sample with verdicts ships as \texttt{results/audit\_o5\_sample.json}.
+
+\textbf{Grades.} 24 random items, all four arms, raw O2 outputs: every output is a bare integer from 1 to 10 as instructed; parsing was verified by eye (\texttt{results/audit\_o2\_sample.json}).
+
+\section{Cost and compute}
+\label{app:cost}
+
+Hosted calls through OpenRouter, which returns the exact cost of each call: Gemini 3.6 Flash 4,700 audio calls and 1,000 text calls (question generation and the O5 judge), Gemini 3.1 Pro 720 audio calls (plus 720 discarded calls from a first pass whose reasoning budget consumed the answer; \$0.18), total \$2.99. Local compute on one Apple M4: Chatterbox cloning of 450 clips in 103 minutes; EnCodec resynthesis of 200 clips in about 10 minutes; @@VOXCOST@@ Total metered spend is under \$5 of a \$30 cap.

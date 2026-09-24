@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>
+  body { margin:0; width:1560px; height:660px; background:#ffffff;
+         font-family: Helvetica, Arial, sans-serif; color:#16130d; position:relative; }
+  .eyebrow { position:absolute; top:22px; left:40px; font-size:15px; letter-spacing:2.5px; color:#6d665a; }
+  .title { position:absolute; top:46px; left:40px; font-size:26px; font-weight:bold; }
+  .box { position:absolute; border-radius:10px; padding:12px 16px; font-size:16px; line-height:1.35; }
+  .src { border:2px solid #3a352b; background:#faf9f6; width:190px; top:150px; left:40px; text-align:center; }
+  .arm { width:200px; text-align:center; font-weight:bold; top:120px; }
+  .real { border:2px solid #155e8c; color:#155e8c; background:#f2f7fb; }
+  .resy { border:2px solid #c0641a; color:#c0641a; background:#fdf6ef; }
+  .clone { border:2.5px dashed #b3006b; color:#b3006b; background:#fdf3f8; }
+  .stock { border:2px solid #7a6f9b; color:#7a6f9b; background:#f5f3fa; }
+  .sub { font-size:13.5px; font-weight:normal; margin-top:5px; color:#3a352b; }
+  .arrow { position:absolute; height:3px; background:#3a352b; }
+  .arrow:after { content:''; position:absolute; right:-2px; top:-5px; border:7px solid transparent; border-left:10px solid #3a352b; }
+  .stage { border:2px solid #16130d; background:#faf9f6; width:150px; text-align:center; font-weight:bold; }
+  .num { font-family:Menlo, monospace; }
+  .note { position:absolute; font-size:15px; color:#3a352b; }
+  .good { color:#1c7a55; } .bad { color:#b3006b; } .shelf { color:#c0641a; }
+  .res { position:absolute; top:120px; left:1180px; width:340px; border:2px solid #e7e2d5; background:#faf9f6; border-radius:10px; padding:12px 16px; font-size:15px; line-height:1.5; }
+</style></head><body>
+  <div class="eyebrow">SAME SPEAKER, SAME WORDS, FOUR VERSIONS</div>
+  <div class="title">Does an audio model treat a cloned voice differently from the same person's real voice?</div>
+
+  <div class="box src">one LibriSpeech reader<div class="sub">200 utterances,<br>40 readers</div></div>
+
+  <div class="box arm real" style="left:290px; top:110px;">REAL<div class="sub">the original recording</div></div>
+  <div class="box arm resy" style="left:290px; top:186px;">RESYNTH<div class="sub">real audio through a 6 kbps neural codec</div></div>
+  <div class="box arm clone" style="left:290px; top:274px;">CLONE<div class="sub">zero-shot clone of this reader, same words</div></div>
+  <div class="box arm stock" style="left:290px; top:362px;">STOCK<div class="sub">default synthetic voice, same words</div></div>
+  <div class="arrow" style="top:212px; left:236px; width:44px;"></div>
+
+  <div class="box stage" style="left:580px; top:222px;">audio LLM<div class="sub">Gemini Flash, Pro,<br>open-weight</div></div>
+  <div class="arrow" style="top:246px; left:526px; width:44px;"></div>
+
+  <div class="box" style="left:790px; top:120px; width:330px; border:2px solid #e7e2d5; background:#faf9f6; font-size:15px; line-height:1.55;">
+    five things asked of every clip:<br>
+    <span class="num">O1</span> transcribe &rarr; word error rate<br>
+    <span class="num">O2</span> grade the reading 1&ndash;10<br>
+    <span class="num">O3</span> answer a content question<br>
+    <span class="num">O4</span> real or AI-generated?<br>
+    <span class="num">O5</span> reply as a voice assistant
+  </div>
+  <div class="arrow" style="top:246px; left:736px; width:44px;"></div>
+
+  <div class="res">
+    <b>Gemini 3.6 Flash, 200 paired items</b><br>
+    grade CLONE &minus; REAL <span class="num good"><b>+0.005</b></span><br>&nbsp;&nbsp;95% interval [&minus;0.16, +0.16]<br>
+    grade RESYNTH &minus; REAL <span class="num shelf"><b>&minus;0.31</b></span><br>&nbsp;&nbsp;survives correction<br>
+    WER real / clone <span class="num">2.9% / 2.7%</span><br>
+    real recordings called SYNTHETIC <span class="num bad"><b>74.5%</b></span><br>
+    real vs clone detection <span class="num">0.555</span>
+  </div>
+
+  <div class="note" style="top:520px; left:290px; width:420px;">
+    <b class="good">The clone is invisible.</b> Grades, transcripts, comprehension, and assistant replies are the same for the clone and the real recording.
+  </div>
+  <div class="note" style="top:520px; left:760px; width:360px;">
+    <b class="shelf">The codec is not.</b> Re-encoding the real recording lowers its grade by a third of a point with no change in intelligibility.
+  </div>
+  <div class="note" style="top:520px; left:1170px; width:350px;">
+    <b class="bad">Asked directly, the model leans synthetic.</b> Most genuine recordings are called AI-generated; real vs clone is near chance.
+  </div>
+</body></html>
