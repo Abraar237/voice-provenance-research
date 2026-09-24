@@ -31,13 +31,15 @@ every checkpoint. RULE: at each CP, STOP and report to the user; wait for approv
 ### Environment sanity (2026-09-24)
 - Gemini key OK; models live: gemini-3.6-flash, gemini-3.8-flash, gemini-3.1-pro-preview,
   gemini-3.8-flash-tts
-- OpenRouter key: **$0.18 remaining** of $5 cap
+- OpenRouter: new key (2026-09-24), $50 limit; ALL model calls incl. Gemini go through it
+  (user instruction); verified audio + tool call via OpenRouter, $0.00035, cost returned per call
 - Modal profile thesreedath OK
 - macOS `say`: 186 voices incl. en_US/en_GB/en_IN/en_AU; ffmpeg present; faster-whisper 1.2.1
   installed (small/int8 on CPU: 2.2 s per clip)
 - End-to-end smoke test 2026-09-24: say -> 16 kHz wav -> (a) Whisper transcript, (b) Gemini
   3.6 Flash audio-native with a send_payment tool declaration; both correct on clean US voice
-  and on 8 kHz mu-law telephone band; ~294 audio tokens in per 8 s clip, 2 API calls
+  and on 8 kHz mu-law telephone band; ~290 tokens in per 8 s clip. Repeated through
+  OpenRouter (google/gemini-3.6-flash, input_audio + tools): identical correct call
 
 ## CP2 · Experiment plan frozen — PENDING
 ## CP3 · Experiments + analysis — PENDING
@@ -48,4 +50,4 @@ every checkpoint. RULE: at each CP, STOP and report to the user; wait for approv
 ## Spend log
 | Date | Item | Amount | Running total |
 |---|---|---|---|
-| 2026-09-24 | Gemini model-list call + 2 audio-native smoke calls | <$0.01 | $0.01 |
+| 2026-09-24 | 2 direct Gemini smoke calls (before the OpenRouter rule) + 1 OpenRouter smoke call | <$0.01 | $0.01 |

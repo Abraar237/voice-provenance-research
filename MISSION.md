@@ -87,13 +87,16 @@ of that shape.
   Spoken text is written the way people say it ("four one five, five five five, zero one
   nine eight"; "the fourteenth at two thirty"). Freeze with a hash before any audio.
 - **Audio rendering:** TTS family A = macOS `say` (free; en_US, en_GB, en_IN, en_AU voices,
-  3 voices per accent, rate 160/220 wpm); TTS family B = Gemini TTS (`gemini-3.8-flash-tts`,
-  several voices) for a second family. Conditions via ffmpeg: clean, babble noise at 10 dB
+  3 voices per accent, rate 160/220 wpm); TTS family B = ElevenLabs (several library
+  voices; the key is TTS-scoped and works for text-to-speech) for a second family. Conditions via ffmpeg: clean, babble noise at 10 dB
   SNR, 8 kHz mu-law telephone, both. Loudness-normalised. Frozen corpus with hashes.
-- **Pipelines:** P1 faster-whisper (local, CPU, small/medium) -> `gemini-3.6-flash` with
-  tools; P2 Gemini audio transcribe -> same text LLM; P3 Gemini audio-native with tools.
-  Second family in the text role via OpenRouter if the key is topped up (only $0.18 left);
-  optional open-weight audio model (Qwen2.5-Omni / Voxtral) on Modal if budget allows.
+- **Pipelines:** P1 faster-whisper (local, CPU, small/medium) -> `google/gemini-3.6-flash`
+  with tools; P2 Gemini audio transcribe -> same text LLM; P3 Gemini audio-native with
+  tools. ALL MODEL CALLS GO THROUGH OPENROUTER (binding, user instruction 2026-09-24): use
+  the OpenAI-compatible chat endpoint with `input_audio` parts and `tools`; never call the
+  Gemini API directly for experiments. Second family in the text role from OpenRouter's
+  catalogue (an OpenAI or open-weight model); an open-weight audio model from OpenRouter if
+  one is listed with audio input, else Modal.
 - **Executor and ledger:** local mock executor validates each call against the schema
   (schema-valid or error) and compares executed args to ground truth: CORRECT /
   SILENT-WRONG / ERROR-SURFACED / ASKED (clarification requested). Canonicalised entity
@@ -179,17 +182,19 @@ ocr-injection, schema-drift.
 ## 4. BUDGET (hard rules)
 
 - **Total cap: $30.** Hard-stop in the cost tracker at $25. Report spend at every checkpoint.
-- Expected: Gemini audio calls (P2 transcribe + P3 native, ~3,000 clips x ~350 tokens in)
-  ~$3-5; text-LLM calls for P1/P2 and lever turns ~$3-5; Gemini TTS for family B ~$1-2;
-  macOS `say`, ffmpeg, faster-whisper all local at $0; Modal optional ~$3.
+- Expected (all via OpenRouter, which returns exact cost per call in `usage.cost`; log
+  that number, not an estimate): Gemini audio calls (P2 transcribe + P3 native, ~3,000
+  clips x ~300 tokens in) ~$3-5; text-LLM calls for P1/P2 and lever turns ~$3-5; second
+  family ~$3; ElevenLabs TTS for family B within the existing plan; macOS `say`, ffmpeg,
+  faster-whisper all local at $0; Modal optional ~$3.
 
 ## 5. KEYS AND ACCOUNTS (`.env` in this folder — NEVER commit, never print values)
 
-- `GEMINI_API_KEY` — audio, text, and TTS calls. Prepaid credits CAN deplete: a 429 with a
-  "prepayment credits" message means STOP and tell the user to top up at
-  https://ai.studio/projects (do not poll forever). Verified live 2026-09-24:
-  gemini-3.6-flash, gemini-3.8-flash, gemini-3.1-pro-preview, gemini-3.8-flash-tts.
-- `OPENROUTER_API_KEY` — second text family; $0.18 remaining of the $5 cap.
+- `OPENROUTER_API_KEY` — ALL experiment model calls, including every Gemini model
+  (`google/gemini-3.6-flash`, `google/gemini-3.1-pro-preview`, `google/gemini-3.8-flash`,
+  all with audio input). New key added 2026-09-24 with a $50 limit; verified with an audio
+  + tool call ($0.00035). The old $5 key is exhausted.
+- `GEMINI_API_KEY` — NOT for experiments (user instruction 2026-09-24). Leave it alone.
 - `token-id` / `token-secret` — Modal (profile thesreedath), optional open-weight audio arm.
 - `ELEVENLABS_API_KEY` — film narration only (Matilda XrExE9yKIg1WjnnlVkGX). TTS-scoped:
   do NOT call voices_read/user_read (401); call text-to-speech directly.
