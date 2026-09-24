@@ -26,3 +26,4 @@ corpus/resynth/
 corpus/refs/
 results/clone_run.log
 results/resynth_run.log
+results/run_*.log

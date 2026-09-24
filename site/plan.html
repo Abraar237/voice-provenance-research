@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SchemaDrift-120 · Experiment Plan (frozen 2026-09-09)</title>
+<style>
+  :root { --slate:#155e8c; --hot:#b3006b; --shelf:#c0641a; --good:#1c7a55; --ink:#1a1a1a; --mut:#666; }
+  body { font-family: Helvetica, Arial, sans-serif; color: var(--ink); background:#fff;
+         max-width: 880px; margin: 0 auto; padding: 40px 24px 80px; line-height: 1.55; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: 12px; color: var(--hot); font-weight: 700; }
+  h1 { font-size: 30px; margin: 6px 0 4px; line-height: 1.2; }
+  .sub { color: var(--mut); margin-bottom: 28px; }
+  h2 { font-size: 19px; color: var(--slate); margin-top: 36px; border-bottom: 2px solid #eee; padding-bottom: 6px; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0; font-size: 14px; }
+  th { text-align: left; border-bottom: 2px solid var(--ink); padding: 6px 8px; }
+  td { border-bottom: 1px solid #e5e5e5; padding: 6px 8px; vertical-align: top; }
+  code { font-family: "SF Mono", Menlo, monospace; font-size: 13px; background:#f5f5f5; padding: 1px 4px; border-radius: 3px; }
+  .pill { display:inline-block; font-size:12px; font-weight:700; padding:2px 10px; border-radius:12px; color:#fff; }
+  .frozen { background: var(--good); }
+  .warn { background: var(--shelf); }
+  .card { border:1px solid #e2e2e2; border-radius:8px; padding:16px 18px; margin:12px 0; }
+  .headline { color: var(--hot); font-weight: 700; }
+  ul { padding-left: 22px; }
+  .mono { font-family:"SF Mono",Menlo,monospace; font-size:13px; }
+</style>
+</head>
+<body>
+<div class="eyebrow">Experiment plan · frozen at CP2</div>
+<h1>The Synthetic-Voice Penalty</h1>
+<div class="sub">Do audio-LLM voice agents treat a cloned voice differently from the same person's real voice?
+· <span class="pill frozen">FROZEN 2026-09-24</span></div>
+
+<div class="card">
+<b>Headline questions.</b>
+<span class="headline">Q1:</span> holding speaker and words fixed, does provenance (real recording vs zero-shot clone) change what the model transcribes, how it grades the speaker, whether it understands the content, and how it replies as an assistant?
+<span class="headline">Q2:</span> is the delta provenance or artifacts? A neural-codec resynthesis of the real audio and a stock-voice TTS arm separate the two.
+<span class="headline">Q3:</span> does the model know? An explicit "real or synthetic?" probe on the same clips, compared with the implicit behavioural delta.
+<span class="headline">Q4:</span> does the sign differ by model family, reconciling the published contradiction (Gemini scores synthetic subsets higher; open-weight models lower)?
+</div>
+
+<h2>Stimuli</h2>
+<table><tr><th>Element</th><th>Choice</th></tr>
+<tr><td>Source</td><td>LibriSpeech test-clean (CC BY 4.0): 40 speakers, 20 F / 20 M, gold transcripts</td></tr>
+<tr><td>Items</td><td>5 target utterances per speaker (4-12 s, 10-40 words) = 200 items; 1 reference clip (5-10 s) per speaker for cloning; a second reference for 10 speakers (stability battery). Seed 7.</td></tr>
+<tr><td>REAL</td><td>the original recording</td></tr>
+<tr><td>CLONE</td><td>Chatterbox (ResembleAI, MIT) zero-shot clone from the speaker's reference, same transcript</td></tr>
+<tr><td>RESYNTH</td><td>REAL through EnCodec 24 kHz encode-decode at 6 kbps: codec-like artifacts with true provenance</td></tr>
+<tr><td>STOCK</td><td>Chatterbox default voice, same transcript: synthetic, different identity</td></tr>
+<tr><td>Normalisation</td><td>16 kHz mono, ffmpeg loudnorm to -23 LUFS, 0.2 s padding; SHA-256 manifest frozen before any model call</td></tr>
+</table>
+
+<h2>Models</h2>
+<table><tr><th>Family</th><th>Route</th><th>Grid</th></tr>
+<tr><td>Gemini 3.6 Flash</td><td>OpenRouter, temperature 0, reasoning minimal</td><td>full: 800 clips x O1-O5 + batteries</td></tr>
+<tr><td>Gemini 3.1 Pro</td><td>OpenRouter, temperature 0, reasoning low</td><td>subset: 20 speakers x 3 items x 4 arms x O2-O4</td></tr>
+<tr><td>Voxtral-Mini-3B</td><td>local Apple-Silicon GPU, greedy</td><td>as compute allows, all arms</td></tr>
+<tr><td>Qwen2.5-Omni-3B</td><td>local Apple-Silicon GPU, greedy</td><td>as compute allows, all arms</td></tr>
+</table>
+<p style="color:var(--mut)">Other hosted audio families (gpt-audio-mini, Voxtral, Qwen-Omni) are blocked by an OpenRouter workspace guardrail on 2026-09-24; Modal's spend limit was also reached, so open-weight models run locally.</p>
+
+<h2>Outcomes (one clip per call)</h2>
+<table><tr><th>Id</th><th>Prompt role</th><th>Measure</th></tr>
+<tr><td>O1 TRANSCRIBE</td><td>"Transcribe this audio exactly."</td><td>WER vs gold</td></tr>
+<tr><td>O2 GRADE</td><td>examiner: rate clarity and fluency 1-10</td><td>score</td></tr>
+<tr><td>O3 COMPREHEND</td><td>4-option content question generated from the gold transcript (text model), answered from audio</td><td>accuracy</td></tr>
+<tr><td>O4 PROBE</td><td>"real human recording or AI-generated speech? REAL / SYNTHETIC"</td><td>detection accuracy, response bias</td></tr>
+<tr><td>O5 ASSIST</td><td>reply as a voice assistant in 2-3 sentences</td><td>reply length; refusal / voice-remark / verify flags from a text judge blind to provenance</td></tr>
+</table>
+
+<h2>Analysis</h2>
+<ul>
+<li>Unit: item. Paired within-item deltas CLONE-REAL, RESYNTH-REAL, STOCK-REAL, CLONE-RESYNTH per outcome and family.</li>
+<li>Sign-flip permutation clustered by speaker (20k), speaker-cluster bootstrap CIs (10k), paired d_z.</li>
+<li>D1: implicit discriminability (probability the model's own grade ranks real above clone, AUC) vs explicit discriminability (probability the probe says synthetic more for the clone), same items, bootstrap CI on the difference.</li>
+<li>D2: (RESYNTH-REAL)/(CLONE-REAL) with bootstrap CI; threshold 0.5.</li>
+<li>D3: family x provenance by sign-flip on the difference of paired deltas.</li>
+<li>Noise floor 30 clips x 5 repeats; clone-to-clone stability on 10 speakers; BH over the full family; 24-reply hand audit.</li>
+</ul>
+
+<h2>Pre-registered directions (dated 2026-09-24, before any data)</h2>
+<ol>
+<li>At least one family's implicit provenance delta (grade or comprehension) exceeds its explicit detection above chance.</li>
+<li>The resynthesis control accounts for under half of the real-vs-clone delta.</li>
+<li>Sign differs by family: Gemini grades clones at or above real; open-weight models below.</li>
+<li>Explicit detection is near chance (under 60%) for every family.</li>
+<li>Transcription WER does not differ between real and clone beyond the noise floor.</li>
+</ol>
+
+<h2>Budget</h2>
+<table><tr><th>Item</th><th>Estimate</th></tr>
+<tr><td>Gemini Flash ~4,400 audio calls</td><td>$1.3</td></tr>
+<tr><td>Gemini Pro subset ~720 calls</td><td>$0.8</td></tr>
+<tr><td>Text calls (MCQ generation, O5 judge)</td><td>$0.4</td></tr>
+<tr><td>Cloning and open-weight inference</td><td>$0 (local GPU; Modal fallback ~$4)</td></tr>
+<tr><td><b>Total</b></td><td><b>under $5 of a $30 cap</b> (hard stop $25)</td></tr>
+</table>
+</body>
+</html>

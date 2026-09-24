@@ -10,6 +10,7 @@ Records -> results/raw/<model-slug>.jsonl  (key = sha of model|item|arm|outcome|
 
 import argparse
 import base64
+import concurrent.futures as cf
 import hashlib
 import json
 import os
@@ -103,6 +104,7 @@ def main():
     ap.add_argument("--subset", default="")
     ap.add_argument("--battery", default="")
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--workers", type=int, default=4)
     args = ap.parse_args()
     key = env("OPENROUTER_API_KEY")
     items = json.load(open(ROOT / "corpus" / "items.json"))["items"]
@@ -121,44 +123,56 @@ def main():
     todo = [j for j in jobs if hashlib.sha256(
         f"{args.model}|{j[0]['item']}|{j[1]}|{j[2]}|{j[3]}".encode()).hexdigest()[:16] not in done]
     print(f"{args.model}: {len(jobs)} jobs, {len(todo)} to do, spend so far ${cost_tracker.total():.3f}")
-    with open(out_path, "a") as fout:
-        for n, (it, arm, o, rep) in enumerate(todo):
-            k = hashlib.sha256(f"{args.model}|{it['item']}|{arm}|{o}|{rep}".encode()).hexdigest()[:16]
-            wav = ROOT / "corpus" / "final" / arm / f"{it['item']}.wav"
-            audio = base64.b64encode(wav.read_bytes()).decode()
-            if o == "O3":
-                q = mcq[it["item"]]
-                text = USER["O3"].format(question=q["question"], **q["options"])
-            else:
-                text = USER[o]
-            body = {"model": args.model, "temperature": 0, "max_tokens": MAX_TOKENS[o],
-                    "usage": {"include": True},
-                    "reasoning": {"effort": REASONING.get(args.model, "minimal")},
-                    "messages": [{"role": "system", "content": SYSTEM[o]},
-                                 {"role": "user", "content": [
-                                     {"type": "text", "text": text},
-                                     {"type": "input_audio", "input_audio": {"data": audio, "format": "wav"}}]}]}
-            try:
-                resp, lat = post(body, key)
-            except Exception as e:
-                print("FAIL", it["item"], arm, o, str(e)[:160])
-                continue
-            msg = resp["choices"][0]["message"]
-            usage = resp.get("usage", {})
-            cost = float(usage.get("cost", 0.0))
-            cost_tracker.log_call(args.model, cost)
-            rec = {"key": k, "model": args.model, "item": it["item"], "spk": it["spk"], "gender": it["gender"],
-                   "arm": arm, "outcome": o, "rep": rep, "text": msg.get("content") or "",
-                   "finish": resp["choices"][0].get("finish_reason"),
-                   "tin": usage.get("prompt_tokens"), "tout": usage.get("completion_tokens"),
-                   "cost": cost, "latency": round(lat, 2), "corpus_sha": frozen["manifest_sha256"][:16],
-                   "t": time.strftime("%Y-%m-%dT%H:%M:%S")}
-            if o == "O3":
-                rec["correct_letter"] = mcq[it["item"]]["correct_letter"]
+    lock = __import__("threading").Lock()
+    fout = open(out_path, "a")
+    prog = {"n": 0}
+
+    def work(job):
+        it, arm, o, rep = job
+        k = hashlib.sha256(f"{args.model}|{it['item']}|{arm}|{o}|{rep}".encode()).hexdigest()[:16]
+        wav = ROOT / "corpus" / "final" / arm / f"{it['item']}.wav"
+        raw = wav.read_bytes()
+        audio = base64.b64encode(raw).decode()
+        if o == "O3":
+            q = mcq[it["item"]]
+            text = USER["O3"].format(question=q["question"], **q["options"])
+        else:
+            text = USER[o]
+        body = {"model": args.model, "temperature": 0, "max_tokens": MAX_TOKENS[o],
+                "usage": {"include": True},
+                "reasoning": {"effort": REASONING.get(args.model, "minimal")},
+                "messages": [{"role": "system", "content": SYSTEM[o]},
+                             {"role": "user", "content": [
+                                 {"type": "text", "text": text},
+                                 {"type": "input_audio", "input_audio": {"data": audio, "format": "wav"}}]}]}
+        try:
+            resp, lat = post(body, key)
+        except Exception as e:
+            print("FAIL", it["item"], arm, o, str(e)[:160])
+            return
+        msg = resp["choices"][0]["message"]
+        usage = resp.get("usage", {})
+        cost = float(usage.get("cost", 0.0))
+        cost_tracker.log_call(args.model, cost)
+        rec = {"key": k, "model": args.model, "item": it["item"], "spk": it["spk"], "gender": it["gender"],
+               "arm": arm, "outcome": o, "rep": rep, "text": msg.get("content") or "",
+               "finish": resp["choices"][0].get("finish_reason"),
+               "tin": usage.get("prompt_tokens"), "tout": usage.get("completion_tokens"),
+               "cost": cost, "latency": round(lat, 2),
+               "clip_sha": hashlib.sha256(raw).hexdigest()[:16], "corpus_sha": frozen["manifest_sha256"][:16],
+               "t": time.strftime("%Y-%m-%dT%H:%M:%S")}
+        if o == "O3":
+            rec["correct_letter"] = mcq[it["item"]]["correct_letter"]
+        with lock:
             fout.write(json.dumps(rec) + "\n")
             fout.flush()
-            if n % 100 == 0:
-                print(f"{n}/{len(todo)} ${cost_tracker.total():.3f}")
+            prog["n"] += 1
+            if prog["n"] % 100 == 0:
+                print(f"{prog['n']}/{len(todo)} ${cost_tracker.total():.3f}", flush=True)
+
+    with cf.ThreadPoolExecutor(max_workers=args.workers) as ex:
+        list(ex.map(work, todo))
+    fout.close()
     print("done; spend", cost_tracker.total())
 
 

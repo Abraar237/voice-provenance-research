@@ -1,0 +1,8 @@
+{
+ "n_clips": 400,
+ "manifest_sha256": "b077aa1cb19589ee6991d0d5956f86a14de7d5c9b2074115363693dc88bd1980",
+ "arms": [
+  "real",
+  "resynth"
+ ]
+}

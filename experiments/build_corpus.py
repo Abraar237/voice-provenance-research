@@ -152,8 +152,8 @@ def freeze():
     arms = ARMS + ["clone_b"]
     for arm in arms:
         src_dir = CORPUS / arm
-        if not src_dir.exists():
-            print("missing arm dir", arm)
+        if not src_dir.exists() or len(list(src_dir.glob("*.wav"))) < (50 if arm == "clone_b" else len(items)):
+            print("arm not complete yet, skipped:", arm)
             continue
         (final / arm).mkdir(parents=True, exist_ok=True)
         for it in items:
@@ -163,6 +163,12 @@ def freeze():
                     continue
                 raise FileNotFoundError(src)
             out = final / arm / f"{it['item']}.wav"
+            if out.exists():
+                info = sf.info(out)
+                rows.append({"item": it["item"], "arm": arm, "spk": it["spk"], "gender": it["gender"],
+                             "path": str(out.relative_to(ROOT)), "dur": round(info.duration, 2),
+                             "sha256": sha(out)})
+                continue
             run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(src),
                  "-af", "loudnorm=I=-23:TP=-2:LRA=11,apad=pad_dur=0.2,adelay=200|200",
                  "-ar", "16000", "-ac", "1", "-c:a", "pcm_s16le", str(out)])
@@ -175,7 +181,7 @@ def freeze():
         w.writeheader()
         w.writerows(rows)
     h = hashlib.sha256("".join(r["sha256"] for r in rows).encode()).hexdigest()
-    json.dump({"n_clips": len(rows), "manifest_sha256": h, "arms": arms},
+    json.dump({"n_clips": len(rows), "manifest_sha256": h, "arms": sorted({r["arm"] for r in rows})},
               open(CORPUS / "FROZEN.json", "w"), indent=1)
     print(f"frozen {len(rows)} clips, manifest sha {h[:16]}")
 
