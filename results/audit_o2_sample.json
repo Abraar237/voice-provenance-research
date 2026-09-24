@@ -1,0 +1,174 @@
+{
+ "n": 24,
+ "note": "Raw O2 outputs for 24 random items, all four arms, Gemini 3.6 Flash. Every output is a bare integer 1-10 as instructed; parsing verified by eye.",
+ "sample": [
+  {
+   "item": "2830_0",
+   "real": "8",
+   "clone": "8",
+   "resynth": "10",
+   "stock": "9"
+  },
+  {
+   "item": "3575_2",
+   "real": "9",
+   "clone": "9",
+   "resynth": "9",
+   "stock": "9"
+  },
+  {
+   "item": "1320_1",
+   "real": "9",
+   "clone": "10",
+   "resynth": "9",
+   "stock": "10"
+  },
+  {
+   "item": "8455_4",
+   "real": "9",
+   "clone": "9",
+   "resynth": "8",
+   "stock": "9"
+  },
+  {
+   "item": "4970_1",
+   "real": "10",
+   "clone": "8",
+   "resynth": "8",
+   "stock": "8"
+  },
+  {
+   "item": "5639_2",
+   "real": "10",
+   "clone": "10",
+   "resynth": "9",
+   "stock": "10"
+  },
+  {
+   "item": "1995_4",
+   "real": "8",
+   "clone": "10",
+   "resynth": "8",
+   "stock": "10"
+  },
+  {
+   "item": "1284_3",
+   "real": "8",
+   "clone": "9",
+   "resynth": "10",
+   "stock": "8"
+  },
+  {
+   "item": "1221_2",
+   "real": "9",
+   "clone": "9",
+   "resynth": "10",
+   "stock": "8"
+  },
+  {
+   "item": "1188_0",
+   "real": "10",
+   "clone": "9",
+   "resynth": "8",
+   "stock": "9"
+  },
+  {
+   "item": "4970_2",
+   "real": "10",
+   "clone": "10",
+   "resynth": "8",
+   "stock": "9"
+  },
+  {
+   "item": "6829_0",
+   "real": "8",
+   "clone": "9",
+   "resynth": "7",
+   "stock": "8"
+  },
+  {
+   "item": "3570_4",
+   "real": "9",
+   "clone": "8",
+   "resynth": "8",
+   "stock": "9"
+  },
+  {
+   "item": "1221_0",
+   "real": "8",
+   "clone": "9",
+   "resynth": "10",
+   "stock": "9"
+  },
+  {
+   "item": "260_1",
+   "real": "8",
+   "clone": "8",
+   "resynth": "8",
+   "stock": "9"
+  },
+  {
+   "item": "61_3",
+   "real": "8",
+   "clone": "9",
+   "resynth": "10",
+   "stock": "8"
+  },
+  {
+   "item": "672_2",
+   "real": "9",
+   "clone": "8",
+   "resynth": "10",
+   "stock": "9"
+  },
+  {
+   "item": "4446_2",
+   "real": "9",
+   "clone": "9",
+   "resynth": "7",
+   "stock": "10"
+  },
+  {
+   "item": "3570_0",
+   "real": "8",
+   "clone": "9",
+   "resynth": "8",
+   "stock": "8"
+  },
+  {
+   "item": "2094_4",
+   "real": "10",
+   "clone": "10",
+   "resynth": "8",
+   "stock": "8"
+  },
+  {
+   "item": "1320_2",
+   "real": "9",
+   "clone": "10",
+   "resynth": "9",
+   "stock": "10"
+  },
+  {
+   "item": "2961_2",
+   "real": "9",
+   "clone": "8",
+   "resynth": "9",
+   "stock": "8"
+  },
+  {
+   "item": "237_4",
+   "real": "10",
+   "clone": "8",
+   "resynth": "8",
+   "stock": "10"
+  },
+  {
+   "item": "1188_1",
+   "real": "8",
+   "clone": "10",
+   "resynth": "9",
+   "stock": "9"
+  }
+ ]
+}

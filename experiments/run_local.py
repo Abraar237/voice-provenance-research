@@ -25,6 +25,7 @@ ROOT = HERE.parent
 RAW = ROOT / "results" / "raw"
 DEV = "mps" if torch.backends.mps.is_available() else "cpu"
 MODELS = {"voxtral": "mistralai/Voxtral-Mini-3B-2507", "qwenomni": "Qwen/Qwen2.5-Omni-3B"}
+LOCAL = {"voxtral": ROOT / "models" / "voxtral"}  # curl-downloaded weights (hub client stalled on this host)
 MAX_TOKENS = {"O1": 300, "O2": 8, "O3": 8, "O4": 8, "O5": 160}
 random.seed(11)
 
@@ -32,9 +33,10 @@ random.seed(11)
 class Voxtral:
     def __init__(self):
         from transformers import AutoProcessor, VoxtralForConditionalGeneration
-        self.proc = AutoProcessor.from_pretrained(MODELS["voxtral"])
+        src = str(LOCAL["voxtral"]) if (LOCAL["voxtral"] / "model-00002-of-00002.safetensors").exists() else MODELS["voxtral"]
+        self.proc = AutoProcessor.from_pretrained(src)
         self.model = VoxtralForConditionalGeneration.from_pretrained(
-            MODELS["voxtral"], dtype=torch.bfloat16, device_map=DEV).eval()
+            src, dtype=torch.bfloat16, device_map=DEV).eval()
 
     def __call__(self, wav, system, text, max_new):
         conv = [{"role": "system", "content": system},

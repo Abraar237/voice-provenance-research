@@ -1,0 +1,10 @@
+numpy
+pandas
+soundfile
+jiwer
+torch
+transformers
+chatterbox-tts
+mistral-common
+librosa
+matplotlib

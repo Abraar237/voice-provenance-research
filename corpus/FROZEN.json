@@ -1,8 +1,11 @@
 {
- "n_clips": 400,
- "manifest_sha256": "b077aa1cb19589ee6991d0d5956f86a14de7d5c9b2074115363693dc88bd1980",
+ "n_clips": 850,
+ "manifest_sha256": "1bb7e14d4a3c664bc4ac7d22d900f12795e24543cee6750cd7cc42cf9c2c4e69",
  "arms": [
+  "clone",
+  "clone_b",
   "real",
-  "resynth"
+  "resynth",
+  "stock"
  ]
 }

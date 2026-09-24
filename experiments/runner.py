@@ -29,7 +29,8 @@ ROOT = HERE.parent
 RAW = ROOT / "results" / "raw"
 RAW.mkdir(parents=True, exist_ok=True)
 URL = "https://openrouter.ai/api/v1/chat/completions"
-REASONING = {"google/gemini-3.6-flash": "minimal", "google/gemini-3.1-pro-preview": "low"}
+REASONING = {"google/gemini-3.6-flash": "minimal", "google/gemini-3.1-pro-preview": "minimal"}
+HEADROOM = {"google/gemini-3.1-pro-preview": 120}  # reasoning tokens count against max_tokens on this route
 MAX_TOKENS = {"O1": 400, "O2": 8, "O3": 8, "O4": 8, "O5": 200}
 random.seed(11)
 
@@ -138,7 +139,7 @@ def main():
             text = USER["O3"].format(question=q["question"], **q["options"])
         else:
             text = USER[o]
-        body = {"model": args.model, "temperature": 0, "max_tokens": MAX_TOKENS[o],
+        body = {"model": args.model, "temperature": 0, "max_tokens": MAX_TOKENS[o] + HEADROOM.get(args.model, 0),
                 "usage": {"include": True},
                 "reasoning": {"effort": REASONING.get(args.model, "minimal")},
                 "messages": [{"role": "system", "content": SYSTEM[o]},
