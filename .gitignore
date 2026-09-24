@@ -16,3 +16,13 @@ corpus/audio/
 video/renders/
 video/frames/
 video/*.mp4
+corpus/raw/
+corpus/final/
+corpus/real/
+corpus/clone/
+corpus/clone_b/
+corpus/stock/
+corpus/resynth/
+corpus/refs/
+results/clone_run.log
+results/resynth_run.log

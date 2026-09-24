@@ -1,0 +1,8 @@
+{
+ "total_usd": 0.081875,
+ "by_model": {
+  "google/gemini-3.6-flash": 0.081875
+ },
+ "n_calls": 203,
+ "updated": "2026-09-24T09:17:45"
+}

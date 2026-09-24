@@ -1,0 +1,2407 @@
+{
+ "seed": 7,
+ "refs": {
+  "1089": {
+   "ref_a": "1089-134691-0001",
+   "ref_b": null,
+   "gender": "M"
+  },
+  "1188": {
+   "ref_a": "1188-133604-0025",
+   "ref_b": null,
+   "gender": "M"
+  },
+  "121": {
+   "ref_a": "121-127105-0013",
+   "ref_b": null,
+   "gender": "F"
+  },
+  "1221": {
+   "ref_a": "1221-135767-0010",
+   "ref_b": "1221-135767-0024",
+   "gender": "F"
+  },
+  "1284": {
+   "ref_a": "1284-1181-0004",
+   "ref_b": "1284-1180-0029",
+   "gender": "F"
+  },
+  "1320": {
+   "ref_a": "1320-122617-0037",
+   "ref_b": null,
+   "gender": "M"
+  },
+  "1580": {
+   "ref_a": "1580-141083-0037",
+   "ref_b": "1580-141084-0023",
+   "gender": "F"
+  },
+  "1995": {
+   "ref_a": "1995-1836-0009",
+   "ref_b": null,
+   "gender": "F"
+  },
+  "2094": {
+   "ref_a": "2094-142345-0054",
+   "ref_b": null,
+   "gender": "F"
+  },
+  "2300": {
+   "ref_a": "2300-131720-0037",
+   "ref_b": "2300-131720-0030",
+   "gender": "M"
+  },
+  "237": {
+   "ref_a": "237-126133-0022",
+   "ref_b": null,
+   "gender": "F"
+  },
+  "260": {
+   "ref_a": "260-123286-0027",
+   "ref_b": null,
+   "gender": "M"
+  },
+  "2830": {
+   "ref_a": "2830-3980-0005",
+   "ref_b": null,
+   "gender": "M"
+  },
+  "2961": {
+   "ref_a": "2961-961-0008",
+   "ref_b": null,
+   "gender": "F"
+  },
+  "3570": {
+   "ref_a": "3570-5694-0005",
+   "ref_b": null,
+   "gender": "F"
+  },
+  "3575": {
+   "ref_a": "3575-170457-0020",
+   "ref_b": null,
+   "gender": "F"
+  },
+  "3729": {
+   "ref_a": "3729-6852-0036",
+   "ref_b": null,
+   "gender": "F"
+  },
+  "4077": {
+   "ref_a": "4077-13751-0000",
+   "ref_b": null,
+   "gender": "M"
+  },
+  "4446": {
+   "ref_a": "4446-2275-0042",
+   "ref_b": null,
+   "gender": "F"
+  },
+  "4507": {
+   "ref_a": "4507-16021-0024",
+   "ref_b": null,
+   "gender": "F"
+  },
+  "4970": {
+   "ref_a": "4970-29095-0009",
+   "ref_b": "4970-29093-0022",
+   "gender": "F"
+  },
+  "4992": {
+   "ref_a": "4992-41806-0013",
+   "ref_b": null,
+   "gender": "F"
+  },
+  "5105": {
+   "ref_a": "5105-28241-0000",
+   "ref_b": null,
+   "gender": "M"
+  },
+  "5142": {
+   "ref_a": "5142-33396-0051",
+   "ref_b": "5142-36586-0003",
+   "gender": "F"
+  },
+  "5639": {
+   "ref_a": "5639-40744-0020",
+   "ref_b": null,
+   "gender": "M"
+  },
+  "5683": {
+   "ref_a": "5683-32865-0008",
+   "ref_b": "5683-32879-0019",
+   "gender": "F"
+  },
+  "61": {
+   "ref_a": "61-70968-0014",
+   "ref_b": null,
+   "gender": "M"
+  },
+  "672": {
+   "ref_a": "672-122797-0061",
+   "ref_b": null,
+   "gender": "M"
+  },
+  "6829": {
+   "ref_a": "6829-68771-0016",
+   "ref_b": null,
+   "gender": "F"
+  },
+  "6930": {
+   "ref_a": "6930-76324-0005",
+   "ref_b": "6930-81414-0013",
+   "gender": "M"
+  },
+  "7021": {
+   "ref_a": "7021-85628-0023",
+   "ref_b": null,
+   "gender": "M"
+  },
+  "7127": {
+   "ref_a": "7127-75946-0029",
+   "ref_b": null,
+   "gender": "M"
+  },
+  "7176": {
+   "ref_a": "7176-88083-0003",
+   "ref_b": null,
+   "gender": "M"
+  },
+  "7729": {
+   "ref_a": "7729-102255-0002",
+   "ref_b": null,
+   "gender": "M"
+  },
+  "8224": {
+   "ref_a": "8224-274384-0013",
+   "ref_b": "8224-274384-0005",
+   "gender": "M"
+  },
+  "8230": {
+   "ref_a": "8230-279154-0021",
+   "ref_b": null,
+   "gender": "M"
+  },
+  "8455": {
+   "ref_a": "8455-210777-0033",
+   "ref_b": "8455-210777-0019",
+   "gender": "M"
+  },
+  "8463": {
+   "ref_a": "8463-287645-0003",
+   "ref_b": null,
+   "gender": "F"
+  },
+  "8555": {
+   "ref_a": "8555-284449-0015",
+   "ref_b": null,
+   "gender": "F"
+  },
+  "908": {
+   "ref_a": "908-157963-0016",
+   "ref_b": null,
+   "gender": "M"
+  }
+ },
+ "items": [
+  {
+   "item": "1089_0",
+   "spk": "1089",
+   "gender": "M",
+   "uid": "1089-134686-0024",
+   "src": "corpus/raw/LibriSpeech/test-clean/1089/134686/1089-134686-0024.flac",
+   "dur": 11.65,
+   "text": "IF THE WINE CHANGE INTO VINEGAR AND THE HOST CRUMBLE INTO CORRUPTION AFTER THEY HAVE BEEN CONSECRATED IS JESUS CHRIST STILL PRESENT UNDER THEIR SPECIES AS GOD AND AS MAN",
+   "words": 30,
+   "stability": false
+  },
+  {
+   "item": "1089_1",
+   "spk": "1089",
+   "gender": "M",
+   "uid": "1089-134686-0008",
+   "src": "corpus/raw/LibriSpeech/test-clean/1089/134686/1089-134686-0008.flac",
+   "dur": 6.73,
+   "text": "THE CHAOS IN WHICH HIS ARDOUR EXTINGUISHED ITSELF WAS A COLD INDIFFERENT KNOWLEDGE OF HIMSELF",
+   "words": 15,
+   "stability": false
+  },
+  {
+   "item": "1089_2",
+   "spk": "1089",
+   "gender": "M",
+   "uid": "1089-134686-0037",
+   "src": "corpus/raw/LibriSpeech/test-clean/1089/134686/1089-134686-0037.flac",
+   "dur": 5.21,
+   "text": "IN THE SILENCE THEIR DARK FIRE KINDLED THE DUSK INTO A TAWNY GLOW",
+   "words": 13,
+   "stability": false
+  },
+  {
+   "item": "1089_3",
+   "spk": "1089",
+   "gender": "M",
+   "uid": "1089-134686-0032",
+   "src": "corpus/raw/LibriSpeech/test-clean/1089/134686/1089-134686-0032.flac",
+   "dur": 4.09,
+   "text": "HE IS CALLED AS YOU KNOW THE APOSTLE OF THE INDIES",
+   "words": 11,
+   "stability": false
+  },
+  {
+   "item": "1089_4",
+   "spk": "1089",
+   "gender": "M",
+   "uid": "1089-134686-0013",
+   "src": "corpus/raw/LibriSpeech/test-clean/1089/134686/1089-134686-0013.flac",
+   "dur": 7.92,
+   "text": "IF EVER HE WAS IMPELLED TO CAST SIN FROM HIM AND TO REPENT THE IMPULSE THAT MOVED HIM WAS THE WISH TO BE HER KNIGHT",
+   "words": 25,
+   "stability": false
+  },
+  {
+   "item": "1188_0",
+   "spk": "1188",
+   "gender": "M",
+   "uid": "1188-133604-0032",
+   "src": "corpus/raw/LibriSpeech/test-clean/1188/133604/1188-133604-0032.flac",
+   "dur": 10.98,
+   "text": "IT IS ONLY A PENCIL OUTLINE BY EDWARD BURNE JONES IN ILLUSTRATION OF THE STORY OF PSYCHE IT IS THE INTRODUCTION OF PSYCHE AFTER ALL HER TROUBLES INTO HEAVEN",
+   "words": 29,
+   "stability": false
+  },
+  {
+   "item": "1188_1",
+   "spk": "1188",
+   "gender": "M",
+   "uid": "1188-133604-0017",
+   "src": "corpus/raw/LibriSpeech/test-clean/1188/133604/1188-133604-0017.flac",
+   "dur": 4.62,
+   "text": "THAT A STYLE IS RESTRAINED OR SEVERE DOES NOT MEAN THAT IT IS ALSO ERRONEOUS",
+   "words": 15,
+   "stability": false
+  },
+  {
+   "item": "1188_2",
+   "spk": "1188",
+   "gender": "M",
+   "uid": "1188-133604-0000",
+   "src": "corpus/raw/LibriSpeech/test-clean/1188/133604/1188-133604-0000.flac",
+   "dur": 10.72,
+   "text": "YOU WILL FIND ME CONTINUALLY SPEAKING OF FOUR MEN TITIAN HOLBEIN TURNER AND TINTORET IN ALMOST THE SAME TERMS",
+   "words": 19,
+   "stability": false
+  },
+  {
+   "item": "1188_3",
+   "spk": "1188",
+   "gender": "M",
+   "uid": "1188-133604-0039",
+   "src": "corpus/raw/LibriSpeech/test-clean/1188/133604/1188-133604-0039.flac",
+   "dur": 6.62,
+   "text": "IT HAS NO BEAUTY WHATSOEVER NO SPECIALTY OF PICTURESQUENESS AND ALL ITS LINES ARE CRAMPED AND POOR",
+   "words": 17,
+   "stability": false
+  },
+  {
+   "item": "1188_4",
+   "spk": "1188",
+   "gender": "M",
+   "uid": "1188-133604-0031",
+   "src": "corpus/raw/LibriSpeech/test-clean/1188/133604/1188-133604-0031.flac",
+   "dur": 4.25,
+   "text": "THERE'S ONE AND THERE'S ANOTHER THE DUDLEY AND THE FLINT",
+   "words": 10,
+   "stability": false
+  },
+  {
+   "item": "121_0",
+   "spk": "121",
+   "gender": "F",
+   "uid": "121-127105-0007",
+   "src": "corpus/raw/LibriSpeech/test-clean/121/127105/121-127105-0007.flac",
+   "dur": 5.79,
+   "text": "TO THIS HIS ANSWER WAS PROMPT OH THANK GOD NO AND IS THE RECORD YOURS",
+   "words": 15,
+   "stability": false
+  },
+  {
+   "item": "121_1",
+   "spk": "121",
+   "gender": "F",
+   "uid": "121-127105-0031",
+   "src": "corpus/raw/LibriSpeech/test-clean/121/127105/121-127105-0031.flac",
+   "dur": 10.77,
+   "text": "SHE WAS YOUNG UNTRIED NERVOUS IT WAS A VISION OF SERIOUS DUTIES AND LITTLE COMPANY OF REALLY GREAT LONELINESS",
+   "words": 19,
+   "stability": false
+  },
+  {
+   "item": "121_2",
+   "spk": "121",
+   "gender": "F",
+   "uid": "121-127105-0022",
+   "src": "corpus/raw/LibriSpeech/test-clean/121/127105/121-127105-0022.flac",
+   "dur": 5.08,
+   "text": "WELL IF I DON'T KNOW WHO SHE WAS IN LOVE WITH I KNOW WHO HE WAS",
+   "words": 16,
+   "stability": false
+  },
+  {
+   "item": "121_3",
+   "spk": "121",
+   "gender": "F",
+   "uid": "121-121726-0009",
+   "src": "corpus/raw/LibriSpeech/test-clean/121/121726/121-121726-0009.flac",
+   "dur": 7.26,
+   "text": "HOTEL A PLACE WHERE A GUEST OFTEN GIVES UP GOOD DOLLARS FOR POOR QUARTERS",
+   "words": 14,
+   "stability": false
+  },
+  {
+   "item": "121_4",
+   "spk": "121",
+   "gender": "F",
+   "uid": "121-121726-0000",
+   "src": "corpus/raw/LibriSpeech/test-clean/121/121726/121-121726-0000.flac",
+   "dur": 8.46,
+   "text": "ALSO A POPULAR CONTRIVANCE WHEREBY LOVE MAKING MAY BE SUSPENDED BUT NOT STOPPED DURING THE PICNIC SEASON",
+   "words": 17,
+   "stability": false
+  },
+  {
+   "item": "1221_0",
+   "spk": "1221",
+   "gender": "F",
+   "uid": "1221-135766-0004",
+   "src": "corpus/raw/LibriSpeech/test-clean/1221/135766/1221-135766-0004.flac",
+   "dur": 7.44,
+   "text": "THIS OUTWARD MUTABILITY INDICATED AND DID NOT MORE THAN FAIRLY EXPRESS THE VARIOUS PROPERTIES OF HER INNER LIFE",
+   "words": 18,
+   "stability": true
+  },
+  {
+   "item": "1221_1",
+   "spk": "1221",
+   "gender": "F",
+   "uid": "1221-135767-0005",
+   "src": "corpus/raw/LibriSpeech/test-clean/1221/135767/1221-135767-0005.flac",
+   "dur": 5.87,
+   "text": "IT WAS THE SCARLET LETTER IN ANOTHER FORM THE SCARLET LETTER ENDOWED WITH LIFE",
+   "words": 14,
+   "stability": true
+  },
+  {
+   "item": "1221_2",
+   "spk": "1221",
+   "gender": "F",
+   "uid": "1221-135766-0002",
+   "src": "corpus/raw/LibriSpeech/test-clean/1221/135766/1221-135766-0002.flac",
+   "dur": 4.83,
+   "text": "YET THESE THOUGHTS AFFECTED HESTER PRYNNE LESS WITH HOPE THAN APPREHENSION",
+   "words": 11,
+   "stability": true
+  },
+  {
+   "item": "1221_3",
+   "spk": "1221",
+   "gender": "F",
+   "uid": "1221-135767-0013",
+   "src": "corpus/raw/LibriSpeech/test-clean/1221/135767/1221-135767-0013.flac",
+   "dur": 11.98,
+   "text": "LIFTING THE IRON HAMMER THAT HUNG AT THE PORTAL HESTER PRYNNE GAVE A SUMMONS WHICH WAS ANSWERED BY ONE OF THE GOVERNOR'S BOND SERVANT A FREE BORN ENGLISHMAN BUT NOW A SEVEN YEARS SLAVE",
+   "words": 34,
+   "stability": true
+  },
+  {
+   "item": "1221_4",
+   "spk": "1221",
+   "gender": "F",
+   "uid": "1221-135767-0014",
+   "src": "corpus/raw/LibriSpeech/test-clean/1221/135767/1221-135767-0014.flac",
+   "dur": 7.07,
+   "text": "YEA HIS HONOURABLE WORSHIP IS WITHIN BUT HE HATH A GODLY MINISTER OR TWO WITH HIM AND LIKEWISE A LEECH",
+   "words": 20,
+   "stability": true
+  },
+  {
+   "item": "1284_0",
+   "spk": "1284",
+   "gender": "F",
+   "uid": "1284-1180-0002",
+   "src": "corpus/raw/LibriSpeech/test-clean/1284/1180/1284-1180-0002.flac",
+   "dur": 7.68,
+   "text": "INSTEAD OF SHOES THE OLD MAN WORE BOOTS WITH TURNOVER TOPS AND HIS BLUE COAT HAD WIDE CUFFS OF GOLD BRAID",
+   "words": 21,
+   "stability": true
+  },
+  {
+   "item": "1284_1",
+   "spk": "1284",
+   "gender": "F",
+   "uid": "1284-1180-0005",
+   "src": "corpus/raw/LibriSpeech/test-clean/1284/1180/1284-1180-0005.flac",
+   "dur": 6.55,
+   "text": "NO ONE WOULD DISTURB THEIR LITTLE HOUSE EVEN IF ANYONE CAME SO FAR INTO THE THICK FOREST WHILE THEY WERE GONE",
+   "words": 21,
+   "stability": true
+  },
+  {
+   "item": "1284_2",
+   "spk": "1284",
+   "gender": "F",
+   "uid": "1284-1181-0001",
+   "src": "corpus/raw/LibriSpeech/test-clean/1284/1181/1284-1181-0001.flac",
+   "dur": 11.43,
+   "text": "MARGOLOTTE HAD FIRST MADE THE GIRL'S FORM FROM THE PATCHWORK QUILT AND THEN SHE HAD DRESSED IT WITH A PATCHWORK SKIRT AND AN APRON WITH POCKETS IN IT USING THE SAME GAY MATERIAL THROUGHOUT",
+   "words": 34,
+   "stability": true
+  },
+  {
+   "item": "1284_3",
+   "spk": "1284",
+   "gender": "F",
+   "uid": "1284-1181-0010",
+   "src": "corpus/raw/LibriSpeech/test-clean/1284/1181/1284-1181-0010.flac",
+   "dur": 6.43,
+   "text": "THEIR CONTENTS HAD ALL BOILED AWAY LEAVING IN THE BOTTOM OF EACH KETTLE A FEW GRAINS OF FINE WHITE POWDER",
+   "words": 20,
+   "stability": true
+  },
+  {
+   "item": "1284_4",
+   "spk": "1284",
+   "gender": "F",
+   "uid": "1284-1181-0007",
+   "src": "corpus/raw/LibriSpeech/test-clean/1284/1181/1284-1181-0007.flac",
+   "dur": 4.04,
+   "text": "SHE POURED INTO THE DISH A QUANTITY FROM EACH OF THESE BOTTLES",
+   "words": 12,
+   "stability": true
+  },
+  {
+   "item": "1320_0",
+   "spk": "1320",
+   "gender": "M",
+   "uid": "1320-122617-0000",
+   "src": "corpus/raw/LibriSpeech/test-clean/1320/122617/1320-122617-0000.flac",
+   "dur": 7.83,
+   "text": "NOTWITHSTANDING THE HIGH RESOLUTION OF HAWKEYE HE FULLY COMPREHENDED ALL THE DIFFICULTIES AND DANGER HE WAS ABOUT TO INCUR",
+   "words": 19,
+   "stability": false
+  },
+  {
+   "item": "1320_1",
+   "spk": "1320",
+   "gender": "M",
+   "uid": "1320-122617-0027",
+   "src": "corpus/raw/LibriSpeech/test-clean/1320/122617/1320-122617-0027.flac",
+   "dur": 5.69,
+   "text": "AS SOON AS THESE DISPOSITIONS WERE MADE THE SCOUT TURNED TO DAVID AND GAVE HIM HIS PARTING INSTRUCTIONS",
+   "words": 18,
+   "stability": false
+  },
+  {
+   "item": "1320_2",
+   "spk": "1320",
+   "gender": "M",
+   "uid": "1320-122617-0010",
+   "src": "corpus/raw/LibriSpeech/test-clean/1320/122617/1320-122617-0010.flac",
+   "dur": 10.0,
+   "text": "THE TASK WILL NOT BE DIFFICULT RETURNED DAVID HESITATING THOUGH I GREATLY FEAR YOUR PRESENCE WOULD RATHER INCREASE THAN MITIGATE HIS UNHAPPY FORTUNES",
+   "words": 23,
+   "stability": false
+  },
+  {
+   "item": "1320_3",
+   "spk": "1320",
+   "gender": "M",
+   "uid": "1320-122617-0020",
+   "src": "corpus/raw/LibriSpeech/test-clean/1320/122617/1320-122617-0020.flac",
+   "dur": 8.89,
+   "text": "THE SCOUT WHO HAD LEFT DAVID AT THE DOOR TO ASCERTAIN THEY WERE NOT OBSERVED THOUGHT IT PRUDENT TO PRESERVE HIS DISGUISE UNTIL ASSURED OF THEIR PRIVACY",
+   "words": 27,
+   "stability": false
+  },
+  {
+   "item": "1320_4",
+   "spk": "1320",
+   "gender": "M",
+   "uid": "1320-122617-0025",
+   "src": "corpus/raw/LibriSpeech/test-clean/1320/122617/1320-122617-0025.flac",
+   "dur": 6.36,
+   "text": "SO UNCAS YOU HAD BETTER TAKE THE LEAD WHILE I WILL PUT ON THE SKIN AGAIN AND TRUST TO CUNNING FOR WANT OF SPEED",
+   "words": 24,
+   "stability": false
+  },
+  {
+   "item": "1580_0",
+   "spk": "1580",
+   "gender": "F",
+   "uid": "1580-141084-0048",
+   "src": "corpus/raw/LibriSpeech/test-clean/1580/141084/1580-141084-0048.flac",
+   "dur": 9.27,
+   "text": "IT WILL BE CLEAR TO YOU FROM WHAT I HAVE SAID THAT ONLY YOU COULD HAVE LET THIS YOUNG MAN OUT SINCE YOU WERE LEFT IN THE ROOM AND MUST HAVE LOCKED THE DOOR WHEN YOU WENT OUT",
+   "words": 38,
+   "stability": true
+  },
+  {
+   "item": "1580_1",
+   "spk": "1580",
+   "gender": "F",
+   "uid": "1580-141084-0040",
+   "src": "corpus/raw/LibriSpeech/test-clean/1580/141084/1580-141084-0040.flac",
+   "dur": 5.99,
+   "text": "HE RETURNED CARRYING HIS JUMPING SHOES WHICH ARE PROVIDED AS YOU ARE AWARE WITH SEVERAL SHARP SPIKES",
+   "words": 17,
+   "stability": true
+  },
+  {
+   "item": "1580_2",
+   "spk": "1580",
+   "gender": "F",
+   "uid": "1580-141084-0041",
+   "src": "corpus/raw/LibriSpeech/test-clean/1580/141084/1580-141084-0041.flac",
+   "dur": 7.99,
+   "text": "NO HARM WOULD HAVE BEEN DONE HAD IT NOT BEEN THAT AS HE PASSED YOUR DOOR HE PERCEIVED THE KEY WHICH HAD BEEN LEFT BY THE CARELESSNESS OF YOUR SERVANT",
+   "words": 30,
+   "stability": true
+  },
+  {
+   "item": "1580_3",
+   "spk": "1580",
+   "gender": "F",
+   "uid": "1580-141083-0002",
+   "src": "corpus/raw/LibriSpeech/test-clean/1580/141083/1580-141083-0002.flac",
+   "dur": 6.13,
+   "text": "MY FRIEND'S TEMPER HAD NOT IMPROVED SINCE HE HAD BEEN DEPRIVED OF THE CONGENIAL SURROUNDINGS OF BAKER STREET",
+   "words": 18,
+   "stability": true
+  },
+  {
+   "item": "1580_4",
+   "spk": "1580",
+   "gender": "F",
+   "uid": "1580-141083-0029",
+   "src": "corpus/raw/LibriSpeech/test-clean/1580/141083/1580-141083-0029.flac",
+   "dur": 10.05,
+   "text": "HE WAS IN THE MIDST OF THAT WHEN YOUR RETURN CAUSED HIM TO MAKE A VERY HURRIED RETREAT VERY HURRIED SINCE HE HAD NOT TIME TO REPLACE THE PAPERS WHICH WOULD TELL YOU THAT HE HAD BEEN THERE",
+   "words": 38,
+   "stability": true
+  },
+  {
+   "item": "1995_0",
+   "spk": "1995",
+   "gender": "F",
+   "uid": "1995-1826-0001",
+   "src": "corpus/raw/LibriSpeech/test-clean/1995/1826/1995-1826-0001.flac",
+   "dur": 10.17,
+   "text": "THE SOUTH SHE HAD NOT THOUGHT OF SERIOUSLY AND YET KNOWING OF ITS DELIGHTFUL HOSPITALITY AND MILD CLIMATE SHE WAS NOT AVERSE TO CHARLESTON OR NEW ORLEANS",
+   "words": 27,
+   "stability": false
+  },
+  {
+   "item": "1995_1",
+   "spk": "1995",
+   "gender": "F",
+   "uid": "1995-1837-0027",
+   "src": "corpus/raw/LibriSpeech/test-clean/1995/1837/1995-1837-0027.flac",
+   "dur": 6.71,
+   "text": "ON SHE HURRIED UNTIL SWEEPING DOWN TO THE LAGOON AND THE ISLAND LO THE COTTON LAY BEFORE HER",
+   "words": 18,
+   "stability": false
+  },
+  {
+   "item": "1995_2",
+   "spk": "1995",
+   "gender": "F",
+   "uid": "1995-1826-0017",
+   "src": "corpus/raw/LibriSpeech/test-clean/1995/1826/1995-1826-0017.flac",
+   "dur": 6.14,
+   "text": "THERE MIGHT BE A BIT OF POETRY HERE AND THERE BUT MOST OF THIS PLACE WAS SUCH DESPERATE PROSE",
+   "words": 19,
+   "stability": false
+  },
+  {
+   "item": "1995_3",
+   "spk": "1995",
+   "gender": "F",
+   "uid": "1995-1836-0003",
+   "src": "corpus/raw/LibriSpeech/test-clean/1995/1836/1995-1836-0003.flac",
+   "dur": 7.96,
+   "text": "SHE WAS NOT HERSELF A NOTABLY INTELLIGENT WOMAN SHE GREATLY ADMIRED INTELLIGENCE OR WHATEVER LOOKED TO HER LIKE INTELLIGENCE IN OTHERS",
+   "words": 21,
+   "stability": false
+  },
+  {
+   "item": "1995_4",
+   "spk": "1995",
+   "gender": "F",
+   "uid": "1995-1826-0011",
+   "src": "corpus/raw/LibriSpeech/test-clean/1995/1826/1995-1826-0011.flac",
+   "dur": 8.94,
+   "text": "HERE SHE WAS TEACHING DIRTY CHILDREN AND THE SMELL OF CONFUSED ODORS AND BODILY PERSPIRATION WAS TO HER AT TIMES UNBEARABLE",
+   "words": 21,
+   "stability": false
+  },
+  {
+   "item": "2094_0",
+   "spk": "2094",
+   "gender": "F",
+   "uid": "2094-142345-0023",
+   "src": "corpus/raw/LibriSpeech/test-clean/2094/142345/2094-142345-0023.flac",
+   "dur": 5.18,
+   "text": "YOU'RE A RARE UN FOR SITTING DOWN TO YOUR WORK A LITTLE WHILE AFTER IT'S TIME TO PUT BY",
+   "words": 19,
+   "stability": false
+  },
+  {
+   "item": "2094_1",
+   "spk": "2094",
+   "gender": "F",
+   "uid": "2094-142345-0058",
+   "src": "corpus/raw/LibriSpeech/test-clean/2094/142345/2094-142345-0058.flac",
+   "dur": 4.93,
+   "text": "BY THE BY I'VE NEVER SEEN YOUR DAIRY I MUST SEE YOUR DAIRY MISSUS POYSER",
+   "words": 15,
+   "stability": false
+  },
+  {
+   "item": "2094_2",
+   "spk": "2094",
+   "gender": "F",
+   "uid": "2094-142345-0050",
+   "src": "corpus/raw/LibriSpeech/test-clean/2094/142345/2094-142345-0050.flac",
+   "dur": 4.04,
+   "text": "BUT THERE'S FATHER THE BARN SIR IF HE'D BE OF ANY USE",
+   "words": 12,
+   "stability": false
+  },
+  {
+   "item": "2094_3",
+   "spk": "2094",
+   "gender": "F",
+   "uid": "2094-142345-0052",
+   "src": "corpus/raw/LibriSpeech/test-clean/2094/142345/2094-142345-0052.flac",
+   "dur": 6.53,
+   "text": "I MUST COME ANOTHER DAY AND SEE YOUR HUSBAND I WANT TO HAVE A CONSULTATION WITH HIM ABOUT HORSES",
+   "words": 19,
+   "stability": false
+  },
+  {
+   "item": "2094_4",
+   "spk": "2094",
+   "gender": "F",
+   "uid": "2094-142345-0043",
+   "src": "corpus/raw/LibriSpeech/test-clean/2094/142345/2094-142345-0043.flac",
+   "dur": 7.35,
+   "text": "BY THIS TIME THE TWO GENTLEMEN HAD REACHED THE PALINGS AND HAD GOT DOWN FROM THEIR HORSES IT WAS PLAIN THEY MEANT TO COME IN",
+   "words": 25,
+   "stability": false
+  },
+  {
+   "item": "2300_0",
+   "spk": "2300",
+   "gender": "M",
+   "uid": "2300-131720-0027",
+   "src": "corpus/raw/LibriSpeech/test-clean/2300/131720/2300-131720-0027.flac",
+   "dur": 8.62,
+   "text": "EDISON HELD THAT THE ELECTRICITY SOLD MUST BE MEASURED JUST LIKE GAS OR WATER AND HE PROCEEDED TO DEVELOP A METER",
+   "words": 21,
+   "stability": true
+  },
+  {
+   "item": "2300_1",
+   "spk": "2300",
+   "gender": "M",
+   "uid": "2300-131720-0012",
+   "src": "corpus/raw/LibriSpeech/test-clean/2300/131720/2300-131720-0012.flac",
+   "dur": 11.14,
+   "text": "EDISON WAS INTOLERANT OF SHAM AND SHODDY AND NOTHING WOULD SATISFY HIM THAT COULD NOT STAND CROSS EXAMINATION BY MICROSCOPE TEST TUBE AND GALVANOMETER",
+   "words": 24,
+   "stability": true
+  },
+  {
+   "item": "2300_2",
+   "spk": "2300",
+   "gender": "M",
+   "uid": "2300-131720-0015",
+   "src": "corpus/raw/LibriSpeech/test-clean/2300/131720/2300-131720-0015.flac",
+   "dur": 8.88,
+   "text": "HE OBTAINED THE DESIRED SPEED AND LOAD WITH A FRICTION BRAKE ALSO REGULATOR OF SPEED BUT WAITED FOR AN INDICATOR TO VERIFY IT",
+   "words": 23,
+   "stability": true
+  },
+  {
+   "item": "2300_3",
+   "spk": "2300",
+   "gender": "M",
+   "uid": "2300-131720-0036",
+   "src": "corpus/raw/LibriSpeech/test-clean/2300/131720/2300-131720-0036.flac",
+   "dur": 7.08,
+   "text": "THE METER CONTINUED IN GENERAL SERVICE DURING EIGHTEEN NINETY NINE AND PROBABLY UP TO THE CLOSE OF THE CENTURY",
+   "words": 19,
+   "stability": true
+  },
+  {
+   "item": "2300_4",
+   "spk": "2300",
+   "gender": "M",
+   "uid": "2300-131720-0038",
+   "src": "corpus/raw/LibriSpeech/test-clean/2300/131720/2300-131720-0038.flac",
+   "dur": 5.61,
+   "text": "HE FELT HE WAS UP AGAINST IT AND THAT PERHAPS ANOTHER KIND OF A JOB WOULD SUIT HIM BETTER",
+   "words": 19,
+   "stability": true
+  },
+  {
+   "item": "237_0",
+   "spk": "237",
+   "gender": "F",
+   "uid": "237-126133-0014",
+   "src": "corpus/raw/LibriSpeech/test-clean/237/126133/237-126133-0014.flac",
+   "dur": 6.79,
+   "text": "ASKED PHRONSIE IN INTENSE INTEREST SLIPPING DOWN OUT OF POLLY'S ARMS AND CROWDING UP CLOSE TO JASPER'S SIDE",
+   "words": 18,
+   "stability": false
+  },
+  {
+   "item": "237_1",
+   "spk": "237",
+   "gender": "F",
+   "uid": "237-134493-0018",
+   "src": "corpus/raw/LibriSpeech/test-clean/237/134493/237-134493-0018.flac",
+   "dur": 4.79,
+   "text": "THERE IS EVEN A WHITE ROW OF BEEHIVES IN THE ORCHARD UNDER THE WALNUT TREES",
+   "words": 15,
+   "stability": false
+  },
+  {
+   "item": "237_2",
+   "spk": "237",
+   "gender": "F",
+   "uid": "237-134500-0036",
+   "src": "corpus/raw/LibriSpeech/test-clean/237/134500/237-134500-0036.flac",
+   "dur": 6.6,
+   "text": "I CAN'T PLAY WITH YOU LIKE A LITTLE BOY ANY MORE HE SAID SLOWLY THAT'S WHAT YOU MISS MARIE",
+   "words": 19,
+   "stability": false
+  },
+  {
+   "item": "237_3",
+   "spk": "237",
+   "gender": "F",
+   "uid": "237-126133-0006",
+   "src": "corpus/raw/LibriSpeech/test-clean/237/126133/237-126133-0006.flac",
+   "dur": 6.15,
+   "text": "AT THIS THE BUNDLE OPENED SUDDENLY AND OUT POPPED PHRONSIE",
+   "words": 10,
+   "stability": false
+  },
+  {
+   "item": "237_4",
+   "spk": "237",
+   "gender": "F",
+   "uid": "237-126133-0012",
+   "src": "corpus/raw/LibriSpeech/test-clean/237/126133/237-126133-0012.flac",
+   "dur": 4.45,
+   "text": "THERE THERE HE SAID SOOTHINGLY PATTING HER BROWN FUZZY HEAD",
+   "words": 10,
+   "stability": false
+  },
+  {
+   "item": "260_0",
+   "spk": "260",
+   "gender": "M",
+   "uid": "260-123288-0027",
+   "src": "corpus/raw/LibriSpeech/test-clean/260/123288/260-123288-0027.flac",
+   "dur": 6.3,
+   "text": "A SUFFOCATING SMELL OF NITROGEN FILLS THE AIR IT ENTERS THE THROAT IT FILLS THE LUNGS",
+   "words": 16,
+   "stability": false
+  },
+  {
+   "item": "260_1",
+   "spk": "260",
+   "gender": "M",
+   "uid": "260-123288-0010",
+   "src": "corpus/raw/LibriSpeech/test-clean/260/123288/260-123288-0010.flac",
+   "dur": 9.99,
+   "text": "ON THE MAST ALREADY I SEE THE LIGHT PLAY OF A LAMBENT SAINT ELMO'S FIRE THE OUTSTRETCHED SAIL CATCHES NOT A BREATH OF WIND AND HANGS LIKE A SHEET OF LEAD",
+   "words": 31,
+   "stability": false
+  },
+  {
+   "item": "260_2",
+   "spk": "260",
+   "gender": "M",
+   "uid": "260-123440-0011",
+   "src": "corpus/raw/LibriSpeech/test-clean/260/123440/260-123440-0011.flac",
+   "dur": 4.87,
+   "text": "NO I'VE MADE UP MY MIND ABOUT IT IF I'M MABEL I'LL STAY DOWN HERE",
+   "words": 15,
+   "stability": false
+  },
+  {
+   "item": "260_3",
+   "spk": "260",
+   "gender": "M",
+   "uid": "260-123440-0016",
+   "src": "corpus/raw/LibriSpeech/test-clean/260/123440/260-123440-0016.flac",
+   "dur": 4.89,
+   "text": "I SHALL BE PUNISHED FOR IT NOW I SUPPOSE BY BEING DROWNED IN MY OWN TEARS",
+   "words": 16,
+   "stability": false
+  },
+  {
+   "item": "260_4",
+   "spk": "260",
+   "gender": "M",
+   "uid": "260-123440-0020",
+   "src": "corpus/raw/LibriSpeech/test-clean/260/123440/260-123440-0020.flac",
+   "dur": 5.0,
+   "text": "WE WON'T TALK ABOUT HER ANY MORE IF YOU'D RATHER NOT WE INDEED",
+   "words": 13,
+   "stability": false
+  },
+  {
+   "item": "2830_0",
+   "spk": "2830",
+   "gender": "M",
+   "uid": "2830-3980-0030",
+   "src": "corpus/raw/LibriSpeech/test-clean/2830/3980/2830-3980-0030.flac",
+   "dur": 5.25,
+   "text": "THEY DO NOT GO WHERE THE ENEMIES OF THE GOSPEL PREDOMINATE THEY GO WHERE THE CHRISTIANS ARE",
+   "words": 17,
+   "stability": false
+  },
+  {
+   "item": "2830_1",
+   "spk": "2830",
+   "gender": "M",
+   "uid": "2830-3980-0019",
+   "src": "corpus/raw/LibriSpeech/test-clean/2830/3980/2830-3980-0019.flac",
+   "dur": 7.01,
+   "text": "I KNEW NOTHING OF THE DOCTRINE OF FAITH BECAUSE WE WERE TAUGHT SOPHISTRY INSTEAD OF CERTAINTY AND NOBODY UNDERSTOOD SPIRITUAL BOASTING",
+   "words": 21,
+   "stability": false
+  },
+  {
+   "item": "2830_2",
+   "spk": "2830",
+   "gender": "M",
+   "uid": "2830-3980-0011",
+   "src": "corpus/raw/LibriSpeech/test-clean/2830/3980/2830-3980-0011.flac",
+   "dur": 5.53,
+   "text": "PAUL DECLARES THAT THE FALSE APOSTLES WERE CALLED OR SENT NEITHER BY MEN NOR BY MAN",
+   "words": 16,
+   "stability": false
+  },
+  {
+   "item": "2830_3",
+   "spk": "2830",
+   "gender": "M",
+   "uid": "2830-3980-0041",
+   "src": "corpus/raw/LibriSpeech/test-clean/2830/3980/2830-3980-0041.flac",
+   "dur": 4.89,
+   "text": "GRACE INVOLVES THE REMISSION OF SINS PEACE AND A HAPPY CONSCIENCE",
+   "words": 11,
+   "stability": false
+  },
+  {
+   "item": "2830_4",
+   "spk": "2830",
+   "gender": "M",
+   "uid": "2830-3980-0056",
+   "src": "corpus/raw/LibriSpeech/test-clean/2830/3980/2830-3980-0056.flac",
+   "dur": 5.35,
+   "text": "OTHERWISE PAUL SHOULD HAVE WRITTEN GRACE FROM GOD THE FATHER AND PEACE FROM OUR LORD JESUS CHRIST",
+   "words": 17,
+   "stability": false
+  },
+  {
+   "item": "2961_0",
+   "spk": "2961",
+   "gender": "F",
+   "uid": "2961-961-0011",
+   "src": "corpus/raw/LibriSpeech/test-clean/2961/961/2961-961-0011.flac",
+   "dur": 7.82,
+   "text": "THE GENEALOGIES WHICH YOU HAVE RECITED TO US OUT OF YOUR OWN ANNALS SOLON ARE A MERE CHILDREN'S STORY",
+   "words": 19,
+   "stability": false
+  },
+  {
+   "item": "2961_1",
+   "spk": "2961",
+   "gender": "F",
+   "uid": "2961-960-0016",
+   "src": "corpus/raw/LibriSpeech/test-clean/2961/960/2961-960-0016.flac",
+   "dur": 7.76,
+   "text": "BUT PLATO HAS NOT THE SAME MASTERY OVER HIS INSTRUMENT WHICH HE EXHIBITS IN THE PHAEDRUS OR SYMPOSIUM",
+   "words": 18,
+   "stability": false
+  },
+  {
+   "item": "2961_2",
+   "spk": "2961",
+   "gender": "F",
+   "uid": "2961-961-0010",
+   "src": "corpus/raw/LibriSpeech/test-clean/2961/961/2961-961-0010.flac",
+   "dur": 7.83,
+   "text": "BUT IN EGYPT THE TRADITIONS OF OUR OWN AND OTHER LANDS ARE BY US REGISTERED FOR EVER IN OUR TEMPLES",
+   "words": 20,
+   "stability": false
+  },
+  {
+   "item": "2961_3",
+   "spk": "2961",
+   "gender": "F",
+   "uid": "2961-960-0022",
+   "src": "corpus/raw/LibriSpeech/test-clean/2961/960/2961-960-0022.flac",
+   "dur": 7.42,
+   "text": "PLATO HAD NOT THE COMMAND OF HIS MATERIALS WHICH WOULD HAVE ENABLED HIM TO PRODUCE A PERFECT WORK OF ART",
+   "words": 20,
+   "stability": false
+  },
+  {
+   "item": "2961_4",
+   "spk": "2961",
+   "gender": "F",
+   "uid": "2961-961-0020",
+   "src": "corpus/raw/LibriSpeech/test-clean/2961/961/2961-961-0020.flac",
+   "dur": 6.12,
+   "text": "THIS IS THE EXPLANATION OF THE SHALLOWS WHICH ARE FOUND IN THAT PART OF THE ATLANTIC OCEAN",
+   "words": 17,
+   "stability": false
+  },
+  {
+   "item": "3570_0",
+   "spk": "3570",
+   "gender": "F",
+   "uid": "3570-5694-0004",
+   "src": "corpus/raw/LibriSpeech/test-clean/3570/5694/3570-5694-0004.flac",
+   "dur": 5.33,
+   "text": "IN THE NATURE OF THINGS LUXURIES AND THE COMFORTS OF LIFE BELONG TO THE LEISURE CLASS",
+   "words": 16,
+   "stability": false
+  },
+  {
+   "item": "3570_1",
+   "spk": "3570",
+   "gender": "F",
+   "uid": "3570-5696-0010",
+   "src": "corpus/raw/LibriSpeech/test-clean/3570/5696/3570-5696-0010.flac",
+   "dur": 7.57,
+   "text": "AN ARTICLE MAY BE USEFUL AND WASTEFUL BOTH AND ITS UTILITY TO THE CONSUMER MAY BE MADE UP OF USE AND WASTE IN THE MOST VARYING PROPORTIONS",
+   "words": 27,
+   "stability": false
+  },
+  {
+   "item": "3570_2",
+   "spk": "3570",
+   "gender": "F",
+   "uid": "3570-5696-0002",
+   "src": "corpus/raw/LibriSpeech/test-clean/3570/5696/3570-5696-0002.flac",
+   "dur": 7.51,
+   "text": "OTHER CIRCUMSTANCES PERMITTING THAT INSTINCT DISPOSES MEN TO LOOK WITH FAVOR UPON PRODUCTIVE EFFICIENCY AND ON WHATEVER IS OF HUMAN USE",
+   "words": 21,
+   "stability": false
+  },
+  {
+   "item": "3570_3",
+   "spk": "3570",
+   "gender": "F",
+   "uid": "3570-5695-0010",
+   "src": "corpus/raw/LibriSpeech/test-clean/3570/5695/3570-5695-0010.flac",
+   "dur": 4.67,
+   "text": "THE MODERN ORGANIZATION OF INDUSTRY WORKS IN THE SAME DIRECTION ALSO BY ANOTHER LINE",
+   "words": 14,
+   "stability": false
+  },
+  {
+   "item": "3570_4",
+   "spk": "3570",
+   "gender": "F",
+   "uid": "3570-5695-0007",
+   "src": "corpus/raw/LibriSpeech/test-clean/3570/5695/3570-5695-0007.flac",
+   "dur": 9.76,
+   "text": "THERE IS NO CLASS AND NO COUNTRY THAT HAS YIELDED SO ABJECTLY BEFORE THE PRESSURE OF PHYSICAL WANT AS TO DENY THEMSELVES ALL GRATIFICATION OF THIS HIGHER OR SPIRITUAL NEED",
+   "words": 30,
+   "stability": false
+  },
+  {
+   "item": "3575_0",
+   "spk": "3575",
+   "gender": "F",
+   "uid": "3575-170457-0029",
+   "src": "corpus/raw/LibriSpeech/test-clean/3575/170457/3575-170457-0029.flac",
+   "dur": 6.05,
+   "text": "YOUR LETTER HAS GIVEN ME GREAT PLEASURE AND I SHOULD NOT FORGIVE MYSELF IF I DID NOT TELL YOU SO",
+   "words": 20,
+   "stability": false
+  },
+  {
+   "item": "3575_1",
+   "spk": "3575",
+   "gender": "F",
+   "uid": "3575-170457-0045",
+   "src": "corpus/raw/LibriSpeech/test-clean/3575/170457/3575-170457-0045.flac",
+   "dur": 6.52,
+   "text": "I AM NOT GOOD ENOUGH FOR YOU AND YOU MUST BE KEPT FROM THE CONTAMINATION OF TOO INTIMATE SOCIETY",
+   "words": 19,
+   "stability": false
+  },
+  {
+   "item": "3575_2",
+   "spk": "3575",
+   "gender": "F",
+   "uid": "3575-170457-0051",
+   "src": "corpus/raw/LibriSpeech/test-clean/3575/170457/3575-170457-0051.flac",
+   "dur": 4.92,
+   "text": "AT TEA TIME THEY WERE SAD AND SILENT AND THE MEAL WENT AWAY UNTOUCHED BY ANY OF THE THREE",
+   "words": 19,
+   "stability": false
+  },
+  {
+   "item": "3575_3",
+   "spk": "3575",
+   "gender": "F",
+   "uid": "3575-170457-0013",
+   "src": "corpus/raw/LibriSpeech/test-clean/3575/170457/3575-170457-0013.flac",
+   "dur": 9.18,
+   "text": "THE MORE SHE IS ENGAGED IN HER PROPER DUTIES THE LESS LEISURE WILL SHE HAVE FOR IT EVEN AS AN ACCOMPLISHMENT AND A RECREATION",
+   "words": 24,
+   "stability": false
+  },
+  {
+   "item": "3575_4",
+   "spk": "3575",
+   "gender": "F",
+   "uid": "3575-170457-0050",
+   "src": "corpus/raw/LibriSpeech/test-clean/3575/170457/3575-170457-0050.flac",
+   "dur": 6.41,
+   "text": "TABBY HAD TENDED THEM IN THEIR CHILDHOOD THEY AND NONE OTHER SHOULD TEND HER IN HER INFIRMITY AND AGE",
+   "words": 19,
+   "stability": false
+  },
+  {
+   "item": "3729_0",
+   "spk": "3729",
+   "gender": "F",
+   "uid": "3729-6852-0031",
+   "src": "corpus/raw/LibriSpeech/test-clean/3729/6852/3729-6852-0031.flac",
+   "dur": 4.4,
+   "text": "BUT HOW DID SHE MANAGE TO RENDER IT SO FASHIONABLE",
+   "words": 10,
+   "stability": false
+  },
+  {
+   "item": "3729_1",
+   "spk": "3729",
+   "gender": "F",
+   "uid": "3729-6852-0022",
+   "src": "corpus/raw/LibriSpeech/test-clean/3729/6852/3729-6852-0022.flac",
+   "dur": 8.31,
+   "text": "I ADDRESS HIM IN ITALIAN AND HE ANSWERS VERY WITTILY BUT HIS WAY OF SPEAKING MAKES ME SMILE AND I TELL HIM WHY",
+   "words": 23,
+   "stability": false
+  },
+  {
+   "item": "3729_2",
+   "spk": "3729",
+   "gender": "F",
+   "uid": "3729-6852-0002",
+   "src": "corpus/raw/LibriSpeech/test-clean/3729/6852/3729-6852-0002.flac",
+   "dur": 8.78,
+   "text": "IN ORDER TO PLEASE HER I SPOKE TO HER OF THE ABBE CONTI AND I HAD OCCASION TO QUOTE TWO LINES OF THAT PROFOUND WRITER",
+   "words": 25,
+   "stability": false
+  },
+  {
+   "item": "3729_3",
+   "spk": "3729",
+   "gender": "F",
+   "uid": "3729-6852-0037",
+   "src": "corpus/raw/LibriSpeech/test-clean/3729/6852/3729-6852-0037.flac",
+   "dur": 5.89,
+   "text": "SHE INTRODUCED ME TO ALL HER GUESTS AND GAVE ME SOME PARTICULARS RESPECTING EVERY ONE OF THEM",
+   "words": 17,
+   "stability": false
+  },
+  {
+   "item": "3729_4",
+   "spk": "3729",
+   "gender": "F",
+   "uid": "3729-6852-0014",
+   "src": "corpus/raw/LibriSpeech/test-clean/3729/6852/3729-6852-0014.flac",
+   "dur": 5.71,
+   "text": "HERE GO AND GET ME CHANGE FOR A LOUIS I HAVE IT SIR",
+   "words": 13,
+   "stability": false
+  },
+  {
+   "item": "4077_0",
+   "spk": "4077",
+   "gender": "M",
+   "uid": "4077-13751-0001",
+   "src": "corpus/raw/LibriSpeech/test-clean/4077/13751/4077-13751-0001.flac",
+   "dur": 8.74,
+   "text": "ITS ORIGIN WAS SMALL A GERM AN INSIGNIFICANT SEED HARDLY TO BE THOUGHT OF AS LIKELY TO AROUSE OPPOSITION",
+   "words": 19,
+   "stability": false
+  },
+  {
+   "item": "4077_1",
+   "spk": "4077",
+   "gender": "M",
+   "uid": "4077-13751-0020",
+   "src": "corpus/raw/LibriSpeech/test-clean/4077/13751/4077-13751-0020.flac",
+   "dur": 10.29,
+   "text": "AS A SAMPLE OF THE PRESS COMMENTS AGAINST THE BRUTALITY OF THE MISSOURIANS I QUOTE A PARAGRAPH FROM THE QUINCY ARGUS MARCH SIXTEENTH EIGHTEEN THIRTY NINE",
+   "words": 26,
+   "stability": false
+  },
+  {
+   "item": "4077_2",
+   "spk": "4077",
+   "gender": "M",
+   "uid": "4077-13751-0013",
+   "src": "corpus/raw/LibriSpeech/test-clean/4077/13751/4077-13751-0013.flac",
+   "dur": 4.32,
+   "text": "THEIR SUFFERINGS HAVE NEVER YET BEEN FITLY CHRONICLED BY HUMAN SCRIBE",
+   "words": 11,
+   "stability": false
+  },
+  {
+   "item": "4077_3",
+   "spk": "4077",
+   "gender": "M",
+   "uid": "4077-13754-0003",
+   "src": "corpus/raw/LibriSpeech/test-clean/4077/13754/4077-13754-0003.flac",
+   "dur": 5.68,
+   "text": "MOREOVER HAD THE PEOPLE BEEN INCLINED TO REBELLION WHAT GREATER OPPORTUNITY COULD THEY HAVE WISHED",
+   "words": 15,
+   "stability": false
+  },
+  {
+   "item": "4077_4",
+   "spk": "4077",
+   "gender": "M",
+   "uid": "4077-13754-0014",
+   "src": "corpus/raw/LibriSpeech/test-clean/4077/13754/4077-13754-0014.flac",
+   "dur": 10.97,
+   "text": "THE PEOPLE CONTESTED THESE MEASURES ONE BY ONE IN THE COURTS PRESENTING IN CASE AFTER CASE THE DIFFERENT PHASES OF THE SUBJECT AND URGING THE UNCONSTITUTIONALITY OF THE MEASURE",
+   "words": 29,
+   "stability": false
+  },
+  {
+   "item": "4446_0",
+   "spk": "4446",
+   "gender": "F",
+   "uid": "4446-2273-0022",
+   "src": "corpus/raw/LibriSpeech/test-clean/4446/2273/4446-2273-0022.flac",
+   "dur": 5.87,
+   "text": "THEY WERE BOTH REMEMBERING WHAT THE WOMAN HAD SAID WHEN SHE TOOK THE MONEY GOD GIVE YOU A HAPPY LOVE",
+   "words": 20,
+   "stability": false
+  },
+  {
+   "item": "4446_1",
+   "spk": "4446",
+   "gender": "F",
+   "uid": "4446-2275-0029",
+   "src": "corpus/raw/LibriSpeech/test-clean/4446/2275/4446-2275-0029.flac",
+   "dur": 6.28,
+   "text": "PLEASE TELL ME ONE THING BARTLEY AT LEAST TELL ME THAT YOU BELIEVE I THOUGHT I WAS MAKING YOU HAPPY",
+   "words": 20,
+   "stability": false
+  },
+  {
+   "item": "4446_2",
+   "spk": "4446",
+   "gender": "F",
+   "uid": "4446-2271-0014",
+   "src": "corpus/raw/LibriSpeech/test-clean/4446/2271/4446-2271-0014.flac",
+   "dur": 5.34,
+   "text": "WESTMERE AND I WERE BACK AFTER THE FIRST ACT AND WE THOUGHT SHE SEEMED QUITE UNCERTAIN OF HERSELF",
+   "words": 18,
+   "stability": false
+  },
+  {
+   "item": "4446_3",
+   "spk": "4446",
+   "gender": "F",
+   "uid": "4446-2273-0003",
+   "src": "corpus/raw/LibriSpeech/test-clean/4446/2273/4446-2273-0003.flac",
+   "dur": 7.83,
+   "text": "WHEN BARTLEY ARRIVED AT BEDFORD SQUARE ON SUNDAY EVENING MARIE THE PRETTY LITTLE FRENCH GIRL MET HIM AT THE DOOR AND CONDUCTED HIM UPSTAIRS",
+   "words": 24,
+   "stability": false
+  },
+  {
+   "item": "4446_4",
+   "spk": "4446",
+   "gender": "F",
+   "uid": "4446-2275-0000",
+   "src": "corpus/raw/LibriSpeech/test-clean/4446/2275/4446-2275-0000.flac",
+   "dur": 6.34,
+   "text": "THE STOP AT QUEENSTOWN THE TEDIOUS PASSAGE UP THE MERSEY WERE THINGS THAT HE NOTED DIMLY THROUGH HIS GROWING IMPATIENCE",
+   "words": 20,
+   "stability": false
+  },
+  {
+   "item": "4507_0",
+   "spk": "4507",
+   "gender": "F",
+   "uid": "4507-16021-0053",
+   "src": "corpus/raw/LibriSpeech/test-clean/4507/16021/4507-16021-0053.flac",
+   "dur": 8.1,
+   "text": "TO DIMINISH THE NUMBER OF THE SHADY TO AUGMENT THE NUMBER OF THE LUMINOUS THAT IS THE OBJECT",
+   "words": 18,
+   "stability": false
+  },
+  {
+   "item": "4507_1",
+   "spk": "4507",
+   "gender": "F",
+   "uid": "4507-16021-0055",
+   "src": "corpus/raw/LibriSpeech/test-clean/4507/16021/4507-16021-0055.flac",
+   "dur": 7.22,
+   "text": "TO TEACH READING MEANS TO LIGHT THE FIRE EVERY SYLLABLE SPELLED OUT SPARKLES",
+   "words": 13,
+   "stability": false
+  },
+  {
+   "item": "4507_2",
+   "spk": "4507",
+   "gender": "F",
+   "uid": "4507-16021-0056",
+   "src": "corpus/raw/LibriSpeech/test-clean/4507/16021/4507-16021-0056.flac",
+   "dur": 6.34,
+   "text": "HOWEVER HE WHO SAYS LIGHT DOES NOT NECESSARILY SAY JOY",
+   "words": 10,
+   "stability": false
+  },
+  {
+   "item": "4507_3",
+   "spk": "4507",
+   "gender": "F",
+   "uid": "4507-16021-0017",
+   "src": "corpus/raw/LibriSpeech/test-clean/4507/16021/4507-16021-0017.flac",
+   "dur": 10.59,
+   "text": "HE WOULD BE LIKE A PHILOLOGIST REFUSING TO EXAMINE A FACT IN LANGUAGE A PHILOSOPHER HESITATING TO SCRUTINIZE A FACT IN HUMANITY",
+   "words": 22,
+   "stability": false
+  },
+  {
+   "item": "4507_4",
+   "spk": "4507",
+   "gender": "F",
+   "uid": "4507-16021-0042",
+   "src": "corpus/raw/LibriSpeech/test-clean/4507/16021/4507-16021-0042.flac",
+   "dur": 10.38,
+   "text": "IT IS BLACK IN MISFORTUNE IT IS BLACKER STILL IN CRIME THESE TWO BLACKNESSES AMALGAMATED COMPOSE SLANG",
+   "words": 17,
+   "stability": false
+  },
+  {
+   "item": "4970_0",
+   "spk": "4970",
+   "gender": "F",
+   "uid": "4970-29095-0016",
+   "src": "corpus/raw/LibriSpeech/test-clean/4970/29095/4970-29095-0016.flac",
+   "dur": 6.95,
+   "text": "RUTH SAT QUITE STILL FOR A TIME WITH FACE INTENT AND FLUSHED IT WAS OUT NOW",
+   "words": 16,
+   "stability": true
+  },
+  {
+   "item": "4970_1",
+   "spk": "4970",
+   "gender": "F",
+   "uid": "4970-29093-0011",
+   "src": "corpus/raw/LibriSpeech/test-clean/4970/29093/4970-29093-0011.flac",
+   "dur": 11.45,
+   "text": "O VERY WELL SAID GRINGO TURNING AWAY WITH A SHADE OF CONTEMPT YOU'LL FIND IF YOU ARE GOING INTO LITERATURE AND NEWSPAPER WORK THAT YOU CAN'T AFFORD A CONSCIENCE LIKE THAT",
+   "words": 31,
+   "stability": true
+  },
+  {
+   "item": "4970_2",
+   "spk": "4970",
+   "gender": "F",
+   "uid": "4970-29095-0024",
+   "src": "corpus/raw/LibriSpeech/test-clean/4970/29095/4970-29095-0024.flac",
+   "dur": 6.04,
+   "text": "IT HAS OCCUPIED MOTHER A LONG TIME TO FIND AT THE SHOPS THE EXACT SHADE FOR HER NEW BONNET",
+   "words": 19,
+   "stability": true
+  },
+  {
+   "item": "4970_3",
+   "spk": "4970",
+   "gender": "F",
+   "uid": "4970-29095-0003",
+   "src": "corpus/raw/LibriSpeech/test-clean/4970/29095/4970-29095-0003.flac",
+   "dur": 10.02,
+   "text": "I HOPE THEE TOLD THE ELDERS THAT FATHER AND I ARE RESPONSIBLE FOR THE PIANO AND THAT MUCH AS THEE LOVES MUSIC THEE IS NEVER IN THE ROOM WHEN IT IS PLAYED",
+   "words": 32,
+   "stability": true
+  },
+  {
+   "item": "4970_4",
+   "spk": "4970",
+   "gender": "F",
+   "uid": "4970-29095-0027",
+   "src": "corpus/raw/LibriSpeech/test-clean/4970/29095/4970-29095-0027.flac",
+   "dur": 9.79,
+   "text": "IT'S SUCH A CRUSH AT THE YEARLY MEETING AT ARCH STREET AND THEN THERE'S THE ROW OF SLEEK LOOKING YOUNG MEN WHO LINE THE CURBSTONE AND STARE AT US AS WE COME OUT",
+   "words": 33,
+   "stability": true
+  },
+  {
+   "item": "4992_0",
+   "spk": "4992",
+   "gender": "F",
+   "uid": "4992-41797-0008",
+   "src": "corpus/raw/LibriSpeech/test-clean/4992/41797/4992-41797-0008.flac",
+   "dur": 8.96,
+   "text": "MISTER POPHAM EXAGGERATED NOTHING BUT ON THE CONTRARY LEFT MUCH UNSAID IN HIS NARRATIVE OF THE FAMILY AT THE HOUSE OF LORDS",
+   "words": 22,
+   "stability": false
+  },
+  {
+   "item": "4992_1",
+   "spk": "4992",
+   "gender": "F",
+   "uid": "4992-23283-0004",
+   "src": "corpus/raw/LibriSpeech/test-clean/4992/23283/4992-23283-0004.flac",
+   "dur": 8.06,
+   "text": "AND YET YOU MUST OWN HER BEHAVIOUR HAS WARRANTED THEM HAS IT NOT BEEN IN THIS PARTICULAR INCOHERENT AND UNACCOUNTABLE",
+   "words": 20,
+   "stability": false
+  },
+  {
+   "item": "4992_2",
+   "spk": "4992",
+   "gender": "F",
+   "uid": "4992-41797-0011",
+   "src": "corpus/raw/LibriSpeech/test-clean/4992/41797/4992-41797-0011.flac",
+   "dur": 5.45,
+   "text": "WHATEVER APPEALED TO HER SENSE OF BEAUTY WAS STRAIGHTWAY TRANSFERRED TO PAPER OR CANVAS",
+   "words": 14,
+   "stability": false
+  },
+  {
+   "item": "4992_3",
+   "spk": "4992",
+   "gender": "F",
+   "uid": "4992-23283-0016",
+   "src": "corpus/raw/LibriSpeech/test-clean/4992/23283/4992-23283-0016.flac",
+   "dur": 4.5,
+   "text": "AGAIN HE SEARCHED HIS OWN THOUGHTS NOR INEFFECTUALLY AS BEFORE",
+   "words": 10,
+   "stability": false
+  },
+  {
+   "item": "4992_4",
+   "spk": "4992",
+   "gender": "F",
+   "uid": "4992-41806-0001",
+   "src": "corpus/raw/LibriSpeech/test-clean/4992/41806/4992-41806-0001.flac",
+   "dur": 8.31,
+   "text": "TO NIGHT THERE WAS NO NEED OF EXTRA HEAT AND THERE WERE GREAT CEREMONIES TO BE OBSERVED IN LIGHTING THE FIRES ON THE HEARTHSTONES",
+   "words": 24,
+   "stability": false
+  },
+  {
+   "item": "5105_0",
+   "spk": "5105",
+   "gender": "M",
+   "uid": "5105-28241-0002",
+   "src": "corpus/raw/LibriSpeech/test-clean/5105/28241/5105-28241-0002.flac",
+   "dur": 10.96,
+   "text": "THE LATE ASTOUNDING EVENTS HOWEVER HAD RENDERED PROCOPE MANIFESTLY UNEASY AND NOT THE LESS SO FROM HIS CONSCIOUSNESS THAT THE COUNT SECRETLY PARTOOK OF HIS OWN ANXIETY",
+   "words": 27,
+   "stability": false
+  },
+  {
+   "item": "5105_1",
+   "spk": "5105",
+   "gender": "M",
+   "uid": "5105-28233-0000",
+   "src": "corpus/raw/LibriSpeech/test-clean/5105/28233/5105-28233-0000.flac",
+   "dur": 4.51,
+   "text": "LENGTH OF SERVICE FOURTEEN YEARS THREE MONTHS AND FIVE DAYS",
+   "words": 10,
+   "stability": false
+  },
+  {
+   "item": "5105_2",
+   "spk": "5105",
+   "gender": "M",
+   "uid": "5105-28240-0019",
+   "src": "corpus/raw/LibriSpeech/test-clean/5105/28240/5105-28240-0019.flac",
+   "dur": 6.24,
+   "text": "MY YACHT IS AT YOUR SERVICE SIR EVEN SHOULD YOU REQUIRE TO MAKE A TOUR ROUND THE WORLD",
+   "words": 18,
+   "stability": false
+  },
+  {
+   "item": "5105_3",
+   "spk": "5105",
+   "gender": "M",
+   "uid": "5105-28240-0024",
+   "src": "corpus/raw/LibriSpeech/test-clean/5105/28240/5105-28240-0024.flac",
+   "dur": 8.2,
+   "text": "DOUBTS NOW AROSE AND SOME DISCUSSION FOLLOWED WHETHER OR NOT IT WAS DESIRABLE FOR BEN ZOOF TO ACCOMPANY HIS MASTER",
+   "words": 20,
+   "stability": false
+  },
+  {
+   "item": "5105_4",
+   "spk": "5105",
+   "gender": "M",
+   "uid": "5105-28240-0005",
+   "src": "corpus/raw/LibriSpeech/test-clean/5105/28240/5105-28240-0005.flac",
+   "dur": 7.4,
+   "text": "HE RECKONED THEREFORE NOT ONLY UPON ASCERTAINING THE EXTENT OF THE LATE CATASTROPHE BUT UPON LEARNING ITS CAUSE",
+   "words": 18,
+   "stability": false
+  },
+  {
+   "item": "5142_0",
+   "spk": "5142",
+   "gender": "F",
+   "uid": "5142-33396-0032",
+   "src": "corpus/raw/LibriSpeech/test-clean/5142/33396/5142-33396-0032.flac",
+   "dur": 9.79,
+   "text": "THE FARMER SAT GLOOMILY ON THE BENCH AND WOULD NOT EAT AND YOU CANNOT WONDER FOR HE SAW US PUTTING POTFULS OF HIS GOOD BEEF AND BASKET LOADS OF BREAD INTO OUR BIG MOUTHS",
+   "words": 34,
+   "stability": true
+  },
+  {
+   "item": "5142_1",
+   "spk": "5142",
+   "gender": "F",
+   "uid": "5142-33396-0036",
+   "src": "corpus/raw/LibriSpeech/test-clean/5142/33396/5142-33396-0036.flac",
+   "dur": 4.26,
+   "text": "SO I WILL GIVE OUT THIS LAW THAT MY MEN SHALL NEVER LEAVE YOU ALONE",
+   "words": 15,
+   "stability": true
+  },
+  {
+   "item": "5142_2",
+   "spk": "5142",
+   "gender": "F",
+   "uid": "5142-36377-0024",
+   "src": "corpus/raw/LibriSpeech/test-clean/5142/36377/5142-36377-0024.flac",
+   "dur": 5.78,
+   "text": "NAOMI SHOOK HER FOREFINGER REPROACHFULLY AT THEM AS IF THE TWO STURDY YOUNG FARMERS HAD BEEN TWO CHILDREN",
+   "words": 18,
+   "stability": true
+  },
+  {
+   "item": "5142_3",
+   "spk": "5142",
+   "gender": "F",
+   "uid": "5142-33396-0054",
+   "src": "corpus/raw/LibriSpeech/test-clean/5142/33396/5142-33396-0054.flac",
+   "dur": 5.75,
+   "text": "THAT IS THE BEST WAY TO DECIDE FOR THE SPEAR WILL ALWAYS POINT SOMEWHERE AND ONE THING IS AS GOOD AS ANOTHER",
+   "words": 22,
+   "stability": true
+  },
+  {
+   "item": "5142_4",
+   "spk": "5142",
+   "gender": "F",
+   "uid": "5142-33396-0012",
+   "src": "corpus/raw/LibriSpeech/test-clean/5142/33396/5142-33396-0012.flac",
+   "dur": 4.59,
+   "text": "THEN I WILL GET ME A FARM AND WILL WINTER IN THAT LAND NOW WHO WILL FOLLOW ME",
+   "words": 18,
+   "stability": true
+  },
+  {
+   "item": "5639_0",
+   "spk": "5639",
+   "gender": "M",
+   "uid": "5639-40744-0010",
+   "src": "corpus/raw/LibriSpeech/test-clean/5639/40744/5639-40744-0010.flac",
+   "dur": 4.12,
+   "text": "IT IS THE ONLY AMENDS I ASK OF YOU FOR THE WRONG YOU HAVE DONE ME",
+   "words": 16,
+   "stability": false
+  },
+  {
+   "item": "5639_1",
+   "spk": "5639",
+   "gender": "M",
+   "uid": "5639-40744-0012",
+   "src": "corpus/raw/LibriSpeech/test-clean/5639/40744/5639-40744-0012.flac",
+   "dur": 8.6,
+   "text": "SHE SUCCEEDED IN OPENING THE WINDOW AND THE MOONLIGHT SHONE IN SO BRIGHTLY THAT SHE COULD DISTINGUISH THE COLOUR OF SOME DAMASK HANGINGS IN THE ROOM",
+   "words": 26,
+   "stability": false
+  },
+  {
+   "item": "5639_2",
+   "spk": "5639",
+   "gender": "M",
+   "uid": "5639-40744-0014",
+   "src": "corpus/raw/LibriSpeech/test-clean/5639/40744/5639-40744-0014.flac",
+   "dur": 7.72,
+   "text": "AMONG OTHER THINGS ON WHICH SHE CAST HER EYES WAS A SMALL CRUCIFIX OF SOLID SILVER STANDING ON A CABINET NEAR THE WINDOW",
+   "words": 23,
+   "stability": false
+  },
+  {
+   "item": "5639_3",
+   "spk": "5639",
+   "gender": "M",
+   "uid": "5639-40744-0016",
+   "src": "corpus/raw/LibriSpeech/test-clean/5639/40744/5639-40744-0016.flac",
+   "dur": 9.49,
+   "text": "ON THE CONTRARY HE RESOLVED TO TELL THEM THAT REPENTING OF HIS VIOLENCE AND MOVED BY HER TEARS HE HAD ONLY CARRIED HER HALF WAY TOWARDS HIS HOUSE AND THEN LET HER GO",
+   "words": 33,
+   "stability": false
+  },
+  {
+   "item": "5639_4",
+   "spk": "5639",
+   "gender": "M",
+   "uid": "5639-40744-0029",
+   "src": "corpus/raw/LibriSpeech/test-clean/5639/40744/5639-40744-0029.flac",
+   "dur": 7.3,
+   "text": "THIS TRUTH WHICH I HAVE LEARNED FROM HER LIPS IS CONFIRMED BY HIS FACE IN WHICH WE HAVE BOTH BEHELD THAT OF OUR SON",
+   "words": 24,
+   "stability": false
+  },
+  {
+   "item": "5683_0",
+   "spk": "5683",
+   "gender": "F",
+   "uid": "5683-32865-0015",
+   "src": "corpus/raw/LibriSpeech/test-clean/5683/32865/5683-32865-0015.flac",
+   "dur": 4.14,
+   "text": "I HAD A HORRID DREAM ABOUT HIM LAST NIGHT THAT",
+   "words": 10,
+   "stability": true
+  },
+  {
+   "item": "5683_1",
+   "spk": "5683",
+   "gender": "F",
+   "uid": "5683-32879-0018",
+   "src": "corpus/raw/LibriSpeech/test-clean/5683/32879/5683-32879-0018.flac",
+   "dur": 7.44,
+   "text": "IT IS AN ANTIPATHY AN ANTIPATHY I CANNOT GET OVER DEAR DORCAS YOU MAY THINK IT A MADNESS BUT DON'T BLAME ME",
+   "words": 22,
+   "stability": true
+  },
+  {
+   "item": "5683_2",
+   "spk": "5683",
+   "gender": "F",
+   "uid": "5683-32879-0004",
+   "src": "corpus/raw/LibriSpeech/test-clean/5683/32879/5683-32879-0004.flac",
+   "dur": 11.21,
+   "text": "BUT POOR RACHEL LAKE HAD MORE THAN THAT STOICAL HYPOCRISY WHICH ENABLES THE TORTURED SPIRITS OF HER SEX TO LIFT A PALE FACE THROUGH THE FLAMES AND SMILE",
+   "words": 28,
+   "stability": true
+  },
+  {
+   "item": "5683_3",
+   "spk": "5683",
+   "gender": "F",
+   "uid": "5683-32879-0014",
+   "src": "corpus/raw/LibriSpeech/test-clean/5683/32879/5683-32879-0014.flac",
+   "dur": 8.4,
+   "text": "YES SOMETHING EVERYTHING SAID RACHEL HURRIEDLY LOOKING FROWNINGLY AT A FLOWER WHICH SHE WAS TWIRLING IN HER FINGERS",
+   "words": 18,
+   "stability": true
+  },
+  {
+   "item": "5683_4",
+   "spk": "5683",
+   "gender": "F",
+   "uid": "5683-32866-0004",
+   "src": "corpus/raw/LibriSpeech/test-clean/5683/32866/5683-32866-0004.flac",
+   "dur": 9.22,
+   "text": "BY THIS TIME LORD CHELFORD AND WYLDER RETURNED AND DISGUSTED RATHER WITH MYSELF I RUMINATED ON MY WANT OF GENERAL SHIP",
+   "words": 21,
+   "stability": true
+  },
+  {
+   "item": "61_0",
+   "spk": "61",
+   "gender": "M",
+   "uid": "61-70970-0016",
+   "src": "corpus/raw/LibriSpeech/test-clean/61/70970/61-70970-0016.flac",
+   "dur": 4.37,
+   "text": "WE WILL GO OUT TOGETHER TO THE BOWER THERE IS A WAY DOWN TO THE COURT FROM MY WINDOW",
+   "words": 19,
+   "stability": false
+  },
+  {
+   "item": "61_1",
+   "spk": "61",
+   "gender": "M",
+   "uid": "61-70968-0024",
+   "src": "corpus/raw/LibriSpeech/test-clean/61/70968/61-70968-0024.flac",
+   "dur": 6.03,
+   "text": "SPOKE THE SQUIRE LOSING ALL PATIENCE AND IT WAS TO YOU THAT I GAVE ANOTHER PURSE IN CONSOLATION",
+   "words": 18,
+   "stability": false
+  },
+  {
+   "item": "61_2",
+   "spk": "61",
+   "gender": "M",
+   "uid": "61-70970-0020",
+   "src": "corpus/raw/LibriSpeech/test-clean/61/70970/61-70970-0020.flac",
+   "dur": 5.03,
+   "text": "WILL WHISPERED ROBIN OPENING HIS DOOR AS HE SPOKE ARE YOU READY",
+   "words": 12,
+   "stability": false
+  },
+  {
+   "item": "61_3",
+   "spk": "61",
+   "gender": "M",
+   "uid": "61-70968-0023",
+   "src": "corpus/raw/LibriSpeech/test-clean/61/70968/61-70968-0023.flac",
+   "dur": 5.03,
+   "text": "BUT I WRESTLED WITH THIS FELLOW AND DO KNOW THAT HE PLAYED UNFAIRLY IN THE SECOND BOUT",
+   "words": 17,
+   "stability": false
+  },
+  {
+   "item": "61_4",
+   "spk": "61",
+   "gender": "M",
+   "uid": "61-70968-0033",
+   "src": "corpus/raw/LibriSpeech/test-clean/61/70968/61-70968-0033.flac",
+   "dur": 5.68,
+   "text": "THRUSTING OPEN THE PROPER ENTRANCE OF THE TENT ROBIN SUDDENLY RUSHED FORTH WITH HIS BURDEN WITH A GREAT SHOUT",
+   "words": 19,
+   "stability": false
+  },
+  {
+   "item": "672_0",
+   "spk": "672",
+   "gender": "M",
+   "uid": "672-122797-0051",
+   "src": "corpus/raw/LibriSpeech/test-clean/672/122797/672-122797-0051.flac",
+   "dur": 4.67,
+   "text": "I AM BY NO MEANS OLD SAID THE FIR TREE",
+   "words": 10,
+   "stability": false
+  },
+  {
+   "item": "672_1",
+   "spk": "672",
+   "gender": "M",
+   "uid": "672-122797-0048",
+   "src": "corpus/raw/LibriSpeech/test-clean/672/122797/672-122797-0048.flac",
+   "dur": 6.55,
+   "text": "IF IT ONLY WERE NOT SO DARK HERE AND SO TERRIBLY LONELY",
+   "words": 12,
+   "stability": false
+  },
+  {
+   "item": "672_2",
+   "spk": "672",
+   "gender": "M",
+   "uid": "672-122797-0071",
+   "src": "corpus/raw/LibriSpeech/test-clean/672/122797/672-122797-0071.flac",
+   "dur": 8.88,
+   "text": "IN THE COURT YARD SOME OF THE MERRY CHILDREN WERE PLAYING WHO HAD DANCED AT CHRISTMAS ROUND THE FIR TREE AND WERE SO GLAD AT THE SIGHT OF HIM",
+   "words": 29,
+   "stability": false
+  },
+  {
+   "item": "672_3",
+   "spk": "672",
+   "gender": "M",
+   "uid": "672-122797-0025",
+   "src": "corpus/raw/LibriSpeech/test-clean/672/122797/672-122797-0025.flac",
+   "dur": 10.69,
+   "text": "THE TREE ONLY CAME TO HIMSELF WHEN HE WAS UNLOADED IN A COURT YARD WITH THE OTHER TREES AND HEARD A MAN SAY THAT ONE IS SPLENDID WE DON'T WANT THE OTHERS",
+   "words": 32,
+   "stability": false
+  },
+  {
+   "item": "672_4",
+   "spk": "672",
+   "gender": "M",
+   "uid": "672-122797-0070",
+   "src": "corpus/raw/LibriSpeech/test-clean/672/122797/672-122797-0070.flac",
+   "dur": 6.27,
+   "text": "THE GOLDEN STAR OF TINSEL WAS STILL ON THE TOP OF THE TREE AND GLITTERED IN THE SUNSHINE",
+   "words": 18,
+   "stability": false
+  },
+  {
+   "item": "6829_0",
+   "spk": "6829",
+   "gender": "F",
+   "uid": "6829-68769-0031",
+   "src": "corpus/raw/LibriSpeech/test-clean/6829/68769/6829-68769-0031.flac",
+   "dur": 5.55,
+   "text": "AS REGARDS MY ROBBING THE COMPANY I'LL SAY THAT I SAVED THEM A HEAVY LOSS ONE DAY",
+   "words": 17,
+   "stability": false
+  },
+  {
+   "item": "6829_1",
+   "spk": "6829",
+   "gender": "F",
+   "uid": "6829-68769-0020",
+   "src": "corpus/raw/LibriSpeech/test-clean/6829/68769/6829-68769-0020.flac",
+   "dur": 5.12,
+   "text": "SIT DOWN PLEASE SAID GATES IN A CHEERFUL AND PLEASANT VOICE THERE'S A BENCH HERE",
+   "words": 15,
+   "stability": false
+  },
+  {
+   "item": "6829_2",
+   "spk": "6829",
+   "gender": "F",
+   "uid": "6829-68769-0022",
+   "src": "corpus/raw/LibriSpeech/test-clean/6829/68769/6829-68769-0022.flac",
+   "dur": 4.12,
+   "text": "WE HAVE HEARD SOMETHING OF YOUR STORY SAID KENNETH AND ARE INTERESTED IN IT",
+   "words": 14,
+   "stability": false
+  },
+  {
+   "item": "6829_3",
+   "spk": "6829",
+   "gender": "F",
+   "uid": "6829-68769-0032",
+   "src": "corpus/raw/LibriSpeech/test-clean/6829/68769/6829-68769-0032.flac",
+   "dur": 5.72,
+   "text": "I DISCOVERED AND PUT OUT A FIRE THAT WOULD HAVE DESTROYED THE WHOLE PLANT BUT MARSHALL NEVER EVEN THANKED ME",
+   "words": 20,
+   "stability": false
+  },
+  {
+   "item": "6829_4",
+   "spk": "6829",
+   "gender": "F",
+   "uid": "6829-68771-0018",
+   "src": "corpus/raw/LibriSpeech/test-clean/6829/68771/6829-68771-0018.flac",
+   "dur": 8.45,
+   "text": "FOR A MOMENT BETH STOOD STARING WHILE THE NEW MAID REGARDED HER WITH COMPOSURE AND A SLIGHT SMILE UPON HER BEAUTIFUL FACE",
+   "words": 22,
+   "stability": false
+  },
+  {
+   "item": "6930_0",
+   "spk": "6930",
+   "gender": "M",
+   "uid": "6930-75918-0004",
+   "src": "corpus/raw/LibriSpeech/test-clean/6930/75918/6930-75918-0004.flac",
+   "dur": 11.06,
+   "text": "SHE TAUGHT HER DAUGHTER THEN BY HER OWN AFFECTION FOR IT THAT LOVE FOR A COUNTRY WHERE THEY HAD BOTH BEEN HOSPITABLY RECEIVED AND WHERE A BRILLIANT FUTURE OPENED BEFORE THEM",
+   "words": 31,
+   "stability": true
+  },
+  {
+   "item": "6930_1",
+   "spk": "6930",
+   "gender": "M",
+   "uid": "6930-76324-0020",
+   "src": "corpus/raw/LibriSpeech/test-clean/6930/76324/6930-76324-0020.flac",
+   "dur": 6.32,
+   "text": "YET LITTLE AS IT WAS IT HAD ALREADY MADE A VAST DIFFERENCE IN THE ASPECT OF THE ROOM",
+   "words": 18,
+   "stability": true
+  },
+  {
+   "item": "6930_2",
+   "spk": "6930",
+   "gender": "M",
+   "uid": "6930-75918-0006",
+   "src": "corpus/raw/LibriSpeech/test-clean/6930/75918/6930-75918-0006.flac",
+   "dur": 5.85,
+   "text": "THIS HAS INDEED BEEN A HARASSING DAY CONTINUED THE YOUNG MAN HIS EYES FIXED UPON HIS FRIEND",
+   "words": 17,
+   "stability": true
+  },
+  {
+   "item": "6930_3",
+   "spk": "6930",
+   "gender": "M",
+   "uid": "6930-76324-0008",
+   "src": "corpus/raw/LibriSpeech/test-clean/6930/76324/6930-76324-0008.flac",
+   "dur": 5.18,
+   "text": "I THOUGHT WE WERE STUMPED AGAIN WHEN I FIRST SAW THAT PICTURE BUT IT'S BEEN OF SOME USE AFTER ALL",
+   "words": 20,
+   "stability": true
+  },
+  {
+   "item": "6930_4",
+   "spk": "6930",
+   "gender": "M",
+   "uid": "6930-81414-0006",
+   "src": "corpus/raw/LibriSpeech/test-clean/6930/81414/6930-81414-0006.flac",
+   "dur": 6.8,
+   "text": "WHAT THEN A HUMAN HAND LARGE AND SHAPELY APPEARED DISTINCTLY ON THE SURFACE OF THE POND",
+   "words": 16,
+   "stability": true
+  },
+  {
+   "item": "7021_0",
+   "spk": "7021",
+   "gender": "M",
+   "uid": "7021-79740-0001",
+   "src": "corpus/raw/LibriSpeech/test-clean/7021/79740/7021-79740-0001.flac",
+   "dur": 6.0,
+   "text": "DELLA HAD A YOUNG SISTER NAMED MARIA AND A COUSIN WHOSE NAME WAS JANE",
+   "words": 14,
+   "stability": false
+  },
+  {
+   "item": "7021_1",
+   "spk": "7021",
+   "gender": "M",
+   "uid": "7021-85628-0002",
+   "src": "corpus/raw/LibriSpeech/test-clean/7021/85628/7021-85628-0002.flac",
+   "dur": 6.46,
+   "text": "HE WAS SUCH A BIG BOY THAT HE WORE HIGH BOOTS AND CARRIED A JACK KNIFE",
+   "words": 16,
+   "stability": false
+  },
+  {
+   "item": "7021_2",
+   "spk": "7021",
+   "gender": "M",
+   "uid": "7021-79740-0006",
+   "src": "corpus/raw/LibriSpeech/test-clean/7021/79740/7021-79740-0006.flac",
+   "dur": 5.96,
+   "text": "I EXPECT YOU HAVE BEEN A VERY GOOD GIRL ANDELLA SINCE YOU WERE HERE LAST",
+   "words": 15,
+   "stability": false
+  },
+  {
+   "item": "7021_3",
+   "spk": "7021",
+   "gender": "M",
+   "uid": "7021-85628-0015",
+   "src": "corpus/raw/LibriSpeech/test-clean/7021/85628/7021-85628-0015.flac",
+   "dur": 11.54,
+   "text": "WELL BUT NOW SAID THE PRINCESS AND SHE FILLED HIS POCKETS WITH CAKES AND PUT HER OWN HEAVY GOLD CHAIN AROUND HIS NECK AND BENT DOWN AND KISSED HIM",
+   "words": 29,
+   "stability": false
+  },
+  {
+   "item": "7021_4",
+   "spk": "7021",
+   "gender": "M",
+   "uid": "7021-85628-0005",
+   "src": "corpus/raw/LibriSpeech/test-clean/7021/85628/7021-85628-0005.flac",
+   "dur": 5.01,
+   "text": "SEEING THAT I AM SO FINE I MAY AS WELL GO AND VISIT THE KING",
+   "words": 15,
+   "stability": false
+  },
+  {
+   "item": "7127_0",
+   "spk": "7127",
+   "gender": "M",
+   "uid": "7127-75947-0029",
+   "src": "corpus/raw/LibriSpeech/test-clean/7127/75947/7127-75947-0029.flac",
+   "dur": 5.29,
+   "text": "THE YOUNG GIRLS HAD INDEED MADE THEMSELVES SMALL INDEED INVISIBLE",
+   "words": 10,
+   "stability": false
+  },
+  {
+   "item": "7127_1",
+   "spk": "7127",
+   "gender": "M",
+   "uid": "7127-75947-0001",
+   "src": "corpus/raw/LibriSpeech/test-clean/7127/75947/7127-75947-0001.flac",
+   "dur": 6.64,
+   "text": "UPON THIS MADAME DEIGNED TO TURN HER EYES LANGUISHINGLY TOWARDS THE COMTE OBSERVING",
+   "words": 13,
+   "stability": false
+  },
+  {
+   "item": "7127_2",
+   "spk": "7127",
+   "gender": "M",
+   "uid": "7127-75947-0010",
+   "src": "corpus/raw/LibriSpeech/test-clean/7127/75947/7127-75947-0010.flac",
+   "dur": 8.87,
+   "text": "WHEN SHE PERCEIVED THE YOUNG MAN SHE ROSE LIKE A WOMAN SURPRISED IN THE MIDST OF IDEAS SHE WAS DESIROUS OF CONCEALING FROM HERSELF",
+   "words": 24,
+   "stability": false
+  },
+  {
+   "item": "7127_3",
+   "spk": "7127",
+   "gender": "M",
+   "uid": "7127-75946-0014",
+   "src": "corpus/raw/LibriSpeech/test-clean/7127/75946/7127-75946-0014.flac",
+   "dur": 10.18,
+   "text": "THE QUEENS HAD TAKEN THEIR SEATS UPON A MAGNIFICENT DIAS OR PLATFORM ERECTED UPON THE BORDERS OF THE LAKE IN A THEATER OF WONDERFUL ELEGANCE OF CONSTRUCTION",
+   "words": 27,
+   "stability": false
+  },
+  {
+   "item": "7127_4",
+   "spk": "7127",
+   "gender": "M",
+   "uid": "7127-75946-0020",
+   "src": "corpus/raw/LibriSpeech/test-clean/7127/75946/7127-75946-0020.flac",
+   "dur": 6.52,
+   "text": "FAR FROM IT SIRE YOUR MAJESTY HAVING GIVEN NO DIRECTIONS ABOUT IT THE MUSICIANS HAVE RETAINED IT",
+   "words": 17,
+   "stability": false
+  },
+  {
+   "item": "7176_0",
+   "spk": "7176",
+   "gender": "M",
+   "uid": "7176-88083-0012",
+   "src": "corpus/raw/LibriSpeech/test-clean/7176/88083/7176-88083-0012.flac",
+   "dur": 5.04,
+   "text": "THE HAWK ALIGHTED ON THE DEAD BRANCH AND SAT UPRIGHT MOTIONLESS AS IF SURPRISED",
+   "words": 14,
+   "stability": false
+  },
+  {
+   "item": "7176_1",
+   "spk": "7176",
+   "gender": "M",
+   "uid": "7176-88083-0000",
+   "src": "corpus/raw/LibriSpeech/test-clean/7176/88083/7176-88083-0000.flac",
+   "dur": 5.7,
+   "text": "ALL ABOUT HIM WAS A TUMULT OF BRIGHT AND BROKEN COLOR SCATTERED IN BROAD SPLASHES",
+   "words": 15,
+   "stability": false
+  },
+  {
+   "item": "7176_2",
+   "spk": "7176",
+   "gender": "M",
+   "uid": "7176-92135-0042",
+   "src": "corpus/raw/LibriSpeech/test-clean/7176/92135/7176-92135-0042.flac",
+   "dur": 7.27,
+   "text": "IN NOVELS THE HERO HAS OFTEN PUSHED HIS MEALS AWAY UNTASTED BUT NO STAGE HERO WOULD DO ANYTHING SO UNNATURAL AS THIS",
+   "words": 22,
+   "stability": false
+  },
+  {
+   "item": "7176_3",
+   "spk": "7176",
+   "gender": "M",
+   "uid": "7176-88083-0002",
+   "src": "corpus/raw/LibriSpeech/test-clean/7176/88083/7176-88083-0002.flac",
+   "dur": 7.51,
+   "text": "HIS FEET WERE RED HIS LONG NARROW BEAK WITH ITS SAW TOOTHED EDGES AND SHARP HOOKED TIP WAS BRIGHT RED",
+   "words": 20,
+   "stability": false
+  },
+  {
+   "item": "7176_4",
+   "spk": "7176",
+   "gender": "M",
+   "uid": "7176-92135-0001",
+   "src": "corpus/raw/LibriSpeech/test-clean/7176/92135/7176-92135-0001.flac",
+   "dur": 7.56,
+   "text": "IN SHORT HE BECOMES A PROMINENT FIGURE IN LONDON SOCIETY AND IF HE IS NOT CAREFUL SOMEBODY WILL SAY SO",
+   "words": 20,
+   "stability": false
+  },
+  {
+   "item": "7729_0",
+   "spk": "7729",
+   "gender": "M",
+   "uid": "7729-102255-0042",
+   "src": "corpus/raw/LibriSpeech/test-clean/7729/102255/7729-102255-0042.flac",
+   "dur": 9.22,
+   "text": "RELOCATED FOOTNOTE GOVERNOR ROBINSON BEING ON HIS WAY EAST THE STEAMBOAT ON WHICH HE WAS TRAVELING STOPPED AT LEXINGTON MISSOURI",
+   "words": 20,
+   "stability": false
+  },
+  {
+   "item": "7729_1",
+   "spk": "7729",
+   "gender": "M",
+   "uid": "7729-102255-0031",
+   "src": "corpus/raw/LibriSpeech/test-clean/7729/102255/7729-102255-0031.flac",
+   "dur": 6.75,
+   "text": "HE CONTINUED HIS PRETENDED SEARCH AND TO GIVE COLOR TO HIS ERRAND MADE TWO ARRESTS",
+   "words": 15,
+   "stability": false
+  },
+  {
+   "item": "7729_2",
+   "spk": "7729",
+   "gender": "M",
+   "uid": "7729-102255-0039",
+   "src": "corpus/raw/LibriSpeech/test-clean/7729/102255/7729-102255-0039.flac",
+   "dur": 6.82,
+   "text": "THE INMATES BEING REMOVED AT THE APPOINTED HOUR A FEW CANNON BALLS WERE FIRED THROUGH THE STONE WALLS",
+   "words": 18,
+   "stability": false
+  },
+  {
+   "item": "7729_3",
+   "spk": "7729",
+   "gender": "M",
+   "uid": "7729-102255-0014",
+   "src": "corpus/raw/LibriSpeech/test-clean/7729/102255/7729-102255-0014.flac",
+   "dur": 5.29,
+   "text": "THE LEADERS OF THE CONSPIRACY BECAME DISTRUSTFUL OF THEIR POWER TO CRUSH THE TOWN",
+   "words": 14,
+   "stability": false
+  },
+  {
+   "item": "7729_4",
+   "spk": "7729",
+   "gender": "M",
+   "uid": "7729-102255-0022",
+   "src": "corpus/raw/LibriSpeech/test-clean/7729/102255/7729-102255-0022.flac",
+   "dur": 11.79,
+   "text": "FROM THESE AGAIN SPRANG BARRICADED AND FORTIFIED DWELLINGS CAMPS AND SCOUTING PARTIES FINALLY CULMINATING IN ROVING GUERRILLA BANDS HALF PARTISAN HALF PREDATORY",
+   "words": 22,
+   "stability": false
+  },
+  {
+   "item": "8224_0",
+   "spk": "8224",
+   "gender": "M",
+   "uid": "8224-274384-0007",
+   "src": "corpus/raw/LibriSpeech/test-clean/8224/274384/8224-274384-0007.flac",
+   "dur": 6.23,
+   "text": "HAVE MERCY LORD ON ME I PRAY FOR MEN WOULD ME DEVOUR",
+   "words": 12,
+   "stability": true
+  },
+  {
+   "item": "8224_1",
+   "spk": "8224",
+   "gender": "M",
+   "uid": "8224-274384-0006",
+   "src": "corpus/raw/LibriSpeech/test-clean/8224/274384/8224-274384-0006.flac",
+   "dur": 6.81,
+   "text": "THE KING STOOD UP AND CALLED FOR THAT PSALM WHICH BEGINS WITH THESE WORDS",
+   "words": 14,
+   "stability": true
+  },
+  {
+   "item": "8224_2",
+   "spk": "8224",
+   "gender": "M",
+   "uid": "8224-274384-0000",
+   "src": "corpus/raw/LibriSpeech/test-clean/8224/274384/8224-274384-0000.flac",
+   "dur": 7.61,
+   "text": "HE PASSED THROUGH HENLEY SAINT ALBANS AND CAME SO NEAR TO LONDON AS HARROW ON THE HILL",
+   "words": 17,
+   "stability": true
+  },
+  {
+   "item": "8224_3",
+   "spk": "8224",
+   "gender": "M",
+   "uid": "8224-274381-0011",
+   "src": "corpus/raw/LibriSpeech/test-clean/8224/274381/8224-274381-0011.flac",
+   "dur": 6.48,
+   "text": "HIS CONDUCT AND PRESENCE OF MIND IN THIS EMERGENCE APPEARED CONSPICUOUS",
+   "words": 11,
+   "stability": true
+  },
+  {
+   "item": "8224_4",
+   "spk": "8224",
+   "gender": "M",
+   "uid": "8224-274384-0002",
+   "src": "corpus/raw/LibriSpeech/test-clean/8224/274384/8224-274384-0002.flac",
+   "dur": 9.81,
+   "text": "THEY INFORMED THE ENGLISH PARLIAMENT OF THIS UNEXPECTED INCIDENT AND ASSURED THEM THAT THEY HAD ENTERED INTO NO PRIVATE TREATY WITH THE KING",
+   "words": 23,
+   "stability": true
+  },
+  {
+   "item": "8230_0",
+   "spk": "8230",
+   "gender": "M",
+   "uid": "8230-279154-0028",
+   "src": "corpus/raw/LibriSpeech/test-clean/8230/279154/8230-279154-0028.flac",
+   "dur": 11.56,
+   "text": "I CAN SET TO WORK NOW TO REMEMBER THINGS I NEVER REMEMBERED BEFORE SUCH AS WHAT I HAD TO EAT FOR BREAKFAST THIS MORNING AND IT CAN HARDLY BE WHOLLY HABIT THAT ENABLES ME TO DO THIS",
+   "words": 37,
+   "stability": false
+  },
+  {
+   "item": "8230_1",
+   "spk": "8230",
+   "gender": "M",
+   "uid": "8230-279154-0020",
+   "src": "corpus/raw/LibriSpeech/test-clean/8230/279154/8230-279154-0020.flac",
+   "dur": 7.83,
+   "text": "IF WE HAD RETAINED THE SUBJECT OR ACT IN KNOWLEDGE THE WHOLE PROBLEM OF MEMORY WOULD HAVE BEEN COMPARATIVELY SIMPLE",
+   "words": 20,
+   "stability": false
+  },
+  {
+   "item": "8230_2",
+   "spk": "8230",
+   "gender": "M",
+   "uid": "8230-279154-0006",
+   "src": "corpus/raw/LibriSpeech/test-clean/8230/279154/8230-279154-0006.flac",
+   "dur": 7.51,
+   "text": "THE BEHAVIOURIST WHO ATTEMPTS TO MAKE PSYCHOLOGY A RECORD OF BEHAVIOUR HAS TO TRUST HIS MEMORY IN MAKING THE RECORD",
+   "words": 20,
+   "stability": false
+  },
+  {
+   "item": "8230_3",
+   "spk": "8230",
+   "gender": "M",
+   "uid": "8230-279154-0000",
+   "src": "corpus/raw/LibriSpeech/test-clean/8230/279154/8230-279154-0000.flac",
+   "dur": 8.8,
+   "text": "THE ANALYSIS OF KNOWLEDGE WILL OCCUPY US UNTIL THE END OF THE THIRTEENTH LECTURE AND IS THE MOST DIFFICULT PART OF OUR WHOLE ENTERPRISE",
+   "words": 24,
+   "stability": false
+  },
+  {
+   "item": "8230_4",
+   "spk": "8230",
+   "gender": "M",
+   "uid": "8230-279154-0014",
+   "src": "corpus/raw/LibriSpeech/test-clean/8230/279154/8230-279154-0014.flac",
+   "dur": 7.94,
+   "text": "I COME NOW TO THE OTHER CHARACTERISTIC WHICH MEMORY IMAGES MUST HAVE IN ORDER TO ACCOUNT FOR OUR KNOWLEDGE OF THE PAST",
+   "words": 22,
+   "stability": false
+  },
+  {
+   "item": "8455_0",
+   "spk": "8455",
+   "gender": "M",
+   "uid": "8455-210777-0055",
+   "src": "corpus/raw/LibriSpeech/test-clean/8455/210777/8455-210777-0055.flac",
+   "dur": 9.55,
+   "text": "SIR I HAVE IT IN COMMAND TO INFORM YOUR EXCELLENCY THAT YOU HAVE BEEN APPOINTED GOVERNOR OF THE CROWN COLONY WHICH IS CALLED BRITANNULA",
+   "words": 24,
+   "stability": true
+  },
+  {
+   "item": "8455_1",
+   "spk": "8455",
+   "gender": "M",
+   "uid": "8455-210777-0053",
+   "src": "corpus/raw/LibriSpeech/test-clean/8455/210777/8455-210777-0053.flac",
+   "dur": 6.96,
+   "text": "WERE I TO COMPLY WITH YOUR ORDERS WITHOUT EXPRESSING MY OWN OPINION I SHOULD SEEM TO HAVE DONE SO WILLINGLY HEREAFTER",
+   "words": 21,
+   "stability": true
+  },
+  {
+   "item": "8455_2",
+   "spk": "8455",
+   "gender": "M",
+   "uid": "8455-210777-0006",
+   "src": "corpus/raw/LibriSpeech/test-clean/8455/210777/8455-210777-0006.flac",
+   "dur": 4.52,
+   "text": "WE ARE QUITE SATISFIED NOW CAPTAIN BATTLEAX SAID MY WIFE",
+   "words": 10,
+   "stability": true
+  },
+  {
+   "item": "8455_3",
+   "spk": "8455",
+   "gender": "M",
+   "uid": "8455-210777-0038",
+   "src": "corpus/raw/LibriSpeech/test-clean/8455/210777/8455-210777-0038.flac",
+   "dur": 10.03,
+   "text": "THEREFORE I FEEL MYSELF QUITE ABLE AS PRESIDENT OF THIS REPUBLIC TO RECEIVE YOU WITH A COURTESY DUE TO THE SERVANTS OF A FRIENDLY ALLY",
+   "words": 25,
+   "stability": true
+  },
+  {
+   "item": "8455_4",
+   "spk": "8455",
+   "gender": "M",
+   "uid": "8455-210777-0058",
+   "src": "corpus/raw/LibriSpeech/test-clean/8455/210777/8455-210777-0058.flac",
+   "dur": 7.16,
+   "text": "IT IS FOUNDED ON THE ACKNOWLEDGED WEAKNESS OF THOSE WHO SURVIVE THAT PERIOD OF LIFE AT WHICH MEN CEASE TO WORK",
+   "words": 21,
+   "stability": true
+  },
+  {
+   "item": "8463_0",
+   "spk": "8463",
+   "gender": "F",
+   "uid": "8463-294828-0029",
+   "src": "corpus/raw/LibriSpeech/test-clean/8463/294828/8463-294828-0029.flac",
+   "dur": 5.29,
+   "text": "OUR BAGGAGE WAS IMMEDIATELY CARRIED TO THE DECK OF THE FRIGATE I RUSHED ABOARD",
+   "words": 14,
+   "stability": false
+  },
+  {
+   "item": "8463_1",
+   "spk": "8463",
+   "gender": "F",
+   "uid": "8463-294828-0037",
+   "src": "corpus/raw/LibriSpeech/test-clean/8463/294828/8463-294828-0037.flac",
+   "dur": 5.37,
+   "text": "DEPARTING FROM FIVE HUNDRED THOUSAND THROATS THREE CHEERS BURST FORTH IN SUCCESSION",
+   "words": 12,
+   "stability": false
+  },
+  {
+   "item": "8463_2",
+   "spk": "8463",
+   "gender": "F",
+   "uid": "8463-294828-0006",
+   "src": "corpus/raw/LibriSpeech/test-clean/8463/294828/8463-294828-0006.flac",
+   "dur": 7.32,
+   "text": "FROM RUBBING SHOULDERS WITH SCIENTISTS IN OUR LITTLE UNIVERSE BY THE BOTANICAL GARDENS THE BOY HAD COME TO KNOW A THING OR TWO",
+   "words": 23,
+   "stability": false
+  },
+  {
+   "item": "8463_3",
+   "spk": "8463",
+   "gender": "F",
+   "uid": "8463-294828-0014",
+   "src": "corpus/raw/LibriSpeech/test-clean/8463/294828/8463-294828-0014.flac",
+   "dur": 5.72,
+   "text": "THERE WAS GOOD REASON TO STOP AND THINK EVEN FOR THE WORLD'S MOST EMOTIONLESS MAN",
+   "words": 15,
+   "stability": false
+  },
+  {
+   "item": "8463_4",
+   "spk": "8463",
+   "gender": "F",
+   "uid": "8463-294825-0002",
+   "src": "corpus/raw/LibriSpeech/test-clean/8463/294825/8463-294825-0002.flac",
+   "dur": 10.56,
+   "text": "FIRST AS A PARIS STOCKBROKER LATER AS A CELEBRATED AUTHOR AND YACHTSMAN HE WENT ON FREQUENT VOYAGES TO BRITAIN AMERICA THE MEDITERRANEAN",
+   "words": 22,
+   "stability": false
+  },
+  {
+   "item": "8555_0",
+   "spk": "8555",
+   "gender": "F",
+   "uid": "8555-292519-0013",
+   "src": "corpus/raw/LibriSpeech/test-clean/8555/292519/8555-292519-0013.flac",
+   "dur": 4.18,
+   "text": "THAT WAS BUT RUSTLING OF DRIPPING PLANTS IN THE DARK",
+   "words": 10,
+   "stability": false
+  },
+  {
+   "item": "8555_1",
+   "spk": "8555",
+   "gender": "F",
+   "uid": "8555-284447-0018",
+   "src": "corpus/raw/LibriSpeech/test-clean/8555/284447/8555-284447-0018.flac",
+   "dur": 5.46,
+   "text": "AT ONCE THE GOAT GAVE A LEAP ESCAPED FROM THE SOLDIERS AND WITH BOWED HEAD RUSHED UPON THE BOOLOOROO",
+   "words": 19,
+   "stability": false
+  },
+  {
+   "item": "8555_2",
+   "spk": "8555",
+   "gender": "F",
+   "uid": "8555-284447-0013",
+   "src": "corpus/raw/LibriSpeech/test-clean/8555/284447/8555-284447-0013.flac",
+   "dur": 9.04,
+   "text": "WHY YOU SAID TO FETCH THE FIRST LIVING CREATURE WE MET AND THAT WAS THIS BILLYGOAT REPLIED THE CAPTAIN PANTING HARD AS HE HELD FAST TO ONE OF THE GOAT'S HORNS",
+   "words": 31,
+   "stability": false
+  },
+  {
+   "item": "8555_3",
+   "spk": "8555",
+   "gender": "F",
+   "uid": "8555-284449-0001",
+   "src": "corpus/raw/LibriSpeech/test-clean/8555/284449/8555-284449-0001.flac",
+   "dur": 8.63,
+   "text": "THEN THEY ALL MARCHED OUT A LITTLE WAY INTO THE FIELDS AND FOUND THAT THE ARMY OF PINKIES HAD ALREADY FORMED AND WAS ADVANCING STEADILY TOWARD THEM",
+   "words": 27,
+   "stability": false
+  },
+  {
+   "item": "8555_4",
+   "spk": "8555",
+   "gender": "F",
+   "uid": "8555-284447-0019",
+   "src": "corpus/raw/LibriSpeech/test-clean/8555/284447/8555-284447-0019.flac",
+   "dur": 10.28,
+   "text": "BEFORE ANY COULD STOP HIM HE BUTTED HIS MAJESTY SO FURIOUSLY THAT THE KING SOARED FAR INTO THE AIR AND TUMBLED IN A HEAP AMONG THE BENCHES WHERE HE LAY MOANING AND GROANING",
+   "words": 33,
+   "stability": false
+  },
+  {
+   "item": "908_0",
+   "spk": "908",
+   "gender": "M",
+   "uid": "908-157963-0012",
+   "src": "corpus/raw/LibriSpeech/test-clean/908/157963/908-157963-0012.flac",
+   "dur": 10.09,
+   "text": "BUT THEL IS LIKE A FAINT CLOUD KINDLED AT THE RISING SUN I VANISH FROM MY PEARLY THRONE AND WHO SHALL FIND MY PLACE",
+   "words": 24,
+   "stability": false
+  },
+  {
+   "item": "908_1",
+   "spk": "908",
+   "gender": "M",
+   "uid": "908-157963-0020",
+   "src": "corpus/raw/LibriSpeech/test-clean/908/157963/908-157963-0020.flac",
+   "dur": 9.8,
+   "text": "TILL WE ARISE LINK'D IN A GOLDEN BAND AND NEVER PART BUT WALK UNITED BEARING FOOD TO ALL OUR TENDER FLOWERS",
+   "words": 21,
+   "stability": false
+  },
+  {
+   "item": "908_2",
+   "spk": "908",
+   "gender": "M",
+   "uid": "908-157963-0030",
+   "src": "corpus/raw/LibriSpeech/test-clean/908/157963/908-157963-0030.flac",
+   "dur": 4.52,
+   "text": "WHY AN EAR A WHIRLPOOL FIERCE TO DRAW CREATIONS IN",
+   "words": 10,
+   "stability": false
+  },
+  {
+   "item": "908_3",
+   "spk": "908",
+   "gender": "M",
+   "uid": "908-157963-0014",
+   "src": "corpus/raw/LibriSpeech/test-clean/908/157963/908-157963-0014.flac",
+   "dur": 4.52,
+   "text": "DESCEND O LITTLE CLOUD AND HOVER BEFORE THE EYES OF THEL",
+   "words": 11,
+   "stability": false
+  },
+  {
+   "item": "908_4",
+   "spk": "908",
+   "gender": "M",
+   "uid": "908-31957-0005",
+   "src": "corpus/raw/LibriSpeech/test-clean/908/31957/908-31957-0005.flac",
+   "dur": 4.49,
+   "text": "ALAS I HAVE GRIEVED SO I AM HARD TO LOVE",
+   "words": 10,
+   "stability": false
+  }
+ ]
+}
