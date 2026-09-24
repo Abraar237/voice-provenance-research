@@ -23,7 +23,7 @@ from prompts import SYSTEM, USER
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parent
 RAW = ROOT / "results" / "raw"
-DEV = "mps" if torch.backends.mps.is_available() else "cpu"
+DEV = "cpu"  # MPS crashes inside a matmul for this model (torch 2.14); CPU bf16 works
 MODELS = {"voxtral": "mistralai/Voxtral-Mini-3B-2507", "qwenomni": "Qwen/Qwen2.5-Omni-3B"}
 LOCAL = {"voxtral": ROOT / "models" / "voxtral"}  # curl-downloaded weights (hub client stalled on this host)
 MAX_TOKENS = {"O1": 300, "O2": 8, "O3": 8, "O4": 8, "O5": 160}
@@ -33,14 +33,26 @@ random.seed(11)
 class Voxtral:
     def __init__(self):
         from transformers import AutoProcessor, VoxtralForConditionalGeneration
+        # transformers 5.16 VoxtralProcessor.apply_chat_template still iterates a removed kwarg
+        # group ("mm_load_kwargs"); give it an empty one so the call proceeds.
+        from typing import TypedDict
+        import transformers.processing_utils as pu
+        if "mm_load_kwargs" not in pu.AllKwargsForChatTemplate.__annotations__:
+            class _MMLoad(TypedDict, total=False):
+                pass
+            pu.AllKwargsForChatTemplate.__annotations__["mm_load_kwargs"] = _MMLoad
+        K = pu.AllKwargsForChatTemplate.__annotations__["template_kwargs"]
+        if "load_audio_from_video" in K.__annotations__:  # the Mistral backend rejects this default
+            del K.__annotations__["load_audio_from_video"]
         src = str(LOCAL["voxtral"]) if (LOCAL["voxtral"] / "model-00002-of-00002.safetensors").exists() else MODELS["voxtral"]
         self.proc = AutoProcessor.from_pretrained(src)
         self.model = VoxtralForConditionalGeneration.from_pretrained(
             src, dtype=torch.bfloat16, device_map=DEV).eval()
 
     def __call__(self, wav, system, text, max_new):
-        conv = [{"role": "system", "content": system},
-                {"role": "user", "content": [{"type": "audio", "path": str(wav)}, {"type": "text", "text": text}]}]
+        # Voxtral's tokenizer forbids a system message alongside audio; prepend it to the user text.
+        conv = [{"role": "user", "content": [{"type": "audio", "path": str(wav)},
+                                             {"type": "text", "text": system + "\n\n" + text}]}]
         inputs = self.proc.apply_chat_template(conv).to(DEV, dtype=torch.bfloat16)
         with torch.no_grad():
             out = self.model.generate(**inputs, max_new_tokens=max_new, do_sample=False)

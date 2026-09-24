@@ -1,0 +1,4 @@
+{"model": "mistralai/Voxtral-Mini-3B-2507", "device": "mps", "n": 8, "seconds": 0, "t": "2026-09-24T13:14:53"}
+{"model": "mistralai/Voxtral-Mini-3B-2507", "device": "mps", "n": 8, "seconds": 0, "t": "2026-09-24T13:16:10"}
+{"model": "mistralai/Voxtral-Mini-3B-2507", "device": "mps", "n": 8, "seconds": 0, "t": "2026-09-24T13:17:17"}
+{"model": "mistralai/Voxtral-Mini-3B-2507", "device": "cpu", "n": 4, "seconds": 206, "t": "2026-09-24T13:22:47"}

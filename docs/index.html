@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Clone Is Invisible, the Codec Is Not</title>
+<meta name="description" content="A matched audit of synthetic-voice provenance in audio language models: same speaker, same words, real recording vs zero-shot clone vs codec re-encoding vs stock voice, on Gemini Flash, Gemini Pro and an open-weight model.">
+<style>
+  :root { --slate:#155e8c; --hot:#b3006b; --shelf:#c0641a; --good:#1c7a55;
+          --ink:#16130d; --ink2:#3a352b; --muted:#6d665a; --faint:#a49c8c;
+          --rule:#e7e2d5; --rule2:#cfdfeb; --cardbg:#fdfcfa; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; background:#ffffff; color:var(--ink);
+         font-size:18px; line-height:1.72; }
+  .wrap { max-width:760px; margin:0 auto; padding:56px 24px 90px; }
+  .eyebrow { font-family: Helvetica, Arial, sans-serif; font-size:12px; letter-spacing:2.5px;
+             text-transform:uppercase; color:var(--muted); font-weight:700; margin-bottom:16px; }
+  h1 { font-size:40px; line-height:1.14; margin-bottom:8px; letter-spacing:-0.3px; }
+  .subtitle { font-size:21px; color:var(--ink2); line-height:1.5; margin:14px 0 18px; }
+  .byline { font-family: Helvetica, Arial, sans-serif; font-size:14px; color:var(--muted); margin-bottom:22px; }
+  .pills { margin-bottom:8px; }
+  .pills a { font-family: Helvetica, Arial, sans-serif; display:inline-block; font-size:14px;
+             text-decoration:none; border:1px solid var(--rule2); border-radius:999px;
+             padding:5px 14px; font-weight:600; color:var(--slate); margin:0 8px 10px 0; }
+  .pills a.solid { background:var(--ink); border-color:var(--ink); color:#fff; }
+  h2 { font-size:26px; line-height:1.25; margin:60px 0 8px; padding-top:26px;
+       border-top:1px solid var(--rule); letter-spacing:-0.2px; }
+  p { margin:14px 0; color:var(--ink2); }
+  p b, li b { color:var(--ink); }
+  .num { font-family:'SF Mono', Menlo, Consolas, monospace; font-size:0.92em; font-variant-numeric:tabular-nums; }
+  .fig { margin:28px 0 32px; border:1px solid var(--rule); border-radius:12px;
+         padding:18px 18px 14px; background:#fff; overflow-x:auto; }
+  .fig img { width:100%; display:block; }
+  .figcap { font-family: Helvetica, Arial, sans-serif; font-size:13px; line-height:1.55;
+            color:var(--muted); margin-top:12px; }
+  .gifnote { font-family: Helvetica, Arial, sans-serif; font-size:12px; color:var(--muted);
+             letter-spacing:1.5px; text-transform:uppercase; margin-bottom:6px; }
+  .stats { display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; margin:26px 0; }
+  .stat { border:1px solid var(--rule); border-radius:10px; padding:14px 12px; text-align:center; }
+  .stat .v { font-family:'SF Mono', Menlo, monospace; font-size:24px; font-weight:700; color:var(--slate); display:block; }
+  .stat .k { font-family: Helvetica, Arial, sans-serif; font-size:12px; color:var(--muted);
+             letter-spacing:1px; text-transform:uppercase; }
+  .toc { font-family: Helvetica, Arial, sans-serif; font-size:14px; margin:26px 0 12px;
+         padding:20px 22px; border:1px solid var(--rule); border-radius:12px; background:var(--cardbg); }
+  .toctitle { font-weight:700; letter-spacing:1.5px; text-transform:uppercase; font-size:12px;
+              color:var(--muted); margin-bottom:8px; }
+  .toc a { color:var(--slate); text-decoration:none; display:block; padding:3px 0; }
+  table { border-collapse:collapse; width:100%; margin:20px 0; font-family: Helvetica, Arial, sans-serif; font-size:14px; }
+  th { text-align:left; border-bottom:2px solid var(--ink); padding:8px; font-size:12.5px;
+       letter-spacing:.5px; text-transform:uppercase; color:var(--muted); }
+  td { border-bottom:1px solid var(--rule); padding:8px; }
+  td.n { font-family:'SF Mono', Menlo, monospace; font-variant-numeric:tabular-nums; }
+  td.hi { color:var(--good); font-weight:700; } td.lo { color:var(--hot); font-weight:700; }
+  .filmwrap { margin:34px 0 40px; border:1px solid var(--rule); border-radius:14px;
+              overflow:hidden; background:#000; position:relative; }
+  .filmwrap video { display:block; width:100%; height:auto; }
+  blockquote { border-left:3px solid var(--rule2); margin:18px 0; padding:4px 0 4px 18px;
+               color:var(--muted); font-style:italic; }
+  .cite { background:var(--cardbg); border:1px solid var(--rule); border-radius:10px; padding:16px 18px;
+          font-family:'SF Mono', Menlo, monospace; font-size:12.5px; color:var(--ink2);
+          white-space:pre-wrap; margin:16px 0; }
+  footer { font-family: Helvetica, Arial, sans-serif; margin-top:70px; padding-top:24px;
+           border-top:1px solid var(--rule); color:var(--muted); font-size:13.5px; }
+  footer a { color:var(--slate); }
+  @media (max-width:640px){ h1{font-size:30px;} body{font-size:17px;} .stats{grid-template-columns:repeat(2,1fr);} }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="eyebrow">Audio language models · Matched provenance audit · September 2026</div>
+<h1>The clone is invisible, the codec is not</h1>
+<div class="subtitle">Does an audio model treat a cloned voice differently from the same person's real voice? We held the speaker and the words fixed and measured. The clone changes nothing the model does. A codec re-encoding of the real recording does. And asked directly, the model calls most real people synthetic.</div>
+<div class="byline">Mohammed Abraar · Vizuara Research · abraar@vizz.vizuara.ai</div>
+<div class="pills">
+  <a class="solid" href="#film">Film</a>
+  <a href="paper_iclr_preprint.pdf">Paper (PDF)</a>
+  <a href="paper_iclr_submission.pdf">Anonymous build</a>
+  <a href="https://github.com/Abraar237/voice-provenance-research">Code + data</a>
+</div>
+
+<div class="stats">
+  <div class="stat"><span class="v">40</span><span class="k">readers</span></div>
+  <div class="stat"><span class="v">200</span><span class="k">paired items</span></div>
+  <div class="stat"><span class="v">4</span><span class="k">arms per item</span></div>
+  <div class="stat"><span class="v">@@NCALLS@@</span><span class="k">model calls</span></div>
+</div>
+
+<div class="toc"><div class="toctitle">Contents</div>
+  <a href="#film">0. The three-minute film</a>
+  <a href="#assumption">1. Every voice agent hears synthetic voices, and every audit assumes that is fine</a>
+  <a href="#design">2. Same speaker, same words, four versions</a>
+  <a href="#clone">3. The clone is invisible: grades, transcripts, comprehension, replies all unchanged</a>
+  <a href="#codec">4. The codec is not: a third of a point, and the only effect that survives</a>
+  <a href="#probe">5. Asked directly, the model calls most real people synthetic</a>
+  <a href="#open">6. @@OPENTOC@@</a>
+  <a href="#prereg">7. Five pre-registered predictions, scored</a>
+  <a href="#known">8. What was known, what is new</a>
+  <a href="#practice">9. What audit designers and deployers should do</a>
+  <a href="#limits">10. Limitations</a>
+  <a href="#repro">11. Reproduce it</a>
+</div>
+
+<h2 id="film">0. The three-minute film</h2>
+<div class="filmwrap"><video controls preload="metadata" poster="assets/film-poster.png" src="assets/film.mp4"></video></div>
+
+<h2 id="assumption">1. Every voice agent hears synthetic voices, and every audit assumes that is fine</h2>
+<p>A voice agent hears a caller and does something: transcribes, grades, answers, or replies. More and more, the caller is not a person speaking directly. People who use augmentative communication devices speak through text-to-speech. Voice-banking users who have lost their voice speak through a clone of it. Agents call other agents. A 2026 honeypot study found that at least <span class="num">27%</span> of robocalls used generated voices.</p>
+<p>The research literature carries the same assumption. Audio-model bias audits need many voices saying the same words, and the cheap way to get them is text-to-speech. Of 21 recent audio-LLM bias and fairness audits we reviewed, <b>16 use synthetic stimuli only</b>. Three name the assumption as an untested limitation. None tests it. The evidence that exists is indirect and points both ways: Gemini models score a few points higher on synthetic subsets in two benchmarks, and four open-weight models score more than 12 points lower in one of them. In every case the synthetic and real arms contain different speakers and different items, so nothing separates provenance from content and speaker.</p>
+
+<h2 id="design">2. Same speaker, same words, four versions</h2>
+<div class="fig"><img src="assets/fig1_teaser.png" alt="Study design">
+<div class="figcap">One real utterance becomes four clips. Each goes to the model with five tasks and an explicit provenance question.</div></div>
+<p>We took 40 readers from LibriSpeech (20 women, 20 men) and 200 of their utterances, five per reader. For each utterance we built three matched versions. <b>CLONE</b> is a zero-shot clone of the same reader saying the same words, generated by Chatterbox from a separate reference clip of that reader. <b>RESYNTH</b> is the real recording passed through a 6 kbps neural codec: it keeps the real provenance and adds codec artifacts. <b>STOCK</b> is Chatterbox's default voice saying the same words: synthetic, but not this person. All 800 clips were loudness-normalised and frozen with a hash before any model call.</p>
+<p>Every clip was sent to Gemini 3.6 Flash, Gemini 3.1 Pro, and an open-weight audio model with five tasks: transcribe it (word error rate against the gold transcript), grade the reading from 1 to 10, answer a four-option content question, say whether the voice is a real human recording or AI-generated, and reply to the caller as a phone voice assistant. Five directions were pre-registered before any clip was cloned. Statistics are paired within item, with permutation tests that flip whole speakers and one Benjamini-Hochberg family over all 45 tests.</p>
+
+<h2 id="clone">3. The clone is invisible: grades, transcripts, comprehension, replies all unchanged</h2>
+<div class="gifnote">Animated · the clone is invisible</div>
+<div class="fig"><img src="assets/gifs/the-clone-is-invisible.gif" alt="Real vs clone grade"></div>
+<div class="gifnote">Figure · grade by provenance</div>
+<div class="fig"><img src="assets/fig2_grade.png" alt="Grade by arm and paired deltas">
+<div class="figcap">Left: reading grade by arm, with 95% speaker-bootstrap intervals. Right: paired differences against the real recording; a star marks a difference that survives correction.</div></div>
+<p>Gemini 3.6 Flash grades the real recordings at <span class="num">9.01</span> and the clones at <span class="num">9.01</span>. The paired difference over 200 items is <span class="num">+0.005</span> points, with a 95% interval from <span class="num">−0.16</span> to <span class="num">+0.16</span>. The stock voice is graded <span class="num">−0.005</span> against real. Word error rate is <span class="num">2.9%</span> on real and <span class="num">2.7%</span> on clone. The content question is answered correctly on <span class="num">99.5%</span> of both, which is a ceiling. Assistant replies are the same length (30.5 vs 30.7 words), refuse at the same rate, and never ask the caller to prove they are human; a hand audit of 24 replies found no remark about the voice in any of them. Gemini 3.1 Pro, on 60 items, grades the clone <span class="num">+0.35</span> higher with an interval that runs from <span class="num">−0.90</span> to <span class="num">+1.46</span>.</p>
+
+<h2 id="codec">4. The codec is not: a third of a point, and the only effect that survives</h2>
+<div class="gifnote">Animated · the codec is not</div>
+<div class="fig"><img src="assets/gifs/the-codec-is-not.gif" alt="Real vs codec grade"></div>
+<p>The RESYNTH arm is the same real waveform after a codec round trip. Flash grades it <span class="num">8.69</span>: <span class="num">−0.31</span> points against real, interval −0.46 to −0.16, <span class="num">p = 3.5×10⁻⁴</span>. That difference, and the matching clone-minus-resynth difference, are the only two of 45 tests that survive correction. Word error rate on the re-encoded clips is unchanged, so the codec lowers the grade without lowering intelligibility.</p>
+<p>This result does two jobs. It is a positive control: the paired design detects a third-of-a-point shift, so the missing clone effect is not a lack of power. And it reverses a pre-registered direction. We expected a provenance effect and asked how much of it re-encoding alone would explain. There is no provenance effect, and re-encoding produces an effect of its own. The model reacts to something in the signal that a state-of-the-art clone does not carry and a 6 kbps codec does.</p>
+
+<h2 id="probe">5. Asked directly, the model calls most real people synthetic</h2>
+<div class="gifnote">Animated · who is real</div>
+<div class="fig"><img src="assets/gifs/who-is-real.gif" alt="Share called synthetic by arm"></div>
+<div class="gifnote">Figure · the explicit probe</div>
+<div class="fig"><img src="assets/fig3_probe.png" alt="Explicit probe and implicit vs explicit discriminability">
+<div class="figcap">Left: share of clips called SYNTHETIC by arm. Right: how well the model's own grades separate real from clone (implicit) against how well its stated answer does (explicit), both as AUC above chance.</div></div>
+<p>Flash calls <span class="num">74.5%</span> of the genuine recordings synthetic. It calls 85.5% of clones, 88.0% of codec re-encodings, and 84.5% of stock-voice clips synthetic. Balanced accuracy for real against clone is <span class="num">0.555</span>. Pro is more extreme: <span class="num">89.8%</span> of real recordings called synthetic, 97.8% of clones, balanced accuracy 0.54. Whatever the model uses to answer, it responds to re-encoding at least as strongly as to cloning, and it is dominated by a prior that speech is synthetic.</p>
+<p>Our headline pre-registered prediction was that the model's behaviour would separate real from clone better than its answer does: sensitivity without awareness. It does not. The grade-based discriminability is <span class="num">0.50</span>, chance, against 0.555 for the stated answer on Flash, and 0.53 against 0.53 on Pro. What little the models can discriminate, they can also say.</p>
+
+<h2 id="open">6. @@OPENTOC@@</h2>
+@@OPENSECTION@@
+
+<h2 id="prereg">7. Five pre-registered predictions, scored</h2>
+<table>
+<tr><th>Direction (recorded before any data)</th><th>Outcome</th></tr>
+<tr><td>D1. Some family's implicit provenance delta exceeds its explicit detection</td><td class="lo">Not supported on any family tested</td></tr>
+<tr><td>D2. Resynthesis explains under half of the clone effect</td><td class="lo">Reversed: the clone effect is zero; resynthesis is the only effect</td></tr>
+<tr><td>D3. Sign differs by family: Gemini at or above real, open-weight below</td><td>@@D3@@</td></tr>
+<tr><td>D4. Explicit detection under 60% for every family</td><td class="hi">Holds: 0.555 and 0.54 @@D4EXTRA@@</td></tr>
+<tr><td>D5. Word error rate equal for real and clone</td><td class="hi">Holds: 2.7% vs 2.9%, p = 0.87</td></tr>
+</table>
+<p>The noise floor matters for reading these numbers. Thirty items were re-run five times each at temperature 0: the grade changed in 83% of cells, with a within-cell standard deviation of 0.57 points. The paired averages over 200 items are precise to about a sixth of a point; single calls are not. Two clones of the same reader from different reference clips differ by 0.64 points on average, four times the clone-versus-real difference, so a single clone per speaker, which most synthetic-stimulus audits use, carries that much sampling noise.</p>
+
+<h2 id="known">8. What was known, what is new</h2>
+<p>That audio models cannot say whether speech is synthetic when asked is established: zero-shot detection sits at or below chance for Qwen-Audio and Gemini 2.5 Pro, GPT-4o refuses the question, and every detector that works is fine-tuned. That a model can encode an acoustic cue and act on it without reporting it is established for other cues. That synthetic subsets score differently from real ones is established and contradictory. New here: the matched speaker-and-content design that turns unmatched comparisons into a per-item causal contrast; the codec control that separates provenance from artifacts; the stock-voice arm that separates cloned identity from synthetic in general; and the implicit-versus-explicit comparison on the same clips. The paper carries the full delineation table and 45 verified references.</p>
+
+<h2 id="practice">9. What audit designers and deployers should do</h2>
+<p><b>Synthetic stimuli are validated for these models</b>, to about a sixth of a grade point: a cloned voice produces the same grades, transcripts, comprehension, and replies as the real one. <b>Equalise compression across arms.</b> The model grades the codec, so an audit whose synthetic arm carries more compression than its real arm measures the codec, not the voice. <b>A clone of a person is treated as that person.</b> Accessibility and voice-banking users are not, on this evidence, getting a different service. <b>Do not let the model's own opinion about who is real gate a decision.</b> It calls three quarters of genuine recordings synthetic; a gate built on it would fail real callers far more often than it catches synthetic ones.</p>
+
+<h2 id="limits">10. Limitations</h2>
+<p>The clones are good, so the result is about high-quality zero-shot clones; a worse synthesiser would sit between the clone and the codec, and the codec result says the model would react. Chatterbox's training data is undisclosed and LibriSpeech readers appear in public TTS training sets, so the clones may be of seen speakers. The passages are audiobook sentences, which makes the assistant task an odd call. Comprehension is at ceiling on every arm. The grade noise floor is large. Gemini Pro ran 60 items, not 200. @@OPENLIMIT@@ The explicit probe is one wording.</p>
+
+<h2 id="repro">11. Reproduce it</h2>
+<p>The item list, the clone, resynthesis, and freeze scripts with the corpus hash, every prompt, every runner, the raw call logs, the single analysis script that produces every number on this page, the audited samples, and the spend log are in the repository. Audio regenerates from LibriSpeech and the scripts. Metered spend: <span class="num">@@SPEND@@</span> of a $30 cap, plus a few hours of local GPU time.</p>
+
+<footer>
+Every number on this page traces to <a href="https://github.com/Abraar237/voice-provenance-research/blob/main/results/analysis.json">results/analysis.json</a>, produced by one scripted analysis over the raw call logs. · Mohammed Abraar, Vizuara Research, 2026.
+</footer>
+</div>
+</body>
+</html>
