@@ -58,3 +58,16 @@ Notes:
 - Venue entries (@inproceedings / journal) were used only where the abs Comments field states acceptance: ICML 2026 (2605.00969, 2602.04796), EACL 2026 Findings (2602.01030), ACM MM 2025 (2505.11079), ICLR 2026 (2505.16211), CVPR 2026 (2512.10652), LREC 2026 (2603.15037), Interspeech 2026 (2603.16941, 2606.24648), TASLP 2026 (2501.08238), Odyssey 2026 (2605.28064), ACL 2026 (2604.19300), IJCB 2025 (2601.00777), EMNLP 2026 (2608.30348), Identity-Aware AI Workshop at LREC 2026 (2509.22061). 2604.17248 says only 'Submitted to SLT 2026' so it stays an arXiv preprint.
 - Author lists with more than 8 names are truncated to 8 + 'and others' (2512.14865, 2505.11079, 2505.16211, 2512.10652, 2609.11137, 2601.10384, 2501.08238, 2606.24648, 2412.10117, 2507.13264, 2604.14548).
 - Accented author names are LaTeX-escaped so the file compiles under pdflatex without inputenc.
+
+## Added 2026-10-15 (formula sources), checked against api.crossref.org
+
+| key | status | title |
+|---|---|---|
+| efron1979 | OK | Bootstrap Methods: Another Look at the Jackknife (Ann. Statist. 7(1), DOI 10.1214/aos/1176344552) |
+| lakens2013 | OK | Calculating and reporting effect sizes to facilitate cumulative science (Front. Psychol. 4:863, DOI 10.3389/fpsyg.2013.00863) |
+| hanley1982 | OK | The meaning and use of the area under a ROC curve (Radiology 143(1), DOI 10.1148/radiology.143.1.7063747) |
+| brodersen2010 | OK | The Balanced Accuracy and Its Posterior Distribution (ICPR 2010, DOI 10.1109/ICPR.2010.764) |
+| good2005 | OK | Permutation, Parametric and Bootstrap Tests of Hypotheses (Springer 2005, DOI 10.1007/b138696) |
+| morris2004 | OK | From WER and RIL to MER and WIL (Interspeech 2004, DOI 10.21437/Interspeech.2004-668) |
+
+OK: 51  PROBLEM: 0

@@ -23,6 +23,7 @@ Each call carries one clip and one prompt; there is no conversation state. Syste
 \begin{table}[h]
 \small
 \centering
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{llrrrrr}
 \toprule
 Model & Outcome & CLONE$-$REAL & RESYNTH$-$REAL & STOCK$-$REAL & CLONE$-$RESYNTH \\
@@ -40,7 +41,7 @@ Pro & grade & $+.345$ [$-.897$, $+1.458$] & $+.121$ [$-.776$, $+1.033$] & $+.328
 Voxtral & grade & $-.175$ [$-.400$, $+.050$] & --- & --- & --- \\
  & share SYNTHETIC & $.000$ [$.000$, $.000$] & --- & --- & --- \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \caption{Paired within-item differences with 95\% speaker-bootstrap intervals. Bold: survives Benjamini-Hochberg at $q \le 0.05$ over all 49 tests. Flash $n = 200$ pairs (195 to 200 depending on parse), Pro $n = 60$, Voxtral $n = 40$.}
 \label{tab:deltas}
 \end{table}
