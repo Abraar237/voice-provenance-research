@@ -71,3 +71,14 @@ Notes:
 | morris2004 | OK | From WER and RIL to MER and WIL (Interspeech 2004, DOI 10.21437/Interspeech.2004-668) |
 
 OK: 51  PROBLEM: 0
+
+## Claim check, 2026-10-15
+
+Every citing sentence was checked against the cited paper's full text (arXiv HTML/PDF), not only its metadata.
+Fixed: a2609_11137 (27% = machine-voiced openings of unwanted calls, not robocalls using generated voices),
+a2605_00969 (only four open-weight models drop >12 points), a2505_16211 (GPT-4o "refuses" claim unsupported; removed),
+mueller2021 (paper reports ~80% after practice, not 73%), a2505_11079 (below chance, not near), a2512_14865
+(7.5%/2.5% are relative), a2410_17196 (same questions, TTS vs crowd-recorded), a2604_25591 (uncertainty estimates,
+not verbal confidence), a2604_21276/a2601_10384 (split the compression/enhancement sentence), a2605_28064/cambre2020
+(quality ratings, not trust), a2410_06885 (similarity at or near ground truth), "three" -> "at least three" papers name
+the assumption. All other citations verified as supporting their claims.

@@ -11,41 +11,26 @@ Reads GEMINI_API_KEY from the environment.
 import base64, json, os, sys, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, "paper", "iclr", "assets", "fig1_schematic.png")
+OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, "paper", "acl", "assets", "fig1_schematic.png")
 MODEL = sys.argv[2] if len(sys.argv) > 2 else "gemini-3.1-flash-image"
 
-PROMPT = """Create a clean schematic diagram of an experimental pipeline for an academic machine-learning paper (ICLR style). Flat vector style, pure white background, thin dark-gray outlines, rounded rectangles, soft pastel fills, a clean sans-serif typeface, generous spacing. No shadows, no gradients, no 3D, no people, no decoration, no title, no watermark. Wide landscape layout. Six columns read left to right, each with a small bold numbered heading at the top, joined by thick gray right-pointing arrows.
+PROMPT = """Create a clean scientific diagram for an academic research paper. Flat vector style, pure white background, thin dark-gray outlines, soft pastel fills, a clear sans-serif typeface, generous spacing. No shadows, no gradients, no 3D, no decoration, no title, no watermark. Portrait layout, four sections stacked top to bottom, joined by three short thick downward arrows.
 
-COLUMN 1, heading "1. Dataset". One box with a small book icon and a small waveform icon. Text in the box: "LibriSpeech test-clean", then "40 readers", then "200 real utterances".
+SECTION 1. Small heading: "1. Same speaker, same words". Below it one wide rounded card, light gray fill, with a small book icon and a small waveform icon on its left. Text in the card on two lines: "LibriSpeech test-clean" and "40 readers, 200 real utterances".
 
-COLUMN 2, heading "2. Four matched clips". Four boxes stacked vertically, each with a tiny waveform icon on its left. Same width.
-Box 1, light green fill: bold "REAL", small text "original recording".
-Box 2, light blue fill: bold "CLONE", small text "same speaker, same words".
-Box 3, light orange fill: bold "RESYNTH", small text "real audio, 6 kbps codec".
-Box 4, light purple fill: bold "STOCK", small text "default synthetic voice".
-Below the four boxes, small gray text: "800 clips, loudness-matched".
+SECTION 2. Small heading: "2. Four versions of every utterance". Below it four rounded cards in a 2 by 2 grid, each with a tiny waveform icon. Each card has a bold word and a small line under it:
+top left, light green fill: "REAL" and "original recording";
+top right, light blue fill: "CLONE" and "zero-shot clone";
+bottom left, light orange fill: "RESYNTH" and "6 kbps codec";
+bottom right, light purple fill: "STOCK" and "default TTS voice".
 
-COLUMN 3, heading "3. Audio LLMs". Three boxes stacked, each with a small chip icon:
-"Gemini 3.6 Flash" with small text "n = 200";
-"Gemini 3.1 Pro" with small text "n = 60";
-"Voxtral-Mini-3B" with small text "n = 40".
+SECTION 3. Small heading: "3. Three audio LLMs, five tasks". Below it three small chip icons in one row with labels underneath: "Gemini 3.6 Flash", "Gemini 3.1 Pro", "Voxtral-Mini-3B". Under them five small pill-shaped tags in one row: "transcribe", "grade", "question", "reply", "real or AI?".
 
-COLUMN 4, heading "4. Five tasks per clip". Five short rows stacked, each a small rounded tag. From top to bottom:
-"O1 Transcribe";
-"O2 Grade the reading 1-10";
-"O3 Content question";
-"O5 Assistant reply";
-then a small gap, then "O4 Real or synthetic?" alone at the bottom.
-To the right of the top four tags (O1, O2, O3, O5) draw one thin curly bracket labeled "behaviour". To the right of the single bottom tag (O4) draw a separate small bracket labeled "self-report".
+SECTION 4. Small heading: "4. Compare each version with REAL". Below it three rounded result boxes side by side. Left box, light green fill, two lines: "Clone" and "grade +0.005". Middle box, light orange fill, two lines: "Codec" and "grade -0.31". Right box, light gray fill, two lines: "Self-report" and "near chance".
 
-COLUMN 5, heading "5. Paired analysis". One box containing three short lines: "CLONE minus REAL", "RESYNTH minus REAL", "STOCK minus REAL". Under the box, small gray text: "speaker bootstrap, 49 tests corrected".
+At the very bottom, one line of larger bold text: "The model hears the codec, not the clone."
 
-COLUMN 6, heading "6. Findings". Three stacked boxes:
-Light green box: bold "Clone: no change", small text "grade +0.005".
-Light orange box: bold "Codec: grade drops", small text "-0.31, survives correction".
-Light gray box: bold "Probe: near chance", small text "real called synthetic 74.5%".
-
-Spell every quoted string exactly as written, including numbers and signs. All text must be large and easy to read when the image is printed 14 centimetres wide. Do not add any other words, numbers or labels."""
+Spell every quoted string exactly as written. All text must be large and easy to read when the image is printed 8 centimetres wide. Do not add any other words, numbers or labels."""
 
 
 def main():
@@ -54,7 +39,7 @@ def main():
         sys.exit("GEMINI_API_KEY not set")
     body = {"contents": [{"parts": [{"text": PROMPT}]}],
             "generationConfig": {"responseModalities": ["IMAGE"],
-                                 "imageConfig": {"aspectRatio": "21:9", "imageSize": "4K"}}}
+                                 "imageConfig": {"aspectRatio": "3:4", "imageSize": "2K"}}}
     req = urllib.request.Request(
         f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent?key={key}",
         data=json.dumps(body).encode(), headers={"Content-Type": "application/json"})
