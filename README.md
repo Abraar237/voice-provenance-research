@@ -5,7 +5,7 @@
 Mohammed Abraar · Vizuara Research · 2026
 
 - **Website:** https://abraar237.github.io/voice-provenance-research/
-- **Paper:** [`docs/paper_iclr_preprint.pdf`](docs/paper_iclr_preprint.pdf) (named preprint) · [`docs/paper_iclr_submission.pdf`](docs/paper_iclr_submission.pdf) (anonymous build)
+- **Paper (AAAI-27 format, for the Audio-Centric AI workshop):** [`docs/paper_aaai_preprint.pdf`](docs/paper_aaai_preprint.pdf) (named preprint) · [`docs/paper_aaai_submission.pdf`](docs/paper_aaai_submission.pdf) (anonymous build) · [`docs/supplementary_aaai.pdf`](docs/supplementary_aaai.pdf) (supplementary). Earlier builds: [`docs/paper_acl_preprint.pdf`](docs/paper_acl_preprint.pdf) (ACL), [`docs/paper_iclr_preprint.pdf`](docs/paper_iclr_preprint.pdf) (ICLR).
 
 Audio language models increasingly hear synthetic voices, and most audits of these models are
 built with synthetic speech on the assumption that being synthetic changes nothing. We tested
@@ -57,7 +57,7 @@ python3 run_local.py --model voxtral --outcomes O2,O4 --items 1 --arms real,clon
 python3 judge_o5.py
 python3 analyze.py                             # -> results/analysis.json (every paper number)
 cd ../figures && python3 build_figures.py && python3 build_gifs.py
-cd ../paper/iclr && tectonic paper_iclr_submission.tex
+cd ../paper/aaai && for f in paper_aaai_submission paper_aaai_preprint supplementary; do pdflatex $f; bibtex $f; pdflatex $f; pdflatex $f; done   # AAAI kit needs pdfLaTeX
 ```
 
 Metered spend for the whole study: $2.99 (6,420 OpenRouter calls, exact per-call cost logged
